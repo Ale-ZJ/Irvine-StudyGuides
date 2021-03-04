@@ -1,10 +1,10 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [~Hi](README.md)
 
 ## ICS-32
 
-* [Untitled](ics-32/untitled.md)
+* [does this work](ics-32/untitled.md)
 
 ## ICS-33
 
