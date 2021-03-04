@@ -8,5 +8,6 @@
 
 ## ICS-33
 
+* [\[credits\]](ics-33/credits.md)
 * [Linked Lists](ics-33/untitled.md)
 
