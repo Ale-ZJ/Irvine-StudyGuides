@@ -9,5 +9,13 @@
 ## ICS-33
 
 * [\[credits\]](ics-33/credits.md)
-* [Linked Lists](ics-33/untitled.md)
+* [File Reading](ics-33/files.md)
+* [Python review](ics-33/python-review.md)
+* [Iterables](ics-33/iterables.md)
+* [Exceptions](ics-33/exceptions.md)
+* [Linked Lists](ics-33/lln.md)
+
+## EECS-31
+
+* [Untitled](eecs-31/untitled.md)
 
