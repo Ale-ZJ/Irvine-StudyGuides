@@ -23,6 +23,38 @@ description: 'week 1: "Python Review"'
 
 ![pictorial representation of binding - adapted from prof. Pattis](../.gitbook/assets/image.png)
 
+### 
+
+#### Using \_ as a variable name
+
+By using \_ your variable is basically 'unnamed' and the interpreter does not expect you to use it.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">not using _</th>
+      <th style="text-align:left">using _</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><code>kv = [k,v for k, v in [list of 2-tuple]]</code>
+      </td>
+      <td style="text-align:left"><code>only_k = [k for k, _ in [list of 2-tuple]]</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">
+        <p><code>for _ in [1,2,3]:</code>
+        </p>
+        <p><code>    print(_) </code>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ### Namespaces \(for objects\): \_\_dict\_\_
 
 Every object has a special variable named `__dict__` that stores bindings in a dictionary in which keys are objects' names and values are the objects themselves.
@@ -49,6 +81,70 @@ from module-name import *
 ```
 
 ### Scope
+
+Visibility of a variable. Can be **local** or **global.** We normally want to avoid using global variables, but if a global variable needs to be rebound, then use the keyword `global` to declare that it is global.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">This is better</th>
+      <th style="text-align:left"><b>DON&apos;T</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p><code>x = 1</code>
+        </p>
+        <p><code>def f():<br />   global x<br />   y = 2</code>
+        </p>
+        <p><code>   print(x,y)</code>
+        </p>
+        <p><code>   x = 2</code>
+        </p>
+        <p><code>f()</code>
+        </p>
+        <p><code>print(x)</code>
+        </p>
+      </td>
+      <td style="text-align:left">
+        <p><code>x = 1</code>
+        </p>
+        <p><code>def f():</code>
+        </p>
+        <p><code>   y = 2</code>
+        </p>
+        <p><code>   print(x,y)</code>
+        </p>
+        <p><code>   x = 2</code>
+        </p>
+        <p><code>f()</code>
+        </p>
+        <p><code>print(x)</code>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>&gt;&gt;&gt; 1 2</p>
+        <p>&gt;&gt;&gt; 2</p>
+      </td>
+      <td style="text-align:left">
+        <p>UnboundLocalError exception:</p>
+        <p>local variable &apos;x&apos; referenced before assignment</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Python looks up / binds names in the following order
+
+1. in the **local** **scope** of the function
+2. in any of the **enclosing scopes** 
+3. in the **global scope**
+4. in the **builtins scope**
+5. raise NameError
 
 ### Functions
 
@@ -92,8 +188,8 @@ bigger_than(60)(70)
 
 ### Lamda
 
-* **lambda:** unnamed function object that represents a very simple fxn
-* **predicate:** a fxn that returns a boolean
+* **lambda:** unnamed function object that represents a very simple function
+* **predicate:** a function that returns a boolean
 
 <table>
   <thead>
@@ -130,94 +226,16 @@ def bigger_than(v) :
     return (lambda x : x > v)
 ```
 
-### Sequence Unpacking
+### Parallel Assignment \(aka Sequence unpacking\)
 
 ```python
+l,m,n = (1,2,[3,4])
+print(l,m,n)
+>>> 1 2 [3, 4]
+
 l,m,(n,o) = (1, 2, [3,4])
 print(l,m,n,o)
 >>> 1 2 3 4
-```
-
-### Using \_ as a variable name
-
-By using \_ your variable is basically 'unnamed' and the interpreter does not expect you to use it.
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">not using _</th>
-      <th style="text-align:left">using _</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>kv = [k,v for k, v in [list of 2-tuple]]</code>
-      </td>
-      <td style="text-align:left"><code>only_k = [k for k, _ in [list of 2-tuple]]</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p><code>for _ in [1,2,3]:</code>
-        </p>
-        <p><code>    print(_) </code>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-## Sorting
-
-## Comprehension
-
-Comprehension is a compact way to generate a list, set, dictionary, tuple. 
-
-{% hint style="warning" %}
-Do not use comprehensions when mutating during the comprehension
-{% endhint %}
-
-### List Comprehension:
-
-```python
-#general form
-[f(var)   for var in iterable   if p(var)]
- ------   -------------------   ---------
- 1        2                     3 (optional, default = True)
-```
-
-Basically: Make a list of iterable \(2\), only when the value iterated \(1\) satisfies predicate \(3\)
-
-```python
-x = [i**2 for i in range(1,11) if i%2==0]
-print(x)
->>> [4, 16, 36, 64, 100]
-```
-
-### Dictionary Comprehension
-
-```python
-#general form
-{k(var) : v(var) for var in iterable if p(var)}
-
-# ex1)
-x = {k : len(k) for k in ['one', 'two', 'three', 'four', 'five']}
->>> {'four': 4, 'three': 5, 'one': 3, 'five': 4, 'two': 3}
-
-# ex2) #a dictionaary with key word and values sets
-{word : {c for c in word} for word in ['i', 'love', 'new', 'york']}
-{'i': {'i'}, 'love': {'e', 'o', 'v', 'l'}, 'new': {'e', 'n', 'w'}, /
-'york': {'k', 'o', 'y', 'r'}}
-```
-
-### Tuple Comprehension
-
-It returns a generator \(an object that is iterable ONE time\)
-
-```python
-x = (i for i in 'abc') returns a generator
-x = tuple(i for i in 'abc') returns a tuple
 ```
 
 ## Must-know functions

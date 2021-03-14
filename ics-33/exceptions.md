@@ -1,5 +1,5 @@
 ---
-description: 'week0: ''Python review'''
+description: 'week 1: ''Python review'''
 ---
 
 # Exceptions
