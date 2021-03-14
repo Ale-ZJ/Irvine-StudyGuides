@@ -4,7 +4,63 @@ description: 'week 1: ''Python review'''
 
 # Iterables
 
+## 
 
+## Mutable vs immutable
+
+* **mutable:** values can change later 
+* **immutable:** values can't chanage once created
+
+## Hashable vs unhashable
+
+Think of hashability as indexability  
+- a key needs to be unique  
+- thus an object needs to be hashable in order for Python to create a unique hash \(index\) to use as the key  
+- since immutable objects do not change, then immutable objects are hashable
+
+{% hint style="info" %}
+All immutable objects are hashable but not all hashable objects are immutable.
+{% endhint %}
+
+## Comparing Iterable objects 
+
+* **Sequence types**: **list** \(mutable\) and **tuples** \(immutable\)
+* **Set type**: **set** \(mutable\) and **frozenset** \(immutable\)
+* **Maping type**: **dict** \(mutable\) and **defaultdict** \(mutable\)
+
+### defaultdict
+
+A defaultdict gives a default value to a key that does not exist, thus never raises a KeyError. 
+
+```python
+from collections import defaultdict
+
+letters = ['a', 'x', 'b', 'x', 'f', 'a', 'x']
+
+freq_dict = defaultdict(int)
+for l in letters:
+    freq_dict[1] += 1
+print(freq_dict)
+```
+
+## Sorting
+
+* `list.sort()` ****= returns None, it mutates the list
+* `sorted()` = returns a sorted list from a given ITERABLE object
+
+when sorting a list of tuples \(from a dict\), python never compares the 2nd value because all keys in a dictionary are unique
+
+```python
+votes = [('Charlie', 20), ('Able', 10), ('Baker' ,20), ('Dog', 15)]
+
+for c,v in sorted(votes, key=(lambda t : t[1]), reverse=True):
+#   ^^^^^^^^^^^^^^^^^^^^^
+#   sort list by value without changing the original list
+
+for c,v in sorted(votes, key=lambda t : (-t[1],t[0]) ):
+#   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#   swaps key with value -> sort list by value
+```
 
 ## Comprehension
 

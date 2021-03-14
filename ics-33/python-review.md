@@ -226,7 +226,7 @@ def bigger_than(v) :
     return (lambda x : x > v)
 ```
 
-### Parallel Assignment \(aka Sequence unpacking\)
+## Parallel Assignment \(aka Sequence unpacking\)
 
 ```python
 l,m,n = (1,2,[3,4])
@@ -236,6 +236,119 @@ print(l,m,n)
 l,m,(n,o) = (1, 2, [3,4])
 print(l,m,n,o)
 >>> 1 2 3 4
+```
+
+## Statements vs Expressions
+
+* **statements**: cause an effect
+  * binding, control structures
+* **expressions**: evaluated to compute a result
+  * formulas, boolean, etc
+* **conditional statement**: use boolean expression to decide which block to execute
+* **conditional expression**: use boolean expression to decide what expression to evaluate
+
+```python
+#statement
+    if x <= y:
+          min = x
+      else:
+          min = y
+
+#expression
+    min = (x if x <= y else y)
+
+#statement
+    if x % 2 == 0:
+          print(x,'is even')
+      else:
+          print(x,'is odd')
+
+#expression
+    print(x, ('is even' if x%2 == 0 else 'is odd'))
+```
+
+## Arguments vs Parameters
+
+* **arguments:** passed to a function when **calling** it 
+  * **positional argument:** an argument NOT preceded by `name=`
+  * **named argument**: argument preceded by the `name=` option
+    * must be written at the end of the function call
+* **parameters:** values in a function **header**
+  * **name-only parameter:** a parameter with NO default value
+  * **default-argument parameter:** a parameter including a default argument value
+
+#### How matching works?
+
+* M1. match positional arguments to the respective parameter 
+* M2. if \* is an arg, then store all remaining pos args in a tuple and match 
+* M3. match named args to the named parameter 
+* M4. default args 
+* M5. exceptions
+
+### \*args and \*\*kargs
+
+* `*args:` 
+  * puts all positional arguments that have not been bound into a tuple 
+* `**kargs:` keyword arguments
+  * there are more named arguments than named parameters, then it will store the extra arguments in a dictionary named kargs
+
+```python
+def f(a,b,**kargs):
+        print(a,b,kargs)
+f(c=3, a=1, b=2, d=4) == 1 2 {'c': 3, 'd': 4}
+```
+
+{% hint style="info" %}
+The following is the general way to get all kinds of arguments:
+{% endhint %}
+
+```python
+def g(*args, **kargs):
+    print(args, kargs)
+    print(*args)
+    print(*kargs)
+    print(dict(**kargs))
+    
+g(1,2,c=3,d=4)
+>>> (1, 2) {'c': 3, 'd': 4}
+>>> 1 2
+>>> c d
+>>> {'c': 3, 'd': 4}
+```
+
+#### Important notes
+
+1. Writing `*` __and _`**`_ for parameters, binds said parameter to tuple/dict resp. 
+2. A parameter name by itself is using the tuple/dict
+3. Using _`*`_ and `**` followed by parameter name as arguments in fxn calls, _expands_ all the values in the tuple/dict to represent all arguments
+
+## None and pass
+
+* None is a value / instance / object of NoneType
+  * all functions return None as default
+* pass: inside a body, means do nothing 
+
+```python
+def function() -> None:
+    pass
+```
+
+## Indexable Objects - slicing
+
+* STL = String, Tuple, and List are indexable objects
+  * then they can be _**sliced**_: STL\[start: end: step\]
+
+## Else block
+
+It is executed when a loop terminates naturally \(without using break\)
+
+```python
+for i in irange(100):
+    if special_property(i):
+        print(i,'is the first value with the special property')
+        break
+    else:
+        print('No value in the range had the special property')
 ```
 
 ## Must-know functions
