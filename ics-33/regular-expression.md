@@ -37,10 +37,10 @@ Let R be a regex sequence, there are more rules:
 | group | what it means |
 | :--- | :--- |
 | `(R)` | matches R and enumerates a capturing group. Starts on the outermost parenthesis |
-| `(?:R)` | matches R but does not remember capture group |
+| `(?:R)` | matches R but the group there is NO group number |
 | `(?:<name> R)` | matches R and remembers the name of the pattern. e.g. `(?P<id>[A-Za-z0-9]+)` |
 
-Escape characters
+### Escape characters
 
 | symbol | meaning |
 | :--- | :--- |
@@ -54,4 +54,72 @@ Escape characters
 | `\S` | `[^ \t\n\r\f\v]` non-white space |
 | `\w` | `[a-zA-Z0-9_]` alphanumeric or underscore |
 | `\W` | `[^a-zA-Z0-9_]` non-alphanumeric |
+
+## Regular Expression \(re\) functions
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">function</th>
+      <th style="text-align:left">what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><code>re.compile(pattern)</code>
+      </td>
+      <td style="text-align:left">Creates a <b>regular expression object</b> from the pattern.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">**when the same pattern is used to match lots of sequences, then it is
+        the most efficient to compile regex and save it into a variable for later
+        use <code>p=re.compile(pattern)</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><code>re.match(pattern, str)</code>
+        </p>
+        <p><code>p.match(str)</code>
+        </p>
+      </td>
+      <td style="text-align:left">returns a <b>match object</b> if str matches the pattern at the beginning
+        of the str, else returns None.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>re.search(pattern, str)</code>
+      </td>
+      <td style="text-align:left">same as match but a match can start anywhere in the str</td>
+    </tr>
+  </tbody>
+</table>
+
+#### re.split\(\)
+
+`re.split(pattern, str)`  
+Splits the string by the occurrences of the pattern. Similar to `str.split()`
+
+```python
+re.split(';+' ,'abc;d;;e') 
+['abc', 'd', 'e']
+
+re.split('(;+)','abc;d;;e') 
+['abc', ';', 'd', ';;', 'e'] 
+```
+
+#### re.sub\(\)
+
+`re.sub(pattern, repl, str)`.  
+If a match is found in the str, build a string that replaces the `pattern` by `repl` \(which is a string that can refer to matched groups\), else return the str unchanged.
+
+```python
+re.sub('(a+)','{as}','aabcaaadaf') 
+{as}bc{as}d{as}f
+
+re.sub('(a+)','(\g<1>)','aabcaaadaf') 
+(aa)bc(aaa)d(a)f
+```
+
+
 
