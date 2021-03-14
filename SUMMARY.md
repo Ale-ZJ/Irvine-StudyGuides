@@ -12,7 +12,7 @@
 * [File Reading](ics-33/files.md)
 * [Python review](ics-33/python-review.md)
 * [Iterables](ics-33/iterables.md)
-* [Exceptions](ics-33/exceptions.md)
+* [Regular Expression](ics-33/regular-expression.md)
 * [Linked Lists](ics-33/lln.md)
 
 ## EECS-31

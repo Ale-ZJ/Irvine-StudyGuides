@@ -1,5 +1,7 @@
 ---
-description: 'week 0: "A Quick note on Simple and Efficient File Reading"'
+description: >-
+  week 0: "A Quick note on Simple and Efficient File Reading" by proffesor
+  Pattis
 ---
 
 # File Reading

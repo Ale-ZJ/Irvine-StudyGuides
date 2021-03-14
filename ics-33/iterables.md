@@ -9,7 +9,7 @@ description: 'week 1: ''Python review'''
 ## Mutable vs immutable
 
 * **mutable:** values can change later 
-* **immutable:** values can't chanage once created
+* **immutable:** values can't change once created
 
 ## Hashable vs unhashable
 
@@ -37,7 +37,7 @@ from collections import defaultdict
 
 letters = ['a', 'x', 'b', 'x', 'f', 'a', 'x']
 
-freq_dict = defaultdict(int)
+freq_dict = defaultdict(int) #defaults to 0
 for l in letters:
     freq_dict[1] += 1
 print(freq_dict)
