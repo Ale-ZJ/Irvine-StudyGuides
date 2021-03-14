@@ -53,13 +53,14 @@ when sorting a list of tuples \(from a dict\), python never compares the 2nd val
 ```python
 votes = [('Charlie', 20), ('Able', 10), ('Baker' ,20), ('Dog', 15)]
 
-for c,v in sorted(votes, key=(lambda t : t[1]), reverse=True):
-#   ^^^^^^^^^^^^^^^^^^^^^
-#   sort list by value without changing the original list
+#sort list by value without changing the original list
+sorted(votes, key=(lambda t : t[1]), reverse=True)
+# returns [('Charlie', 20), ('Baker', 20), ('Dog', 15), ('Able', 10)]
 
-for c,v in sorted(votes, key=lambda t : (-t[1],t[0]) ):
-#   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#   swaps key with value -> sort list by value
+
+# swaps key with value -> sort list by value and aphabetical order
+sorted(votes, key=lambda t : (-t[1],t[0]) )
+# return [('Baker', 20), ('Charlie', 20), ('Dog', 15), ('Able', 10)]
 ```
 
 ## Comprehension

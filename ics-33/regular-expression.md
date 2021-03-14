@@ -38,9 +38,9 @@ Let R be a regex sequence, there are more rules:
 | :--- | :--- |
 | `(R)` | matches R and enumerates a capturing group. Starts on the outermost parenthesis |
 | `(?:R)` | matches R but the group there is NO group number |
-| `(?:<name> R)` | matches R and remembers the name of the pattern. e.g. `(?P<id>[A-Za-z0-9]+)` |
+| `(?P<name> R)` | matches R and remembers the name of the pattern. e.g. `(?P<id>[A-Za-z0-9]+)` |
 
-### Escape characters
+Escape characters
 
 | symbol | meaning |
 | :--- | :--- |
@@ -121,5 +121,58 @@ re.sub('(a+)','(\g<1>)','aabcaaadaf')
 (aa)bc(aaa)d(a)f
 ```
 
+## Match Object functions 
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">function</th>
+      <th style="text-align:left">what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p><code>m.group(int)</code>
+        </p>
+        <p><code>m.group(str)</code>
+        </p>
+      </td>
+      <td style="text-align:left">returns the matched group pattern that corresponds to the given index
+        (int) or name (str)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>m.groupdict()</code>
+      </td>
+      <td style="text-align:left">puts all groups into a dictionary with keys as the index or name of the
+        group and the values are the matched pattern</td>
+    </tr>
+  </tbody>
+</table>
+
+## Example
+
+taken from phonecall.py written by prof. Pattis
+
+```python
+import re
+
+def place_call(area_code, exchange, number):
+    #does something with the stuff given
+
+def parse_phone_numbered(number):
+    pat = r"(\((\d{3})\))?((\d\d)?\d)-(\d{4})$"
+    m = re.match(pat, number)
+    assert m, number + 'is not legal phone number'
+    return place_call(m.group(2), m.group(3), m.group(5))
+
+def parse_phone_named(number):
+    pat = r"(\((?P<area_code>\d{3})\))?(?P<exchange>(\d\d)?\d)-(?P<number>\d{4})$"
+    m = re.match(pat,number)
+    assert m, number + " is not a legal phone number"
+    return place_call(**m.groupdict())
+    #or place_call(m.group('area_code'), m.group('exchange'), m.group('number'))
+
+number = input('Enter phone number: ')
+```
 
