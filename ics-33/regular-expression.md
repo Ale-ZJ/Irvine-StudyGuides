@@ -104,6 +104,7 @@ Splits the string by the occurrences of the pattern. Similar to `str.split()`
 re.split(';+' ,'abc;d;;e') 
 ['abc', 'd', 'e']
 
+#when you group the pattern, it will include the matching pattern in the list
 re.split('(;+)','abc;d;;e') 
 ['abc', ';', 'd', ';;', 'e'] 
 ```
@@ -121,7 +122,7 @@ re.sub('(a+)','(\g<1>)','aabcaaadaf')
 (aa)bc(aaa)d(a)f
 ```
 
-## Match Object functions 
+## re methods on Match Object 
 
 <table>
   <thead>
@@ -171,7 +172,7 @@ def parse_phone_named(number):
     m = re.match(pat,number)
     assert m, number + " is not a legal phone number"
     return place_call(**m.groupdict())
-    #or place_call(m.group('area_code'), m.group('exchange'), m.group('number'))
+    #or place_call(m.group('area_code'), m.['exchange'], m.group('number'))
 
 number = input('Enter phone number: ')
 ```

@@ -26,7 +26,7 @@ All immutable objects are hashable but not all hashable objects are immutable.
 
 * **Sequence types**: **list** \(mutable\) and **tuples** \(immutable\)
 * **Set type**: **set** \(mutable\) and **frozenset** \(immutable\)
-* **Maping type**: **dict** \(mutable\) and **defaultdict** \(mutable\)
+* **Mapping type**: **dict** \(mutable\) and **defaultdict** \(mutable\)
 
 ### defaultdict
 
@@ -106,7 +106,9 @@ x = {k : len(k) for k in ['one', 'two', 'three', 'four', 'five']}
 
 ### Tuple Comprehension
 
-It returns a generator \(an object that is iterable ONE time\)
+{% hint style="info" %}
+Tuple comprehensions are special because they return a _**generator**_.
+{% endhint %}
 
 ```python
 x = (i for i in 'abc') returns a generator

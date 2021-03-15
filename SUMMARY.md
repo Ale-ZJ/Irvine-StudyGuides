@@ -13,7 +13,7 @@
 * [Python review](ics-33/python-review.md)
 * [Iterables](ics-33/iterables.md)
 * [Regular Expression](ics-33/regular-expression.md)
-* [Untitled](ics-33/untitled.md)
+* [Classes](ics-33/untitled.md)
 * [Linked Lists](ics-33/lln.md)
 
 ## EECS-31
