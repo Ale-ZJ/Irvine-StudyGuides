@@ -500,7 +500,9 @@ class List1:
 ### Attributes
 
 {% hint style="danger" %}
-**Be careful when overloading** `__setattr__` since it gets called by `__init__` to initialize attributes. ALWAYS include `self.__dict__[name] = value` somewhere in the `__setattr__` . NEVER write `pass` in `__setattr__` body.
+**Be careful when overloading** `__setattr__` since it gets called by `__init__` to initialize attributes.   
+**ALWAYS** include `self.__dict__[name] = value` somewhere in the `__setattr__` .   
+**NEVER** write `pass` in `__setattr__` body.
 {% endhint %}
 
 ```python
