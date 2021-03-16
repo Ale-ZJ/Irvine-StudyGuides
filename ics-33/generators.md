@@ -213,7 +213,30 @@ def pfilter(iterable, p):
 Generators embodies a small amount of code and does not often store any large data type. It also produces one value at a time. Therefore generators are space efficient. 
 {% endhint %}
 
+* to build generators you need some sort of looping 
+  * for loop 
+  * while loop - more control over iterator
+    * StopIteration
+* DO NOT put everything into a list 
+  * iterables can be infinite
+  * ok to do a list of iterables 
+* DO NOT use len or slicing 
+  * ok to use zip 
 
+```python
+#generator - for version
+for x in iterable:
+    if condition:
+        yield x
+
+#generator - while version
+it = iter(iterable)
+try:
+    while True:
+        yield next(it)
+except StopIteration:
+    break / return
+```
 
 
 
