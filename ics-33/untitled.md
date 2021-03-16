@@ -10,7 +10,7 @@ When we define a class in Python, we bind the class name to an object that repre
 
 #### Python does three things when constructing new instance objects:
 
-1. Python calls a special function that _constructs_ a an empty `__dict__`.
+1. Python calls a special function that _constructs_ an empty `__dict__`.
 2. Python calls the class' `__init__(self, *args, **kargs)` with self as the object created in \(1\). It also _initializes_ attributes by binding their name with their respective values in the namespace `__dict__`.
 3. A reference to the object that was **created in \(1\)** and **initialized in \(2\)** is returned.
 
@@ -525,7 +525,7 @@ class C:
 
 ### Iteration
 
-Whenever you call something that loops.
+Whenever you call something that loops, Python translates it into a while loop.
 
 ```python
 while True:
@@ -541,6 +541,10 @@ while not (test):     # not is HIGH precedence, so I put test in ()
 
 {% hint style="info" %}
 In Python "not" has a higher precedence than "and", which has a higher precedence than "or" \(think of "not" like unary "-", "and" like "\*", and "or" like "+"\). 
+{% endhint %}
+
+{% hint style="info" %}
+`__next__`is called repeated/automatically, in the while-loop translation of a Python for-loop.
 {% endhint %}
 
 * `iter(iterable)` returns an **iterator**, an object which `next()` can be called on.
@@ -621,8 +625,38 @@ It print:
 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, blastoff
 
 
-#problem with above: objects from the same Countdown class share the same iterator?????
-#define a class_iter inside the __iter__ so you can keep track of next
+#BUT THERE IS A PROBLEM! 
+
+for a in Countdown(2):
+    for b in Countdown(2):
+        print(a,b)
+'''
+prints
+2 2 
+2 1 
+2 0 
+1 2
+1 1
+0 0
+0 2
+0 1
+0 0
+'''
+
+c = Countdown(2)
+for a in c:
+    for b in c:
+        print(a,b)
+'''
+2 2
+2 1
+2 0
+'''
+```
+
+to avoid the precious problem we define a class to keep track of information. ????? 
+
+```python
 def __iter__(self):
     class prange_iter:
         def __init__(self,start,stop,step):
@@ -643,8 +677,6 @@ def __iter__(self):
             
 return prange_iter(self.start, self.stop ,self.step)
 ```
-
-
 
 
 

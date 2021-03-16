@@ -54,9 +54,9 @@ def primes(max = None):
         p += 1
 ```
 
-#### From Iterators via classes to generators
+#### Decorators from Iterators via classes to generators
 
-Because generators can remember information, they are shorter to write than iterators build from a class iterator that implements `__iter__` and `__next__`
+Because generators can remember information - state, it is easier to write generators to implement iterators compared to writing  `__iter__` and `__next__` methods explicitly.
 
 ```python
 class Repeat: 
@@ -208,6 +208,10 @@ def pfilter(iterable, p):
         if p(i):
             yield i
 ```
+
+{% hint style="info" %}
+Generators embodies a small amount of code and does not often store any large data type. It also produces one value at a time. Therefore generators are space efficient. 
+{% endhint %}
 
 
 

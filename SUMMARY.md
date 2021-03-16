@@ -11,7 +11,7 @@
 * [\[credits\]](ics-33/credits.md)
 * [File Reading](ics-33/files.md)
 * [Python review](ics-33/python-review.md)
-* [Iterables](ics-33/iterables.md)
+* [List, Set, Tuple, Dictionary](ics-33/iterables.md)
 * [Regular Expression](ics-33/regular-expression.md)
 * [Classes](ics-33/untitled.md)
 * [Generators and Decorators](ics-33/generators.md)

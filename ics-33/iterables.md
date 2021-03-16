@@ -2,7 +2,7 @@
 description: 'week 1: ''Python review'''
 ---
 
-# Iterables
+# List, Set, Tuple, Dictionary
 
 ## Mutable vs immutable
 
