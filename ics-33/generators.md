@@ -4,7 +4,7 @@ description: >-
   that Return Iterators"
 ---
 
-# Generators
+# Generators and Decorators
 
 | function | generators |
 | :--- | :--- |

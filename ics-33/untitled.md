@@ -499,6 +499,10 @@ class List1:
 
 ### Attributes
 
+{% hint style="danger" %}
+**Be careful when overloading** `__setattr__` since it gets called by `__init__` to initialize attributes. ALWAYS include `self.__dict__[name] = value` somewhere in the `__setattr__` . NEVER write `pass` in `__setattr__` body.
+{% endhint %}
+
 ```python
 class C:
     '''Class that remembers all its attributes'''
@@ -514,7 +518,7 @@ class C:
         if '_history' in self.__dict__:         
             self._history[name].append(value)
 
-        self.__dict__[name] = value
+        self.__dict__[name] = value #ALWAYS INCLUDE
 ```
 
 ### Iteration
@@ -615,6 +619,8 @@ It print:
 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, blastoff
 
 
+#problem with above: objects from the same Countdown class share the same iterator?????
+#define a class_iter inside the __iter__ so you can keep track of next
 def __iter__(self):
     class prange_iter:
         def __init__(self,start,stop,step):

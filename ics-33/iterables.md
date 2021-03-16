@@ -4,8 +4,6 @@ description: 'week 1: ''Python review'''
 
 # Iterables
 
-## 
-
 ## Mutable vs immutable
 
 * **mutable:** values can change later 
