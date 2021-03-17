@@ -378,6 +378,10 @@ def __lt__(self,right):
 
 For binary arithmetic operator Python can't have a mirror backup operator \( `1-v` not the same as `v-1`\) because the commutative property doesn't apply to all operands. Instead Python lets us define a 'right hand side' operation.
 
+{% hint style="danger" %}
+Do not mutate `self` and remember to **return** a new Class with the new results
+{% endhint %}
+
 <table>
   <thead>
     <tr>
@@ -521,6 +525,26 @@ class C:
             self._history[name].append(value)
 
         self.__dict__[name] = value #ALWAYS INCLUDE
+```
+
+### Function call
+
+```python
+class Product: 
+    def __init__(self): 
+        print("Instance Created") 
+  
+    # Defining __call__ method 
+    def __call__(self, a, b): 
+        print(a * b) 
+  
+# Instance created 
+ans = Product() 
+  
+# __call__ method will be called 
+ans(10, 20) 
+
+#taken from https://www.geeksforgeeks.org/__call__-in-python/
 ```
 
 ### Iteration

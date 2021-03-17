@@ -26,5 +26,6 @@
     * non trivial instance of a problem
     * compute what your final answer should be \(no code\)
     * make your split and apply recursive functions appropriately
-    * 
+
+Tail recursive 
 

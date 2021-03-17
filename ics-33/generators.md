@@ -56,7 +56,8 @@ def primes(max = None):
 
 #### Decorators from Iterators via classes to generators
 
-Because generators can remember information - state, it is easier to write generators to implement iterators compared to writing  `__iter__` and `__next__` methods explicitly.
+Because generators can remember information - state, it is easier to write generators to implement iterators compared to writing  `__iter__` and `__next__` methods explicitly.  
+\* Classes decorating iterators, only defines the init and the iter dunder
 
 ```python
 class Repeat: 
