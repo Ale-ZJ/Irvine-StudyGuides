@@ -1,3 +1,7 @@
+---
+description: Intermediate Programming with Python
+---
+
 # \[credits\]
 
 Disclaimer: Study guides adapted from **Professor Richard Pattis**'s notes and lectures.   

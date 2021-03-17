@@ -4,7 +4,7 @@
 
 ## ICS-32
 
-* [does this work](ics-32/untitled.md)
+* [tba](ics-32/untitled.md)
 
 ## ICS-33
 
@@ -23,5 +23,5 @@
 
 ## EECS-31
 
-* [Untitled](eecs-31/untitled.md)
+* [tba](eecs-31/untitled.md)
 
