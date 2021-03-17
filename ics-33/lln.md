@@ -27,3 +27,26 @@ def str_ll(ll):
     return answer + 'None'
 ```
 
+![](../.gitbook/assets/image%20%281%29.png)
+
+writing recusive functions  
+
+
+* base case is then LN = None
+  * no nodes
+* LN.next refers to another LN
+
+```python
+def sum_ll_r(ll):
+    if ll == None: # Could also test: type(ll) is NoneType
+        return 0
+    else:
+        return ll.value + sum_ll_r(ll.next)
+```
+
+{% hint style="info" %}
+In tuples/lists, using a slice to skip the first value in a recursive call is INEFFICIENT in both time and space. It must COPY the entire tuple/list. But using ll.next to skip the first value in a recursive call is EFFICIENT in both time and space.
+{% endhint %}
+
+
+

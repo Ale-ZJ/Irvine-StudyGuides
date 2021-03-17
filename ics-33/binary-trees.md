@@ -1,5 +1,13 @@
 # Binary Trees
 
+Both structure and order property
+
+* structure 
+  * every parent has 0,1,2 children 
+* order property
+  * values in the left subtree are less than that node 
+  * values in the right subtree are greater than that node 
+  * if there are duplicates, then you choose which side, but be consistent 
 * **size:** number of total nodes 
 * **height:** rows of nodes -1 
 
@@ -28,6 +36,8 @@ def str_tree(atree,indent_char ='.',indent_delta=2):
             return answer
     return str_tree_1(0,atree) 
 ```
+
+![](../.gitbook/assets/image%20%282%29.png)
 
 
 
