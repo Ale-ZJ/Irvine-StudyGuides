@@ -27,7 +27,18 @@
     * compute what your final answer should be \(no code\)
     * make your split and apply recursive functions appropriately
 
-Tail recursive 
+try to keep Tail recursive 
+
+```python
+#example of GREEDY algorithms
+def mns(amount: int, denom: (int)) -> int:
+    if amount == 0:
+        return 0
+    else:
+        assert denom != () and (amount == 0 or min(denom) <= amount), \
+            f'No solution with denom({denom}) and amount({amount}).'
+        return 1 + min( [mns(amount-d, denom) for d in denom if amount - d >= 0] )
+```
 
 ## Functional Programming
 
