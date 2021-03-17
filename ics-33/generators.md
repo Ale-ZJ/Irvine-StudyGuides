@@ -239,5 +239,13 @@ except StopIteration:
     break / return
 ```
 
+## Decorators
 
+```python
+@MyDecorator
+def myfunc(x)
+
+#translates to 
+myfunc = MyDecorator(myfunc)
+```
 
