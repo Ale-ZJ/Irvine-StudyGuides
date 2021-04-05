@@ -21,6 +21,11 @@
 * [Inheritance](ics-33/inheritance.md)
 * [Big O-Notation](ics-33/big-o-notation.md)
 
+## ICS-45C
+
+* [Virtual Machines](ics-45c/virtual-machines.md)
+* [Untitled](ics-45c/untitled.md)
+
 ## EECS-31
 
 * [tba](eecs-31/untitled.md)
