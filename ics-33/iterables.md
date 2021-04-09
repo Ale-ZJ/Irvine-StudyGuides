@@ -65,7 +65,7 @@ sorted(votes, key=lambda t : (-t[1],t[0]) )
 
 Comprehension is a compact way to generate a list, set, dictionary, tuple. 
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Do not use comprehensions when mutating during the comprehension
 {% endhint %}
 

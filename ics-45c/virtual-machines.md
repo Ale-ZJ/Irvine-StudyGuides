@@ -11,10 +11,12 @@ VMware is a **hypervisor** used to arbitrate virtualization between the host and
 * `cd` move between directories
 * `.` current directory
 * `..` previous directory
-* `ip addr` 
+* `ip addr` shows network info
+* `df` shows the 
 * `sudo shutdown -h now` safe way to shutting down the VM
 * `sudo reboot` to reboot VM
 * `sudo netplan apply` to restart the network interfaces
+* \`\`
 
 
 
@@ -28,7 +30,9 @@ VMware is a **hypervisor** used to arbitrate virtualization between the host and
   * `exp`
   * `gtest`
 * `./run app`
-* 
+* `./run app >output.txt`
+* `more output.txt` show one page of info
+
 #### Text editors you can use:
 
 * `nano FILE_NAME`

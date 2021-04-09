@@ -25,8 +25,10 @@
 
 * [Virtual Machines](ics-45c/virtual-machines.md)
 * [Untitled](ics-45c/untitled.md)
+* [Untitled](ics-45c/untitled-1.md)
 
 ## EECS-31
 
-* [tba](eecs-31/untitled.md)
+* [\[credits\]](eecs-31/untitled.md)
+* [VHDL](eecs-31/vhdl.md)
 
