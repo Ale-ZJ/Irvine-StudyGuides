@@ -1,4 +1,4 @@
-# Untitled
+# week1
 
 * Python is a dynamically typed language 
   * it is dynamic while the program is running 

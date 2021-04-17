@@ -24,8 +24,9 @@
 ## ICS-45C
 
 * [Virtual Machines](ics-45c/virtual-machines.md)
-* [Untitled](ics-45c/untitled.md)
-* [Untitled](ics-45c/untitled-1.md)
+* [week1](ics-45c/untitled.md)
+* [week2](ics-45c/untitled-1.md)
+* [week3](ics-45c/week3.md)
 
 ## EECS-31
 
