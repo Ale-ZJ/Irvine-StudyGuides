@@ -217,16 +217,16 @@ int* p = nullptr;
 
 ## New / Delete
 
-`new` dynamically allocates a block of memory big enough to store the type specified.
+`new` dynamically allocates a block of memory big enough in the heap to store the type specified and returns a pointer.
 
 ```cpp
 int* p = new int;
 ```
 
-`delete` used to de-allocate the value a pointer is pointing at, it does not get rid of the name of the pointer.
+`delete` used to de-allocate **the object/value a pointer is pointing at**, it does not get rid of the name of the pointer.
 
 ```cpp
-delete p;
+delete p; //deletes whatever p points at
 ```
 
 dangling problem
