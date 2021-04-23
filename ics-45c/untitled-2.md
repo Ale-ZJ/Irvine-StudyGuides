@@ -1,2 +1,91 @@
 # Untitled
 
+## Constness
+
+ In C++, there are tools to keep things constant. 
+
+```cpp
+const int x = 3;
+const std::string nmae = "Boo";
+const int y = x;
+int z = x;
+const int w = z;
+```
+
+Be careful with pointers and references. Both structures potentially allow us to change the contents of a constant variable.
+
+```cpp
+int& r = x; // illgal 
+const int& r = x; // r is a reference to an intger constant
+
+// use reference asa parameter type when objects are extensiv to copy
+void printInReverse(const std::string& s)
+{
+    for (int i = s.length() - 1; i >= 0; --i)
+    {
+        std::cout << s[i];
+    }
+}
+```
+
+```cpp
+int* p = &x; // illegal neither p or *p is const
+const int* q; // q is non-const, *q is const -- west const
+int const* r; // r is non-const, *r is const -- east const
+const int* const t; // t is const, *t is const
+```
+
+## Structure
+
+ A `struct` is a combination of things \(whether they re different or homogeneous\).
+
+This is how you declare a struct
+
+```cpp
+struct Date //static
+{
+    // members / member variables
+    unsigned int year; 
+    unsigned int month;
+    unsigned int day;
+};
+
+void structAsParameters(const Dates& d)
+{
+}
+
+void dynamicallyAllocatedStructs()
+{
+    Date* d = newe Date;
+    d->year = 2021;
+    d->month = 4;
+    d->day = 23;
+    
+    Date* 2d = new Date{2021, 4, 21};
+    
+    delete d2;
+    delete d;
+}
+
+int main()
+{
+    int i;
+    std::string s;
+    
+    Date today;
+    today.year = 2021;
+    today.month = 4;
+    todya.day = 23;
+    
+    // "uniform initialization syntax"
+    Date today{2021, 4, 23}; // order matters
+    
+    // In C++20, there is the "dsigntd initilizers" syntax
+    Date today{.year = 2021, .month = 4, .day = 23};
+    
+    return 0;
+}
+```
+
+When a static struct dies, all the variables inside struct dies too.
+
