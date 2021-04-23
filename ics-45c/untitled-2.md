@@ -39,10 +39,10 @@ const int* const t; // t is const, *t is const
 
  A `struct` is a combination of things \(whether they re different or homogeneous\).
 
-This is how you declare a struct
+This is how you declare a struct:
 
 ```cpp
-struct Date //static
+struct Date //static // 12 BYTES
 {
     // members / member variables
     unsigned int year; 
@@ -88,4 +88,26 @@ int main()
 ```
 
 When a static struct dies, all the variables inside struct dies too.
+
+## StructLayout
+
+The compiler needs to allocate space for the structure and its members. 
+
+C++ has a `sizeof(object)` operator that tells you how big an object is. Using it in the example below, we get: 
+
+```cpp
+struct X // 24 BYTES
+{
+    char a;    // 1 BYTE
+    int b;     // 4 BYTES
+    short c;   // 2 BYTES
+    double d;  // 8 BYTES
+};
+```
+
+Should not struct b 15 BYTES then? Why 24? Sometimes there is **padding** \(blank spaces\) because a type can only be allocated in memory indexes that are by the type size \( ? \)
+
+![](../.gitbook/assets/image%20%2811%29.png)
+
+
 
