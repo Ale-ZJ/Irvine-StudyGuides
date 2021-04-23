@@ -109,5 +109,15 @@ Should not struct b 15 BYTES then? Why 24? Sometimes there is **padding** \(blan
 
 ![](../.gitbook/assets/image%20%2811%29.png)
 
+## The C++ Standard
+
+1. WHat constitutes a "legal" C++ program
+2. What legal C++ program "means"
+3. What is included in the C++ Standard Library
+
+#### Undefined Behaviors 
+
+C++ is built around the zero-overhead principle: features shouldn't cost anything unless you use them.
+
 
 
