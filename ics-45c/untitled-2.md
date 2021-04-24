@@ -47,7 +47,7 @@ const int* const t; // t is const, *t is const
 
 ## Structure
 
- A `struct` is a combination of things \(whether they re different or homogeneous\).
+ A `struct` is a combination of things \(whether they are different or homogeneous\).
 
 This is how you declare a struct:
 
