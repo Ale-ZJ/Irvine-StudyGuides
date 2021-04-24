@@ -14,9 +14,17 @@ const int w = z;
 
 Be careful with pointers and references. Both structures potentially allow us to change the contents of a constant variable.
 
+#### References
+
+The key thing to understand is that a reference to a constant doesn't necessarily guarantee that the value it refers to will never change; it simply guarantees that the reference itself will never be used to change the value.
+
 ```cpp
-int& r = x; // illgal 
+int& r = x; // illegal 
 const int& r = x; // r is a reference to an intger constant
+
+int x = 3;
+const int& y = x; // the value is constant 
+                  // (and technically references are const by definition)
 
 // use reference asa parameter type when objects are extensiv to copy
 void printInReverse(const std::string& s)
@@ -27,6 +35,8 @@ void printInReverse(const std::string& s)
     }
 }
 ```
+
+#### Pointers
 
 ```cpp
 int* p = &x; // illegal neither p or *p is const
