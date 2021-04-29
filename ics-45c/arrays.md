@@ -53,7 +53,7 @@ int* a = new int[10]; // instead of 10, you can use a variable
 The expression above allocated a block of memory on the heap large enough to store 10 ints \(10 bytes in our VM\). 
 
 {% hint style="info" %}
-Notice that `int*` is the syntax we learned to declare a _pointer to an integer_. Then how does the compiler know we are talking about an array of ints and not an int? - sike, it doesn't and can't, you need to keep track because arrays are implemented as pointer to their first cell \(in this case an int\)
+Notice that `int*` is the syntax we learned to declare a _pointer to an integer_. Then how does the compiler know we are talking about an array of ints and not an int? - sike, it doesn't and can't, you need to keep track yourself. Arrays are implemented as pointer to their first cell \(in this case an int\)
 {% endhint %}
 
 You can treat a dynamically allocated array as a pointer to a static array of integers. Indexing and such is the same.

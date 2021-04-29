@@ -60,18 +60,18 @@ struct Date //static // 12 BYTES
     unsigned int day;
 };
 
-void structAsParameters(const Dates& d)
+void structAsParameters(const Date& d)
 {
 }
 
 void dynamicallyAllocatedStructs()
 {
-    Date* d = newe Date;
+    Date* d = new Date;
     d->year = 2021;
     d->month = 4;
     d->day = 23;
     
-    Date* 2d = new Date{2021, 4, 21};
+    Date* d2 = new Date{2021, 4, 21};
     
     delete d2;
     delete d;
