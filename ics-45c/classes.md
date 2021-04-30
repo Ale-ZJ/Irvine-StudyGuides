@@ -57,10 +57,42 @@ Types characteristics:
 
 class Song
 {
+public:
+    Song(std::string initialArtist, std::string initialTitle); // constructor
     
+private:
+    std::string artist;
+    std::string title;
 };
 ```
 
-* public: accessible anywhere in the program 
-* private: only accessible only within this class
+* `Song` is a constructor
+  * initialization 
+  * same name as class 
+  * no return type
+* `public`: accessible anywhere in the program 
+  * usually member functions 
+* `private`: only accessible only within this class
+  * usually member variables because outsiders can change the information
 
+```cpp
+// Song.cpp 
+// The implementation of my Song class 
+
+#include "Song.hpp"
+
+// there is a class called song and there is a song function inside class Song
+Song::Song(const std::string& initialArtist, const std::string& initialTitle)
+{
+    artist = initialArtist; 
+    title = initialTitle;
+}
+```
+
+* `Song::Song` tells the compiler that we want the function Song inside the class Song.
+  * same as when using`std::string`
+* `const std::string&` 
+  * we pass by reference because if not we would have to make a copy every time
+  * there is no reason why the initial parameters will change
+  * remember to make the same changes in the hpp file
+* 
