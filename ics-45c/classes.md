@@ -58,7 +58,13 @@ Types characteristics:
 class Song
 {
 public:
-    Song(std::string initialArtist, std::string initialTitle); // constructor
+    Song(const std::string& initialArtist, const std::string& initialTitle); // constructor
+    
+    std::string getArtist() const; // <-- legal to call this on a const Song
+    std::string getTitle() const;  // <-- legal to call this on a const Song
+    
+    void setArtitst(const std::string& newArtist);
+    void setTitle(const std::string& newTitle);
     
 private:
     std::string artist;
@@ -81,11 +87,31 @@ private:
 
 #include "Song.hpp"
 
-// there is a class called song and there is a song function inside class Song
+// constructor
 Song::Song(const std::string& initialArtist, const std::string& initialTitle)
+    // initializers
+    : artist{initialArtist}, title{initialTitle}
 {
-    artist = initialArtist; 
-    title = initialTitle;
+}
+
+std::string Song::getArtist() const
+{
+    return artist;
+}
+
+std::string Song::getTitle() const
+{
+    return title;
+}
+
+void Song::setArtitst(const std::string& newArtist)
+{
+    artist = newArtist;
+}
+
+void Song::setTitle(const std::string& newTitle)
+{
+    title = newTitle;
 }
 ```
 
@@ -94,5 +120,33 @@ Song::Song(const std::string& initialArtist, const std::string& initialTitle)
 * `const std::string&` 
   * we pass by reference because if not we would have to make a copy every time
   * there is no reason why the initial parameters will change
-  * remember to make the same changes in the hpp file
-* 
+  * remember to make the same changes in the hpp file - same signature
+* **initializers**
+  * if you put `artist = initialArtist` inside Song constructor \(inside curly braces\) you are initializing the value of artist again. You already initialized it to be empty \(in hpp\) before entering the body of Song. 
+  * instead, after the constructor signature add `: artist{initialArtist}, title{initialTitle}`
+    * this way artist and title are "born" with the correct type of initialization
+
+```cpp
+// main.cpp
+
+#include <iostream>
+#include "Song.hpp"
+
+void printSongInfo(const Song& song)
+{
+    std::cout << song.getArtist() << " - " << song.getTitle() << std::endl;
+}
+
+int main()
+{
+    Song song{"U2", "Moment of Surrender"}; // curly braces mean initialization
+    printSongInfo(song)
+    
+    return 0;
+}
+```
+
+{% hint style="warning" %}
+curly braces mean initialization
+{% endhint %}
+
