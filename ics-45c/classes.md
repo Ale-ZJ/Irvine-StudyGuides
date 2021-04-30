@@ -3,7 +3,9 @@
 Like other programming languages, a class in C++ is a blueprint for a new kind of object. A class consists of:
 
 * an **interface**: specifies what information is stored in these objects and what can these objects do
-* an **implementation**: precisely specifies what happens when you ask objects for a job for you 
+  * member variables: information
+  * member functions: what jobs it can do
+*  an **implementation**: precisely specifies what happens when you ask objects for a job for you 
 
 ## Data types in C++
 
@@ -28,4 +30,37 @@ Types characteristics:
 * What can be done to "const" objects of a type?
 
 
+
+
+
+| Song.hpp | Song.cpp |
+| :--- | :--- |
+| interface | implementation |
+| what you need to know in order to use it | how does it work internally |
+| use `#ifndef CLASS_HPP` |  |
+
+```cpp
+// Song.hpp
+// The "interface" of my Song class
+
+#ifndef SONG_HPP
+#define SONG_HPP
+
+#include <string>
+
+// A song contains two pieces of information: an artist and a title,
+// both strings.
+
+// The inteface of a class consists of two things:
+//     1) member variables
+//     2) member fucntions
+
+class Song
+{
+    
+};
+```
+
+* public: accessible anywhere in the program 
+* private: only accessible only within this class
 
