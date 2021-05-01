@@ -57,6 +57,10 @@ Types characteristics:
 
 class Song
 {
+public: // added after Unitest lecture
+    static constexpr unsigned int MAX_ARTITST_LENGTH = 40;
+    static constexpr unsigned int MAX_TITLE_LENGTH = 40;
+
 public:
     Song(const std::string& initialArtist, const std::string& initialTitle); // constructor
     
@@ -80,6 +84,8 @@ private:
   * usually member functions 
 * `private`: only accessible only within this class
   * usually member variables because outsiders can change the information
+* `std::string getArtist() const` means that you can call the function using `const`
+* `static` belongs to the class as a whole and not to the individual object of the class
 
 ```cpp
 // Song.cpp 

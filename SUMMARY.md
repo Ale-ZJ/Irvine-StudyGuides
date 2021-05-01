@@ -28,8 +28,9 @@
 * [week2](ics-45c/untitled-1.md)
 * [week3](ics-45c/week3.md)
 * [Arrays](ics-45c/arrays.md)
-* [Untitled](ics-45c/untitled-2.md)
+* [week4](ics-45c/untitled-2.md)
 * [Classes](ics-45c/classes.md)
+* [week5](ics-45c/week5.md)
 
 ## EECS-31
 
