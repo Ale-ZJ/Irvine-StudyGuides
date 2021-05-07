@@ -2,10 +2,6 @@
 
 * [~Hi](README.md)
 
-## ICS-32
-
-* [tba](ics-32/untitled.md)
-
 ## ICS-33
 
 * [\[credits\]](ics-33/credits.md)

@@ -232,9 +232,6 @@ TEST(SongTest, truncateArtistAtCreationIfTooLong)
 Anything you **assert**, you can **expect**.
 {% endhint %}
 
-
-
-Assert: if this isn't true then test fail and the test immediatly stops
-
-* Expect: check this, and if it is wrong tell me, and keep running the test
+* **Assert**: if this isn't true then test fail and the test immediatly stops
+* **Expect**: check this, and if it is wrong tell me, and keep running the test
 
