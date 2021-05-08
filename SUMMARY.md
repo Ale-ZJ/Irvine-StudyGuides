@@ -28,6 +28,7 @@
 * [Classes](ics-45c/classes.md)
 * [week5](ics-45c/week5.md)
 * [week6](ics-45c/week6.md)
+* [week7](ics-45c/week7.md)
 
 ## EECS-31
 
