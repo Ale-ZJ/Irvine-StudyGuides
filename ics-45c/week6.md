@@ -58,7 +58,7 @@ It initializes new objects that are created as _copies of existing ones._
   * `foo(ClassType& object);`
 * object has been used to explicitly initialize another
   * `ClassType object1;`
-  * `ClassType object2 = object 1;`
+  * `ClassType object2 = object1;`
 
 ```cpp
 // in header file 
