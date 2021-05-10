@@ -110,5 +110,19 @@ The architecture recognizes the information declared in the entity.
   </tbody>
 </table>
 
+## Events
 
+* An event is a change in the value of a signal or variable \(e.g. from 0 to 1 or from 1 to 0\). 
+
+```cpp
+StateReg: PROCESS (Clk, Rst)
+BEGIN
+  IF (Clk = '1' AND Clk'EVENT) THEN
+    IF (Rst = '1') THEN
+      CurrState <= S_Off;
+    ELSE
+      CurrState <= NextState;
+    END IF;
+  END IF;
+```
 
