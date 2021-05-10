@@ -110,6 +110,10 @@ The architecture recognizes the information declared in the entity.
   </tbody>
 </table>
 
+## Testbench
+
+
+
 ## Events
 
 * An event is a change in the value of a signal or variable \(e.g. from 0 to 1 or from 1 to 0\). 
