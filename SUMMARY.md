@@ -29,6 +29,7 @@
 * [week5](ics-45c/week5.md)
 * [week6](ics-45c/week6.md)
 * [week7](ics-45c/week7.md)
+* [Sanity check for myself](ics-45c/sanity-check-for-myself.md)
 
 ## EECS-31
 
