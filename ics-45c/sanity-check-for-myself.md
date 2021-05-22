@@ -4,7 +4,7 @@ description: 'std::cout << "muffled screams"'
 
 # Sanity check for myself
 
-There are so many symbols... my head is spinning :s
+There are so many symbols... :s
 
 ```cpp
 #include <iostream>
@@ -32,7 +32,14 @@ int main() {
 	}
   
   arrayOfPointers[0]->key = "hellow";
-  std::cout << arrayOfPointers[0]->key << std::endl;
+  
+  arrayOfPointers[0]->next = new Node;
+  arrayOfPointers[0]->next->key = "there";
+  
+  std::cout << arrayOfPointers[0]->key << std::endl; 
+  // "hellow"
+  std::cout << arrayOfPointers[0]->next->key << std::endl;
+  // "there"
   
   return 0;
 }
