@@ -31,6 +31,8 @@ VMware is a **hypervisor** used to arbitrate virtualization between the host and
   * `gtest`
 * `./run app`
 * `./run app >output.txt`
+* `./run app <inputs/sample.in`
+* `./run --memcheck gtest` 
 * `more output.txt` show one page of info
 
 #### Text editors you can use:
