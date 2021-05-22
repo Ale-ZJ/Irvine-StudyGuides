@@ -110,6 +110,10 @@ The architecture recognizes the information declared in the entity.
   </tbody>
 </table>
 
+## Std\_logic\_vector
+
+* All bits in a vector can be zeroed by using the aggregate assignment `(others => '0')`
+
 ## Testbench
 
 
