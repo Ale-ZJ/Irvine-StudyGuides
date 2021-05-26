@@ -123,3 +123,85 @@ std::string toString() const override;
 
 ## Abstract Base Classes
 
+An abstract base class is a class that has at least one pure virtual function in it.
+
+* You can't have objects of an abstract base class 
+* but you can have Shape references and pointers 
+
+```cpp
+//Shape.hpp
+
+#ifndef SHAPE_HPP
+#define SHAPE_HPP
+
+// Shape is an abstract base clas
+class Shape
+{
+public: 
+    // to make sure that the derived classes destructors are called correctly
+    virtual ~Shape() = default;
+
+    // area() is a "pure virtual function"
+    // you are saying that you arent giving this function a body
+    virtual double area() const = 0
+};
+
+#endif
+```
+
+```cpp
+// Circle.hpp 
+
+#ifndef CIRCLE_HPP
+#define CIRCLE_HPP
+
+#include "Shape.hpp"
+
+class Circle
+{
+public:
+    // "inlining": replacing calls to a function with the body of the function 
+    
+    // when constructors have one parameter this is an 
+    // implicit type conversion, so you gotta use "explicit" to prevent that
+    explicit Circle(double radius)
+        : radius{radius}
+    {
+    }
+    
+    double area() const
+    {
+        return radius * radius * 3.141592;
+    }
+
+private:
+    double radius;
+};
+```
+
+```cpp
+//Rectangle.hpp
+
+#ifndef RECTANGLE_HPP
+#define RECTANGLE_HPP
+
+#include "Shape.hpp"
+
+class Rectangle
+{
+public:
+    Circle(double width, double height)
+        : width{ width}, height {height}
+    {
+    }
+    
+    double area() const
+    {
+        return width * height;
+    }
+
+private:
+    double radius;
+};
+```
+
