@@ -156,3 +156,5 @@ int main()
 curly braces mean initialization
 {% endhint %}
 
+* When writing member functions in a class, they always have a `this` parameter! 
+
