@@ -1,5 +1,61 @@
 # week 9
 
+## RAII
+
+Imagine having to do this everytime you write a function that can potentially throw exceptions.
+
+```cpp
+void doTheJob()
+{
+    A* a = nullptr;
+    B* b = nullptr;
+    
+    try
+    {
+        a = buildA();     // dynamically allocates an A
+        b = buildB();     // dynamically allocates an B
+        
+        doThings(a, b);
+        doMoreThings(a, b);
+        doYetMoreTHings(a, b);
+        
+        delete b;
+        delete a;
+    }
+    catch (...)
+    {
+        delete b;
+        delete a;
+        
+        throw;
+    }
+}
+```
+
+That is cringe. So we use RAII: Resource Acquisition Is Initialization. 
+
+```cpp
+std::vector<int> getFunctionValues(int n, std::function<int(int)> f)
+{
+    std::vector<int> v;
+    
+    for (int i = 0; i < n; ++i)
+    {
+        v.push_back(f(i));
+    }
+    
+    return v;
+}
+```
+
+Even tho the function above has the potential to throw exceptions, this function does not leak memory.
+
+1. Prefer to acquire dynamic resources in constructors. 
+   1. If that acquisition fails, throw an exception from the constructor.
+2. Always release those resources in the corresponding destructors.
+
+If every kind of resource is managed by its own class this way, and if we otherwise endeavor to use statically-allocated objects of these classes when we can, then a lot of what would be error-prone cleanup becomes automatic.
+
 ## Smart Pointers 
 
 Pointers are dumb. They only know the address where they point. So let's create a smarter one.
