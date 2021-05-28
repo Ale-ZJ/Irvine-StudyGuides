@@ -2,7 +2,7 @@
 
 ## RAII
 
-Imagine having to do this everytime you write a function that can potentially throw exceptions.
+Imagine having to do this every time you write a function that can potentially throw exceptions.
 
 ```cpp
 void doTheJob()
