@@ -1,4 +1,4 @@
-# Object Oriented Programming
+# Inheritance
 
 Three main features:
 
