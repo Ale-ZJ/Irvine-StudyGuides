@@ -86,7 +86,7 @@ int main()
 
 ### Function literals - lambdas 
 
-**Literal** means an object without a name. So `"Boo"` or `10` or `'A'i` are all literals. And there is also function literals called **lambd**a expression.
+**Literal** means an object without a name. So `"Boo"` or `10` or `'A'` are all literals. And there is also function literals called **lambd**a expression.
 
 ```cpp
 transform(a, 10, []      (int i)      { return i + i });

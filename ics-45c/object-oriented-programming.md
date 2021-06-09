@@ -205,3 +205,7 @@ private:
 };
 ```
 
+## Inlining
+
+
+
