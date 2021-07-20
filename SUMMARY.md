@@ -39,3 +39,7 @@
 * [\[credits\]](eecs-31l/untitled.md)
 * [VHDL](eecs-31l/vhdl.md)
 
+## ICS-6B
+
+* [\[credit\]](ics-6b/credit.md)
+
