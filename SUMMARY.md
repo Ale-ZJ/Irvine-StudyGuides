@@ -34,12 +34,12 @@
 * [week 8](ics-45c/week-8.md)
 * [week 9](ics-45c/untitled-4.md)
 
+## ics-46
+
+* [Untitled](ics-46/untitled.md)
+
 ## EECS-31L
 
 * [\[credits\]](eecs-31l/untitled.md)
 * [VHDL](eecs-31l/vhdl.md)
-
-## ICS-6B
-
-* [\[credit\]](ics-6b/credit.md)
 
