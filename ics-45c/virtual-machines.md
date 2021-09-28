@@ -16,7 +16,6 @@ VMware is a **hypervisor** used to arbitrate virtualization between the host and
 * `sudo shutdown -h now` safe way to shutting down the VM
 * `sudo reboot` to reboot VM
 * `sudo netplan apply` to restart the network interfaces
-* \`\`
 
 
 
