@@ -117,8 +117,9 @@ for (int a = 3; a<10; a++)
     * write their signature 
       * int square\(int n\); 
     * declaration of a function doesnt mean that the function has meaning 
+      * you need to define them too!
 * definitions: gives a name life, makes it exist
-  * int a; //its variable declaration AND definition 
+  * int a; //variable declaration AND definition 
   * int a = 3; //declaration + definition + initialization 
   * int square\(int n\) { } //a promise
   * int square\(int n\) { return n\*n }

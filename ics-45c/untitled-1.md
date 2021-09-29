@@ -24,7 +24,7 @@ std::string
   * compares lexicographical order
 * splicing `s[1]` 
   * if you go out of bounds, it is an `undefined behavior` \(not illegal - compiler wont complain\) 
-  * so instead of using `[]` use `s.at(5)` because it will always fail
+  * so instead of using `[]` use `s.at(5)` because it will never fail
     * `at` costs more tho! 
 
 Member functions 
@@ -86,12 +86,12 @@ in linux there are three types of standardIO: output, input and error \(not cove
 * `./run app | xxd` xxd is a program that shows the output in hexadecimal \(pipping?\)
 
 {% hint style="info" %}
-using these commands didn't change the program
+using these commands doesn't change the program
 {% endhint %}
 
 * `std::endl` 
   * tells the console to add a new carriage return at the end 
-  * it _flushes_ the string so that it doesnt get buffered later 
+  * it _flushes_ the string so that it doesnt get _buffered_ later 
   * if you dont add it then the carriage will remain at the end of the line of output
 
 ```cpp
@@ -132,14 +132,14 @@ void inputExample()
 
 ## Separate Compilation
 
-Writing programs in one than one file. 
+Writing programs in more than one file. 
 
 * files ending in `.cpp` compiles separately and have amnesia -they forget- after they compile them 
   * put the signature of the method of module 1 in module 2 where you want to use it
 * `.cpp` is source file 
   * we can think of them as "modules"
 * `.hpp` is **header file**
-  * just communicates the declarations NOT definitions
+  * just communicates the declarations \(function signatures\) NOT definitions
   * include the `.hpp` file in module 2 that uses module 1
 * objects files are created
 * Linking - makes sure that all promises to the compiler are fulfilled
@@ -161,10 +161,10 @@ int methodNames();
 #endif
 ```
 
-* One definition rule 
+* **One definition rule** 
   * you can only have one definition for a name
 
-### Behind the Scenes
+## Behind the Scenes
 
 #### How to understand the abstraction layer of your programming language
 
