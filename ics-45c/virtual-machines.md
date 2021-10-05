@@ -4,6 +4,10 @@ description: ics45c-2021spring
 
 # Virtual Machines
 
+We are using a Virtual Machine for the class.
+
+
+
 VMware is a **hypervisor** used to arbitrate virtualization between the host and the guest.
 
 * `passwd` to change password

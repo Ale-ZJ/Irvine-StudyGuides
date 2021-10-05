@@ -19,6 +19,7 @@
 
 ## ICS-45C
 
+* [\[credits\]](ics-45c/untitled-3.md)
 * [Virtual Machines](ics-45c/virtual-machines.md)
 * [week1](ics-45c/untitled.md)
 * [week2](ics-45c/untitled-1.md)
@@ -36,10 +37,13 @@
 
 ## ics-46
 
-* [Untitled](ics-46/untitled.md)
+* [\[credits\]](ics-46/credits.md)
+* [Doubly-linked lists](ics-46/untitled.md)
+* [Stacks](ics-46/stacks.md)
+* [Queues, Deques](ics-46/queues-deques.md)
 
 ## EECS-31L
 
-* [\[credits\]](eecs-31l/untitled.md)
+* [\[credits\]](eecs-31l/credits.md)
 * [VHDL](eecs-31l/vhdl.md)
 
