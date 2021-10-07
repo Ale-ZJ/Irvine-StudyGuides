@@ -41,6 +41,7 @@
 * [Doubly-linked lists](ics-46/untitled.md)
 * [Stacks](ics-46/stacks.md)
 * [Queues, Deques](ics-46/queues-deques.md)
+* [Array-based Lists](ics-46/array-based-lists.md)
 
 ## EECS-31L
 

@@ -16,6 +16,10 @@ There is a pointer that keeps track of where the "top" is.
 | `IsEmpty(stack)` | `true` if stack has no elements |
 | `GetLength(stack)` | returns number of elements in the stack |
 
+{% hint style="warning" %}
+`Pop` and `Peek` should NOT be applied to an empty Stack. Undefined behavior.
+{% endhint %}
+
 ## What problems does Stack solve?
 
 * web browser "back" button 
@@ -44,6 +48,7 @@ private:
     int topIndex;
     
 public: 
+    // CONSTRUCTOR
     explicit ArrayStack(int cap = CAPACITY);
     // explicit prevents you from chagning atributes 
     // of an Object directly, you are forced to use a 
