@@ -49,7 +49,7 @@ QueueDequeue( queue )
 
 ## Deques
 
-A deque is an Abstract Data Type where elements can be inserted and removed from both the front and back.
+A **deque** is an Abstract Data Type where elements can be inserted and removed from both the front and back.
 
 ## Deques Operations
 
