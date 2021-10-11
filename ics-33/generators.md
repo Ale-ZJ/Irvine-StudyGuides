@@ -8,41 +8,18 @@ description: >-
 
 Important terminologies:
 
-* **Iterable:** object that can be iterated over \(you can call `iter` on them\)
+* **Iterable:** object that can be iterated over (you can call `iter` on them)
 * **Iterator:** object which `next()` can be called 
-* **Generator function:** function with one or more `yield` statements
-* **Generator:** special kind of iterator 
+* **Generator function: **function with one or more `yield` statements
+* **Generator: **special kind of iterator 
 * **Decorator:** returns the 'same kind' of object that its argument but decorated, i.e. with a change in behavior
   * takes in an iterable and returns the same iterable but with diff stuff
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">function</th>
-      <th style="text-align:left">generators</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>return</code> it goes outside the function</td>
-      <td style="text-align:left"><code>return</code> ignores return value and raises <code>StopIteration</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">resets in every function call</td>
-      <td style="text-align:left"><code>yield</code> is like printing a value and then resuming execution
-        in the same line of code when <code>next</code> is called in the generator.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">binds parameters to matching arguments and then they are forgotten</td>
-      <td
-      style="text-align:left">
-        <p><code>yield</code> args and params are remembered</p>
-        <p><code>return</code> they are forgotten</p>
-        </td>
-    </tr>
-  </tbody>
-</table>
+| function                                                           | generators                                                                                                                    |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| `return` it goes outside the function                              | `return` ignores return value and raises `StopIteration`                                                                      |
+| resets  in every function call                                     | `yield` is like printing a value and then resuming execution in the same line of code when `next` is called in the generator. |
+| binds parameters to matching arguments and then they are forgotten | <p><code>yield</code> args and params are remembered </p><p><code>return</code> they are forgotten </p>                       |
 
 ```python
 #will produce 2 3 5 7 11 13 17 19 if primes(20)
@@ -56,7 +33,7 @@ def primes(max = None):
 
 #### Decorators from Iterators via classes to generators
 
-Because generators can remember information - state, it is easier to write generators to implement iterators compared to writing  `__iter__` and `__next__` methods explicitly.  
+Because generators can remember information - state, it is easier to write generators to implement iterators compared to writing  `__iter__` and `__next__` methods explicitly.\
 \* Classes decorating iterators, only defines the init and the iter dunder
 
 ```python
@@ -248,4 +225,3 @@ def myfunc(x)
 #translates to 
 myfunc = MyDecorator(myfunc)
 ```
-

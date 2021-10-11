@@ -1,6 +1,6 @@
 # Table of contents
 
-* [~Hi](README.md)
+* [\~Hi](README.md)
 
 ## ICS-33
 
@@ -42,9 +42,9 @@
 * [Stacks](ics-46/stacks.md)
 * [Queues, Deques](ics-46/queues-deques.md)
 * [Array-based Lists](ics-46/array-based-lists.md)
+* [Graphs](ics-46/graphs.md)
 
 ## EECS-31L
 
 * [\[credits\]](eecs-31l/credits.md)
 * [VHDL](eecs-31l/vhdl.md)
-

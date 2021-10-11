@@ -6,56 +6,35 @@ description: 'week 1: "Python Review"'
 
 ## Python in 4 sentences 
 
-1. **NAMES:** Names \(in namespaces\) are _**bound**_ to objects.
-2. **REFERENCE:** Every object has its own **namespace**.
-3. **OBJECTS:** Objects are the fundamental unit with which Python computes.
+1. **NAMES: **Names (in namespaces) are _**bound **_to objects.
+2. **REFERENCE: **Every object has its own **namespace**.
+3. **OBJECTS: **Objects are the fundamental unit with which Python computes.
    1. We can compute with int objects in mathematical operations 
-   2. We can compute with **functions** by calling on them 
-   3. We can compute with a module object by **importing** them 
-   4. We can compute with class objects by constructing **instances** of the class
+   2. We can compute with **functions **by calling on them 
+   3. We can compute with a module object by **importing **them 
+   4. We can compute with class objects by constructing **instances **of the class
 4. Python has rules about how names are bound and how things work.
 
 ### Binding
 
-**Binding:** making a name refer to a value   
-- Using the = symbol  
-- Using imports, function definitions and class definitions
+**Binding: **making a name refer to a value \
+\- Using the = symbol\
+\- Using imports, function definitions and class definitions
 
 ![pictorial representation of binding - adapted from prof. Pattis](../.gitbook/assets/image.png)
 
-### 
+###
 
 #### Using \_ as a variable name
 
 By using \_ your variable is basically 'unnamed' and the interpreter does not expect you to use it.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">not using _</th>
-      <th style="text-align:left">using _</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>kv = [k,v for k, v in [list of 2-tuple]]</code>
-      </td>
-      <td style="text-align:left"><code>only_k = [k for k, _ in [list of 2-tuple]]</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p><code>for _ in [1,2,3]:</code>
-        </p>
-        <p><code>    print(_) </code>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| not using \_                               | using \_                                                               |
+| ------------------------------------------ | ---------------------------------------------------------------------- |
+| `kv = [k,v for k, v in [list of 2-tuple]]` | `only_k = [k for k, _ in [list of 2-tuple]]`                           |
+|                                            | <p><code>for _ in [1,2,3]:</code></p><p><code>    print(_) </code></p> |
 
-### Namespaces \(for objects\): \_\_dict\_\_
+### Namespaces (for objects): \__dict\_\_
 
 Every object has a special variable named `__dict__` that stores bindings in a dictionary in which keys are objects' names and values are the objects themselves.
 
@@ -63,16 +42,16 @@ Every object has a special variable named `__dict__` that stores bindings in a d
 
 ### Importing
 
-\#1 Import module-name form  
-- when writing code you use module-name.function
+\#1 Import module-name form\
+\- when writing code you use module-name.function
 
 ```python
 import 'module-name' (, 'more-modules')
 import 'module-name' as 'alt-name'
 ```
 
-\#2 from module-name import  
-- directly use the function name in the code
+\#2 from module-name import\
+\- directly use the function name in the code
 
 ```python
 from module-name import attr-name
@@ -82,65 +61,16 @@ from module-name import *
 
 ### Scope
 
-Visibility of a variable. Can be **local** or **global.** We normally want to avoid using global variables, but if a global variable needs to be rebound, then use the keyword `global` to declare that it is global.
+Visibility of a variable. Can be** local **or **global. **We normally want to avoid using global variables, but if a global variable needs to be rebound, then use the keyword `global` to declare that it is global.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">This is better</th>
-      <th style="text-align:left"><b>DON&apos;T</b>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">
-        <p><code>x = 1</code>
-        </p>
-        <p><code>def f():<br />   global x<br />   y = 2</code>
-        </p>
-        <p><code>   print(x,y)</code>
-        </p>
-        <p><code>   x = 2</code>
-        </p>
-        <p><code>f()</code>
-        </p>
-        <p><code>print(x)</code>
-        </p>
-      </td>
-      <td style="text-align:left">
-        <p><code>x = 1</code>
-        </p>
-        <p><code>def f():</code>
-        </p>
-        <p><code>   y = 2</code>
-        </p>
-        <p><code>   print(x,y)</code>
-        </p>
-        <p><code>   x = 2</code>
-        </p>
-        <p><code>f()</code>
-        </p>
-        <p><code>print(x)</code>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>&gt;&gt;&gt; 1 2</p>
-        <p>&gt;&gt;&gt; 2</p>
-      </td>
-      <td style="text-align:left">
-        <p>UnboundLocalError exception:</p>
-        <p>local variable &apos;x&apos; referenced before assignment</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| This is better                                                                                                                                                                                                             | **DON'T**                                                                                                                                                                                         |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <p><code>x = 1</code></p><p><code>def f():</code><br><code>   global x</code><br><code>   y = 2</code></p><p><code>   print(x,y)</code></p><p><code>   x = 2</code></p><p><code>f()</code></p><p><code>print(x)</code></p> | <p><code>x = 1</code></p><p><code>def f():</code></p><p><code>   y = 2</code></p><p><code>   print(x,y)</code></p><p><code>   x = 2</code></p><p><code>f()</code></p><p><code>print(x)</code></p> |
+| <p>>>> 1 2</p><p>>>> 2</p>                                                                                                                                                                                                 | <p>UnboundLocalError exception: </p><p>local variable 'x' referenced before assignment</p>                                                                                                        |
 
 #### Python looks up / binds names in the following order
 
-1. in the **local** **scope** of the function
+1. in the **local** **scope **of the function
 2. in any of the **enclosing scopes** 
 3. in the **global scope**
 4. in the **builtins scope**
@@ -150,12 +80,12 @@ Visibility of a variable. Can be **local** or **global.** We normally want to av
 
 #### Functions vs Methods
 
-* **Functions:** called by function\(args\)
-* **Methods:** object.method\(\) 
+* **Functions: **called by function(args)
+* **Methods: **object.method() 
 
 #### Function Calls
 
-Defining a function is binding a name to it; therefore, you can store a function name \(without the '\(\)'\) into a variable name
+Defining a function is binding a name to it; therefore, you can store a function name (without the '()') into a variable name
 
 ```python
 def function(x):
@@ -189,28 +119,11 @@ bigger_than(60)(70)
 ### Lamda
 
 * **lambda:** unnamed function object that represents a very simple function
-* **predicate:** a function that returns a boolean
+* **predicate: **a function that returns a boolean
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">This</th>
-      <th style="text-align:left">Same as</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>...(lambda x,y: x+y)...</code>
-      </td>
-      <td style="text-align:left">
-        <p><code>def f(x,y):</code>
-        </p>
-        <p><code>    return x + y</code>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| This                      | Same as                                                             |
+| ------------------------- | ------------------------------------------------------------------- |
+| `...(lambda x,y: x+y)...` | <p><code>def f(x,y):</code></p><p><code>    return x + y</code></p> |
 
 examples: 
 
@@ -226,7 +139,7 @@ def bigger_than(v) :
     return (lambda x : x > v)
 ```
 
-## Parallel Assignment \(aka Sequence unpacking\)
+## Parallel Assignment (aka Sequence unpacking)
 
 ```python
 l,m,n = (1,2,[3,4])
@@ -269,13 +182,13 @@ print(l,m,n,o)
 
 ## Arguments vs Parameters
 
-* **arguments:** passed to a function when **calling** it 
-  * **positional argument:** an argument NOT preceded by `name=`
+* **arguments: **passed to a function when **calling **it 
+  * **positional argument: **an argument NOT preceded by `name=`
   * **named argument**: argument preceded by the `name=` option
     * must be written at the end of the function call
-* **parameters:** values in a function **header**
+* **parameters: **values in a function **header**
   * **name-only parameter:** a parameter with NO default value
-  * **default-argument parameter:** a parameter including a default argument value
+  * **default-argument parameter: **a parameter including a default argument value
 
 #### How matching works?
 
@@ -318,9 +231,9 @@ g(1,2,c=3,d=4)
 
 #### Important notes
 
-1. Writing `*` __and _`**`_ for parameters, binds said parameter to tuple/dict resp. 
+1. Writing `*`_ _and _`**`_ for parameters, binds said parameter to tuple/dict resp. 
 2. A parameter name by itself is using the tuple/dict
-3. Using _`*`_ and `**` followed by parameter name as arguments in fxn calls, _expands_ all the values in the tuple/dict to represent all arguments
+3. Using_ `*`_ and `**` followed by parameter name as arguments in fxn calls, _expands _all the values in the tuple/dict to represent all arguments
 
 ## None and pass
 
@@ -336,11 +249,11 @@ def function() -> None:
 ## Indexable Objects - slicing
 
 * STL = String, Tuple, and List are indexable objects
-  * then they can be _**sliced**_: STL\[start: end: step\]
+  * then they can be _**sliced**_: STL\[start: end: step]
 
 ## Else block
 
-It is executed when a loop terminates naturally \(without using break\)
+It is executed when a loop terminates naturally (without using break)
 
 ```python
 for i in irange(100):
@@ -353,7 +266,7 @@ for i in irange(100):
 
 ## Must-know functions
 
-### str.split\( \) and str.join\(\)
+### str.split( ) and str.join()
 
 ```python
 'ab;c;ef;;jk'.split(';')
@@ -365,7 +278,7 @@ for i in irange(100):
 ';'.join(['ab', 'c', 'ef', '', 'jk']) == 'ab;c;ef;;jk'
 ```
 
-### all\(iterable\) and any\(iterable\)
+### all(iterable) and any(iterable)
 
 * `all()` returns True if all values in iterable produce True.
 * `any()` returns True if at least one value in iterable produce True
@@ -374,7 +287,7 @@ for i in irange(100):
 x = all( predicate.is_prime(x) for x in l )
 ```
 
-### max\(\) and min\(\)
+### max() and min()
 
 ```python
 max('abcd','xyz') == 'xyz'
@@ -382,9 +295,9 @@ min('abcd','xyz') == 'abcd'
 min('abcd','xyz', key= lambda x: len(x)) == 'xyz'
 ```
 
-### zip\(iterables\)
+### zip(iterables)
 
-Takes iterable objects \(can be different lengths\) and glues respective elements into a tuple and returns a generator as a result.
+Takes iterable objects (can be different lengths) and glues respective elements into a tuple and returns a generator as a result.
 
 ```python
 z = list(zip( 'abcde', (1, 2, 3) )) == [('a', 1), ('b', 2), ('c', 3)]
@@ -396,9 +309,9 @@ print(v1,v2)
 >>> c 3
 ```
 
-### enumerate\(iterable\)
+### enumerate(iterable)
 
-Takes one iterable \(and an optional starting number\) and produces a generator.
+Takes one iterable (and an optional starting number) and produces a generator.
 
 ```python
 e = enumerate(['a','b','c','d'], 5)
@@ -408,36 +321,19 @@ print(list(e))
 
 ## Exceptions
 
-Exceptions are _raised_ and we _handle_ them. A function raises an exception when it fails to finish its job. 
+Exceptions are _raised _and we _handle _them. A function raises an exception when it fails to finish its job. 
 
 * `raise` allows you to throw an exception at any time.
 * `assert` verifies if a given condition is met and throws an `AssertionError` exception if it isn’t.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Good and simple</th>
-      <th style="text-align:left">Inefficient</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>assert x &gt;= 0, &apos;not positive&apos;</code>
-      </td>
-      <td style="text-align:left">
-        <p><code>if x &lt; 0:</code>
-        </p>
-        <p><code>   raise AssertionError(&apos;not positive&apos;)</code>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Good and simple                 | Inefficient                                                                                   |
+| ------------------------------- | --------------------------------------------------------------------------------------------- |
+| `assert x >= 0, 'not positive'` | <p><code>if x &#x3C; 0:</code></p><p><code>   raise AssertionError('not positive')</code></p> |
 
 We can also handle exceptions with a `try-except` statement.
 
 * The `try` body is executed normally until an exception is raised.
-* `except` catches and handles the exception\(s\).
+* `except` catches and handles the exception(s).
 * `else` body will run only when the try finishes without any exception 
 * `finally` body will always execute no matter if there's an exception or not
 
@@ -471,5 +367,4 @@ def prompt_for_int(prompt_text):
 print(prompt_for_int('Enter a positive number'))
 ```
 
-## 
-
+##

@@ -8,7 +8,7 @@ Changing the type of a variable or object to another variable or object type. In
 
 C-Style Cast is a blunt instrument.
 
-You can cast an integer to be a pointer using c-style casting \(although you won't be able to compile it in the ICS45C VM\)
+You can cast an integer to be a pointer using c-style casting (although you won't be able to compile it in the ICS45C VM)
 
 ```cpp
 int i = 3;
@@ -124,7 +124,7 @@ private:
 }
 ```
 
-Initialization of the static member functions must be done in one source file \(One Definition Rule\)
+Initialization of the static member functions must be done in one source file (One Definition Rule)
 
 ```cpp
 // Widget.cpp
@@ -214,7 +214,7 @@ Classes also have contracts associated with them. Every member function has a co
   * `capacity >= 0`
   * `capacity == number of elemetns in the underlying array` 
 
-**Poposed syntax for contracts in C++20** \(got shot down\) 
+**Poposed syntax for contracts in C++20** (got shot down) 
 
 ```cpp
 double sqrt(double n)
@@ -241,7 +241,7 @@ class DivideByZeroException
 };
 ```
 
-Then you can **statically create a `DivideByZeroException`** and throw it in your code. We statically allocate it so that the error can be carried through. If we were to dynamically allocate it, we would be throwing a pointer.
+Then you can **statically create a `DivideByZeroException` **and throw it in your code. We statically allocate it so that the error can be carried through. If we were to dynamically allocate it, we would be throwing a pointer.
 
 ```cpp
 double divide(double n, double m)
@@ -255,7 +255,7 @@ double divide(double n, double m)
 }
 ```
 
-If you don't catch the exception, then the function that called divide will fail. You catch a reference of the exceotion class because 1\) it saves time by not having to copy the class and 2\) exceptions are generally part of hierarchies with more general class.
+If you don't catch the exception, then the function that called divide will fail. You catch a reference of the exceotion class because 1) it saves time by not having to copy the class and 2) exceptions are generally part of hierarchies with more general class.
 
 ```cpp
 void foo()
@@ -285,7 +285,7 @@ void foo()
 }
 ```
 
-Statically allocated variables are destroyed automatically when you throw an exception. BUT dynamically allocated variables are a whole new story. \(tba\)
+Statically allocated variables are destroyed automatically when you throw an exception. BUT dynamically allocated variables are a whole new story. (tba)
 
 * for instance `std::bad_alloc` is thrown when dynamic memory allocation fails 
 
@@ -303,7 +303,7 @@ Classes in the C++ Standard Library make "guarantees" about what happens when th
 
 * no guarantee 
 * basic guarantee
-  * if member function fails, the objext is left in a consistent \(i.e. all class invariants are met\).
+  * if member function fails, the objext is left in a consistent (i.e. all class invariants are met).
 * strong guarantee
   * if a member function fails, the obejct is left in the state it was in before the member function was called
   * too expensive sometimes
@@ -311,4 +311,3 @@ Classes in the C++ Standard Library make "guarantees" about what happens when th
   * this function will never throw an exception
   * almost impossible 
   * for example: getters
-

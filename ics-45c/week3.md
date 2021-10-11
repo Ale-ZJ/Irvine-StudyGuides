@@ -8,7 +8,7 @@ description: >-
 
 ## References
 
-In C++, when naming a storage location \(a variable or parameter\) you give that location \(think of it as a box\) a type \(which dictates how much memory is required to store it or how big the box is\) and a name. 
+In C++, when naming a storage location (a variable or parameter) you give that location (think of it as a box) a type (which dictates how much memory is required to store it or how big the box is) and a name. 
 
 A reference can be thought of as an "alternative name" for a variable, like a synonym. This means that changes made to a reference are reflected on the original.
 
@@ -26,8 +26,8 @@ int& x = 4; // illegal because 4 is a r-value
 
 There are two important rules about references:
 
-1. References must be **initialized explicitly** when they're **defined**
-2. Once a reference is initialized, it **cannot be changed** to refer to something else \(like another object\)
+1. References must be **initialized explicitly **when they're **defined**
+2. Once a reference is initialized, it **cannot be changed** to refer to something else (like another object)
 
 Here is an example of everything above:
 
@@ -50,7 +50,7 @@ int* q = p;
 int** r = q
 ```
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](<../.gitbook/assets/image (6).png>)
 
 ### Pass-by-value parameters
 
@@ -104,7 +104,7 @@ int main()
 
 ### Implicit type conversion
 
-Some types can be implicitly converted to another if they are _compatible_ when there is a known conversion between them.
+Some types can be implicitly converted to another if they are _compatible _when there is a known conversion between them.
 
 ```cpp
 int i1 = 4;
@@ -119,18 +119,18 @@ int i3 = l3;       // 705032704
 
 ### Function overloading 
 
-Overloading means writing more than one function with the same name. In C++ it is ok to overload functions as long as the compiler has a way to differentiate them \(in this case the parameters\). 
+Overloading means writing more than one function with the same name. In C++ it is ok to overload functions as long as the compiler has a way to differentiate them (in this case the parameters). 
 
 Overload resolution rules: 
 
 * Exact matches have priority 
 * Matches involving promotion 
-  * int -&gt; long
-  * int -&gt; double 
-  * float -&gt; double
+  * int -> long
+  * int -> double 
+  * float -> double
 * matches involving other standard conversions 
-  * double -&gt; int
-  * float -&gt; char
+  * double -> int
+  * float -> char
 
 ### Default Arguments
 
@@ -145,12 +145,12 @@ double vectorLength(double x, double y, double z = 0.0)
 
 ## Static and Dynamic Allocation 
 
-| Static allocation | Dynamic allocation |
-| :--- | :--- |
-| determine things before the program runs | determine things while program runs |
-| set size | size changes during execution |
-| in the run-time stack | in the free store or heap |
-| automatically deletes names after function ends | you need to delete them yourself |
+| Static allocation                               | Dynamic allocation                  |
+| ----------------------------------------------- | ----------------------------------- |
+| determine things before the program runs        | determine things while program runs |
+| set size                                        | size changes during execution       |
+| in the run-time stack                           | in the free store or heap           |
+| automatically deletes names after function ends | you need to delete them yourself    |
 
 ```cpp
 {
@@ -159,7 +159,7 @@ double vectorLength(double x, double y, double z = 0.0)
 }
 ```
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](<../.gitbook/assets/image (3).png>)
 
 But what is that blue arrow? It can't be a reference because references can't change the object they are referring to.
 
@@ -184,7 +184,7 @@ int* p = &i;
 
 ```
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](<../.gitbook/assets/image (5).png>)
 
 ```cpp
 int* p = new int;
@@ -200,7 +200,7 @@ int*& s = p;
 *s = 6;
 ```
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](<../.gitbook/assets/image (4).png>)
 
 There are also null pointers. Pointers that point at the absence of something. Useful in linked lists.
 
@@ -237,4 +237,3 @@ int* p = new int;
 delete p;
 std::cout << *p << std::endl; //once deleted you can't find it anymore
 ```
-

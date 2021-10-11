@@ -17,7 +17,7 @@ Objects of a well-behaved class have these properties:
 
 ## Constructors
 
-If you don't declare a constructor, one will be created for you. The default constructor will use the default initialization for the member variables' type. \(For `std::string` the default initialization is an empty string, but for `int` and `pointer` it is an unknown behavior\). So we use **initializers** for the member variables after the construction signature.
+If you don't declare a constructor, one will be created for you. The default constructor will use the default initialization for the member variables' type. (For `std::string` the default initialization is an empty string, but for `int` and `pointer` it is an unknown behavior). So we use **initializers **for the member variables after the construction signature.
 
 ```cpp
 ArrayList::ArrayList()
@@ -33,7 +33,7 @@ Classes whose objects manage resources that live outside of themselves — such 
 
 ### Destructor 
 
-Member function that will be called right before the object dies. Its job is to perform cleanup of dynamically allocated memory \(_not_ member variables, as they are handled automatically\).
+Member function that will be called right before the object dies. Its job is to perform cleanup of dynamically allocated memory (_not_ member variables, as they are handled automatically).
 
 * takes NO parameters 
 * Same name as constructor 
@@ -78,7 +78,7 @@ ArrayList::ArrayList(const ArrayList& other)
 
 ### Assignment Operator
 
-It is called every time an _existing object_ is assigned into _another existing object._ \(Note that both objects already exists\).
+It is called every time an _existing object_ is assigned into _another existing object. _(Note that both objects already exists).
 
 * `ClassType object1;`
 * `ClassType object2;`
@@ -116,4 +116,3 @@ ArrayList& ArrayList::operator=(const ArrayList& other)
                   // which is a reference to the obejcts you assign into
 }
 ```
-

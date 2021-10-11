@@ -47,7 +47,7 @@ const int* const t; // t is const, *t is const
 
 ## Structure
 
- A `struct` is a combination of things \(whether they are different or homogeneous\).
+ A `struct` is a combination of things (whether they are different or homogeneous).
 
 This is how you declare a struct:
 
@@ -115,9 +115,9 @@ struct X // 24 BYTES
 };
 ```
 
-Should not struct b 15 BYTES then? Why 24? Sometimes there is **padding** \(blank spaces\) because a type can only be allocated in memory indexes that are by the type size \( ? \)
+Should not struct b 15 BYTES then? Why 24? Sometimes there is **padding **(blank spaces) because a type can only be allocated in memory indexes that are by the type size ( ? )
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](<../.gitbook/assets/image (11).png>)
 
 ## The C++ Standard
 
@@ -273,15 +273,13 @@ void bar()
 
 #### Memory Leaks 
 
-Memory leaks can be found under `HEAP SUMMARY` and `LEAK SUMMARY` that memcheck prints to the console. There are several ways in which a block \(a box\) can be "lost" at the end of a program:
+Memory leaks can be found under `HEAP SUMMARY` and `LEAK SUMMARY` that memcheck prints to the console. There are several ways in which a block (a box) can be "lost" at the end of a program:
 
 * **Definitely:** blocks with no pointers pointing to them 
 * **Indirectly:** you can't access the pointers that are pointing the blocks
 * **Possibly:** there are pointers pointing to stuff inside the block but not the box itself. We will treat this like definitely lost.
-* **Still reachable:** blocks with pointers pointing to them \(usually global variables since all the run-time stack were destroyed\)
+* **Still reachable:** blocks with pointers pointing to them (usually global variables since all the run-time stack were destroyed)
 * **Suppressed:** memcheck was explicitly instructed to ignore these blocks. We will ignore them
-
-
 
 
 

@@ -1,20 +1,20 @@
 # Stacks
 
-## Stack Abstract Data Type \(ADT\)
+## Stack Abstract Data Type (ADT)
 
-A **stack** is an ADT where elements can only be inserted or removed from the top of the stack. Also known as **last-in first-out** ADT. Can be implemented using a linked list, an array, or a vector.
+A **stack** is an ADT where elements can only be inserted or removed from the top of the stack. Also known as **last-in first-out **ADT. Can be implemented using a linked list, an array, or a vector.
 
 There is a pointer that keeps track of where the "top" is.
 
 ## Stack Operations
 
-| Operation | Description |
-| :--- | :--- |
-| `Push(stack, x)` | inserts `x` on top of the stack |
-| `Pop(stack)` | returns and removes element at top |
-| `Peek(stack)` | returns but does not remove element at the top |
-| `IsEmpty(stack)` | `true` if stack has no elements |
-| `GetLength(stack)` | returns number of elements in the stack |
+| Operation          | Description                                    |
+| ------------------ | ---------------------------------------------- |
+| `Push(stack, x)`   | inserts `x` on top of the stack                |
+| `Pop(stack)`       | returns and removes element at top             |
+| `Peek(stack)`      | returns but does not remove element at the top |
+| `IsEmpty(stack)`   | `true` if stack has no elements                |
+| `GetLength(stack)` | returns number of elements in the stack        |
 
 {% hint style="warning" %}
 `Pop` and `Peek` should NOT be applied to an empty Stack. Undefined behavior.
@@ -24,14 +24,14 @@ There is a pointer that keeps track of where the "top" is.
 
 * web browser "back" button 
 * postfix notation 
-  * \( \(5+2\) \* \(8-3\)\) / 4
+  * ( (5+2) \* (8-3)) / 4
   * 5 2 + 8 3 - \* 4 /
   * if it is a number then push it to a stack
   * if you see an operation, then perform the operation and replace the top of the stack with the solution
 
 ## Stacks using Array
 
-Here is a **template** to implement Stacks with Arrays. Remember that a template is a **set of classes** and the template is implemented in `.hpp`
+Here is a **template **to implement Stacks with Arrays. Remember that a template is a **set of classes** and the template is implemented in `.hpp`
 
 ###  .hpp
 
@@ -136,8 +136,8 @@ write ArrayQueue functions for
 
 ## Stacks using Linked Lists
 
-* **Stacks** can be implemented with **linked lists**. The head of the list is the stack's "top". 
-* A push creates a new list node, assigns the data,  and _prepends_ the node to the front of the list
+* **Stacks **can be implemented with **linked lists**. The head of the list is the stack's "top". 
+* A push creates a new list node, assigns the data,  and _prepends _the node to the front of the list
 * A pop assigns a local variable with the head's node data, removes the head node from the list, and returns the local variable. 
 
 ```cpp
@@ -160,6 +160,4 @@ StackPop(stack)
     return headData;
 }
 ```
-
-
 

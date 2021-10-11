@@ -1,6 +1,6 @@
 # Array-based Lists
 
-An array-based list is a list of Abstract Data Types implemented with an array. Because a static array is initialized with a fixed size, the array-based list dynamically allocates \(memory allocated at runtime -&gt; not fixed size\) the array with a default capacity \(size\) and changes the capacity once the number of elements is the same as the capacity.
+An array-based list is a list of Abstract Data Types implemented with an array. Because a static array is initialized with a fixed size, the array-based list dynamically allocates (memory allocated at runtime -> not fixed size) the array with a default capacity (size) and changes the capacity once the number of elements is the same as the capacity.
 
 {% hint style="info" %}
 A default size of 1 to 10 is common. Usually, we also double the capacity when the number of elements catches up.
@@ -10,7 +10,7 @@ A default size of 1 to 10 is common. Usually, we also double the capacity when t
 
 We must resize the array-based list when the `allocationSize` equals the list's length. A new array with double the capacity is created and the elements from the original array are copied to the new one.
 
-Runtime complexity of O\(**N**\).
+Runtime complexity of O(**N**).
 
 ```cpp
 ArrayListResize(list, newAllocationSize)
@@ -66,7 +66,7 @@ ArrayListPrepend(list, newItem)
 
 ### InsertAfter
 
-Inserts a new element _after_ a given index. 
+Inserts a new element _after _a given index. 
 
 ```cpp
 ArrayListInsertAfter(list, index, newItem)
@@ -90,7 +90,7 @@ ArrayListInsertAfter(list, index, newItem)
 
 ### Search
 
-Returns the index of the first element whose data matches that of a key. `-1` if not found. O\(**N**\) complexity.
+Returns the index of the first element whose data matches that of a key. `-1` if not found. O(**N**) complexity.
 
 ```cpp
 ArrayListSearch(list, item)
@@ -108,7 +108,7 @@ ArrayListSearch(list, item)
 
 ### Remove At
 
-Removes the item from the list at a given index. O\(**N**\) complexity.
+Removes the item from the list at a given index. O(**N**) complexity.
 
 ```cpp
 ArrayListRemoveAt(list, index)
@@ -123,6 +123,4 @@ ArrayListRemoveAt(list, index)
     }
 }
 ```
-
-
 

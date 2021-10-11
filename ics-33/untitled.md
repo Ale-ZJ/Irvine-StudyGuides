@@ -10,69 +10,21 @@ When we define a class in Python, we bind the class name to an object that repre
 
 #### Python does three things when constructing new instance objects:
 
-1. Python calls a special function that _constructs_ an empty `__dict__`.
-2. Python calls the class' `__init__(self, *args, **kargs)` with self as the object created in \(1\). It also _initializes_ attributes by binding their name with their respective values in the namespace `__dict__`.
-3. A reference to the object that was **created in \(1\)** and **initialized in \(2\)** is returned.
+1. Python calls a special function that _constructs _an empty `__dict__`.
+2. Python calls the class' `__init__(self, *args, **kargs)` with self as the object created in (1). It also _initializes _attributes by binding their name with their respective values in the namespace `__dict__`.
+3. A reference to the object that was **created in (1)** and **initialized in (2)** is returned.
 
 ## Types of variables 
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">name</th>
-      <th style="text-align:left">definition and use</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">local variables</td>
-      <td style="text-align:left">
-        <ul>
-          <li>defined and used inside functions/methods.</li>
-          <li>parameters considered local vars too</li>
-          <li>local var dies when the function finishes execution</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">instance attributes/variables</td>
-      <td style="text-align:left">
-        <ul>
-          <li>defined in <code>__init__</code> and used inside class methods</li>
-          <li><code>self.name</code>
-          </li>
-          <li>exists while the instance object exists</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">class attributes/variables</td>
-      <td style="text-align:left">
-        <ul>
-          <li>defined in classes (same level as methods)</li>
-          <li>stores info common to all objects of a class
-            <ul>
-              <li>info shared among all objects created from class</li>
-            </ul>
-          </li>
-          <li>methods are actually<em> class attributes </em>bound to function objects</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">global variables</td>
-      <td style="text-align:left">
-        <ul>
-          <li>defined in modules</li>
-          <li>use them with precaution</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| name                          | definition and use                                                                                                                                                                                                                                                           |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| local variables               | <ul><li>defined and used inside functions/methods.</li><li>parameters considered local vars too </li><li>local var dies when the function finishes execution</li></ul>                                                                                                       |
+| instance attributes/variables | <ul><li>defined in <code>__init__</code> and used inside class methods</li><li><code>self.name</code></li><li>exists while the instance object exists</li></ul>                                                                                                              |
+| class attributes/variables    | <ul><li>defined in classes (same level as methods)</li><li><p>stores info common to all objects of a class </p><ul><li>info shared among all objects created from class</li></ul></li><li>methods are actually<em> class attributes </em>bound to function objects</li></ul> |
+| global variables              | <ul><li>defined in modules </li><li>use them with precaution</li></ul>                                                                                                                                                                                                       |
 
 {% hint style="info" %}
-**The Fundamental Equation of Object-Oriented Programming \(FEOOP\)** tells us that Python translates the method call `o.m(p)` to the function call `type(o).m(o,p)`
+**The Fundamental Equation of Object-Oriented Programming (FEOOP)** tells us that Python translates the method call `o.m(p)` to the function call `type(o).m(o,p)`
 {% endhint %}
 
 When calling `o.attr`, Python tries to find the attr in instance o's `__dict__` first. If it doesn't find it there, then by FEOOP checks `type(o).attr` and checks for the class' `__dict__`.
@@ -104,10 +56,10 @@ Person.fingers = 10 #the class fingers doesnt change but the bob intance fingers
 
 We usually don't want clients or outside code to directly access class attributes. Indirect access can be given by writing 'getters' and 'setters':
 
-* **accessors** \(or query\): o.method\(...\) returns information about o's state without changing it
-* **mutator** \(or command\): they change o's state
+* **accessors **(or query): o.method(...) returns information about o's state without changing it
+* **mutator** (or command): they change o's state
 
-Python allows us to hide variables or attributes in two ways \(although neither truly prohibits access to the variables' content\):
+Python allows us to hide variables or attributes in two ways (although neither truly prohibits access to the variables' content):
 
 #### \_ underscore prefix
 
@@ -125,7 +77,7 @@ print(o._ia, o._f())
 >>> 1 True
 ```
 
-#### \_\_ double underscore prefix
+#### \__ double underscore prefix
 
 `__variable` is harder to access outside the class than with a single underscore because you need to include a **mangled name** that includes the name of the class. In other words, because`__dict__` stores `__vars` as `_Classname__vars` you need to use the second way to access a double underscore attribute.
 
@@ -150,166 +102,34 @@ print(o._C__ia, o._C__f())
 
 Overloading is giving more than one job to one function name. It usually differentiates between each job based on the arguments. 
 
-Python has special methods used to manage classes. You can think of them as magic methods haha. Their technical name is 'dunder' + method name and they are surrounded by two underscores, e.g. `__init__` . **Remember FEOOP when overloading!** 
+Python has special methods used to manage classes. You can think of them as magic methods haha. Their technical name is 'dunder' + method name and they are surrounded by two underscores, e.g. `__init__` . **Remember FEOOP when overloading! **
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">purpose</th>
-      <th style="text-align:left">dunder method</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">misc</td>
-      <td style="text-align:left"><code>__init__, __bool__, __len__, __str__/__repr__</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">relational</td>
-      <td style="text-align:left"><code>__lt__ (__gt__, __le__, __ge__, __eq__, __ne__)</code>
-        <br />represents: <code>&lt; (&gt;, &lt;=, &gt;=, ==, and !=)</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">unary</td>
-      <td style="text-align:left"><code>__neg__, __pos__, __invert__</code> represents: ( - + ~)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">unary functions</td>
-      <td style="text-align:left"><code>__abs__, __round__, __float__, __floor__, __ceil__, __trunc__</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">arithmetic</td>
-      <td style="text-align:left">
-        <p><code>__add__, __sub__, __mul__, __truediv__, __floordiv__, __mod__, __divmod__, __pow__, __lshift__, __rshift__, __and__, __or__, __xor__</code> 
-        </p>
-        <p>represents: <code>+ - * / // % divmod ** &lt;&lt; &gt;&gt; &amp; | ^</code>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">right arithmetic</td>
-      <td style="text-align:left">
-        <p>there&apos;s a right form for each of the arithmetic methods so:</p>
-        <p><code>__radd__, __rsub__, __rmul__</code> ...</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">arithmetic incrementing delimeters</td>
-      <td style="text-align:left"><code>__iadd__, __isub__, __imul__</code> ... represents: <code>+=, -=, *=</code> ...</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">container</td>
-      <td style="text-align:left">
-        <p><code>__getitem__, __setitem__, __delitem__, __contains__</code> 
-        </p>
-        <p>represents: <code>l[-1], l[2] = 3, del l[2], 3 in l</code>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">function call</td>
-      <td style="text-align:left"><code>__call__</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">iterators</td>
-      <td style="text-align:left"><code>__iter__, __next__, </code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">attributes</td>
-      <td style="text-align:left"><code>__getattr__, __setattr__, __delattr__</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">context managers</td>
-      <td style="text-align:left"><code>__enter__, __exit__</code>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| purpose                            | dunder method                                                                                                                                                                                                                              |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| misc                               | `__init__, __bool__, __len__, __str__/__repr__`                                                                                                                                                                                            |
+| relational                         | <p><code>__lt__ (__gt__, __le__, __ge__, __eq__, __ne__)</code><br>represents: <code>&#x3C; (>, &#x3C;=, >=, ==, and !=)</code></p>                                                                                                        |
+| unary                              | `__neg__, __pos__, __invert__` represents: ( - + \~)                                                                                                                                                                                       |
+| unary functions                    | `__abs__, __round__, __float__, __floor__, __ceil__, __trunc__`                                                                                                                                                                            |
+| arithmetic                         | <p><code>__add__, __sub__, __mul__, __truediv__, __floordiv__, __mod__, __divmod__, __pow__, __lshift__, __rshift__, __and__, __or__, __xor__</code> </p><p>represents: <code>+ - * / // % divmod ** &#x3C;&#x3C; >> &#x26; | ^</code></p> |
+| right arithmetic                   | <p>there's a right form for each of the arithmetic methods so:</p><p><code>__radd__, __rsub__, __rmul__</code> ...</p>                                                                                                                     |
+| arithmetic incrementing delimeters | `__iadd__, __isub__, __imul__` ... represents: `+=, -=, *=` ...                                                                                                                                                                            |
+| container                          | <p><code>__getitem__, __setitem__, __delitem__, __contains__</code> </p><p>represents: <code>l[-1], l[2] = 3, del l[2], 3 in l</code></p>                                                                                                  |
+| function call                      | `__call__`                                                                                                                                                                                                                                 |
+| iterators                          | `__iter__, __next__, `                                                                                                                                                                                                                     |
+| attributes                         | `__getattr__, __setattr__, __delattr__`                                                                                                                                                                                                    |
+| context managers                   | `__enter__, __exit__`                                                                                                                                                                                                                      |
 
 ### Misc 
 
 They are all parameterless except for init
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">name</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>__init__</code>
-      </td>
-      <td style="text-align:left">
-        <p>cmon you have used it before</p>
-        <ul>
-          <li>initializes a class by binding attr names to values in <code>__dict__</code>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>__len__</code>
-      </td>
-      <td style="text-align:left">
-        <ul>
-          <li>when we call <code>len(object)</code> 
-          </li>
-          <li>ints do not have a len implementation
-            <ul>
-              <li>TypeError: object of type &apos;int&apos; has no len()</li>
-            </ul>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>__bool__</code>
-      </td>
-      <td style="text-align:left">
-        <ul>
-          <li>called whenever Python needs to interpret some object as a boolean value</li>
-          <li>like test conditions for <code>if </code>or <code>while </code>statements</li>
-          <li>if there is no <code>__bool__</code> implementation in the class, Python
-            return <code>len(object) != 0</code> . If there is no <code>__len__</code> function
-            then Python returns True.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>__str__</code>
-      </td>
-      <td style="text-align:left">
-        <ul>
-          <li>called when we call the conversion function <code>str(object)</code> 
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>__repr__</code>
-      </td>
-      <td style="text-align:left">
-        <ul>
-          <li>When <code>print()</code> or <code>format()</code> is called and there&apos;s
-            no <code>__str__</code> , then we use <code>__repr__</code>as a backup</li>
-          <li>if there is no <code>__repr__</code> then Python uses the location of the
-            object. e.g. <code>&lt;__main__.C object at [address]&gt;</code> 
-          </li>
-          <li>convention: it returns a string that when passed to <code>eval()</code> it
-            will produce an object with the same state</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| name       | description                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `__init__` | <p>cmon you have used it before</p><ul><li>initializes a class by binding attr names to values in <code>__dict__</code></li></ul>                                                                                                                                                                                                                                                                                                                  |
+| `__len__`  | <ul><li>when we call <code>len(object)</code> </li><li><p>ints do not have a len implementation </p><ul><li>TypeError: object of type 'int' has no len()</li></ul></li></ul>                                                                                                                                                                                                                                                                       |
+| `__bool__` | <ul><li>called whenever Python needs to interpret some object as a boolean value</li><li>like test conditions for <code>if </code>or <code>while </code>statements</li><li>if there is no <code>__bool__</code> implementation in the class, Python return <code>len(object) != 0</code> . If there is no <code>__len__</code> function then Python returns True.</li></ul>                                                                        |
+| `__str__`  | <ul><li>called when we call the conversion function <code>str(object)</code> </li></ul>                                                                                                                                                                                                                                                                                                                                                            |
+| `__repr__` | <ul><li>When <code>print()</code> or <code>format()</code> is called and there's no <code>__str__</code> , then we use <code>__repr__</code>as a backup</li><li>if there is no <code>__repr__</code> then Python uses the location of the object. e.g. <code>&#x3C;__main__.C object at [address]></code> </li><li>convention: it returns a string that when passed to <code>eval()</code> it will produce an object with the same state</li></ul> |
 
 ```python
 class Vector:
@@ -338,12 +158,12 @@ class Vector:
 Technically you can write all the other dunder relational operators using only `< or > or <= or >=`
 {% endhint %}
 
-| expression | description |
-| :--- | :--- |
-| `12 < y` | when evaluating this |
-| `12.__lt__(y)` | Python interprets this by feoop |
-| `type(12).__lt__(y)` | which then translates to |
-| `int.__lt__(12, y)` | then uses the `__lt__` defined in the int class |
+| expression              | description                                                                                               |
+| ----------------------- | --------------------------------------------------------------------------------------------------------- |
+| `12 < y`                | when evaluating this                                                                                      |
+| `12.__lt__(y)`          | Python interprets this by feoop                                                                           |
+| `type(12).__lt__(y)`    | which then translates to                                                                                  |
+| `int.__lt__(12, y)`     | then uses the `__lt__` defined in the int class                                                           |
 | `type(y).__gt__(y, 12)` | if `__lt__` was `NotImplemented` in the int class, then Python will try to evaluate the opposite `y > 12` |
 
 **Relational operations are simetrical/mirrored**, so they serve as 'backups' that can be called when one operation is `NotImplemented`
@@ -376,37 +196,15 @@ def __lt__(self,right):
 
 ### Arithmetic
 
-For binary arithmetic operator Python can't have a mirror backup operator \( `1-v` not the same as `v-1`\) because the commutative property doesn't apply to all operands. Instead Python lets us define a 'right hand side' operation.
+For binary arithmetic operator Python can't have a mirror backup operator ( `1-v` not the same as `v-1`) because the commutative property doesn't apply to all operands. Instead Python lets us define a 'right hand side' operation.
 
 {% hint style="danger" %}
 Do not mutate `self` and remember to **return** a new Class with the new results
 {% endhint %}
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">left hand operator</th>
-      <th style="text-align:left">right hand operator</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">
-        <p><code>def __add__(self, right):</code>
-        </p>
-        <p><code>   #some implementation here</code>
-        </p>
-      </td>
-      <td style="text-align:left">
-        <p><code>def __radd__(self, left):</code>
-        </p>
-        <p><code>   return self + left</code>
-        </p>
-        <p>*works here because of commutativity</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| left hand operator                                                                            | right hand operator                                                                                                               |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| <p><code>def __add__(self, right):</code></p><p><code>   #some implementation here</code></p> | <p><code>def __radd__(self, left):</code></p><p><code>   return self + left</code></p><p>*works here because of commutativity</p> |
 
 ```python
 def __add__(self,right):
@@ -504,9 +302,9 @@ class List1:
 ### Attributes
 
 {% hint style="danger" %}
-**Be careful when overloading** `__setattr__` since it gets called by `__init__` to initialize attributes.   
-**ALWAYS** include `self.__dict__[name] = value` somewhere in the `__setattr__` .   
-**NEVER** write `pass` in `__setattr__` body.
+**Be careful when overloading** `__setattr__` since it gets called by `__init__` to initialize attributes. \
+**ALWAYS **include `self.__dict__[name] = value` somewhere in the `__setattr__` . \
+**NEVER **write `pass` in `__setattr__` body.
 {% endhint %}
 
 ```python
@@ -564,7 +362,7 @@ while not (test):     # not is HIGH precedence, so I put test in ()
 ```
 
 {% hint style="info" %}
-In Python "not" has a higher precedence than "and", which has a higher precedence than "or" \(think of "not" like unary "-", "and" like "\*", and "or" like "+"\). 
+In Python "not" has a higher precedence than "and", which has a higher precedence than "or" (think of "not" like unary "-", "and" like "\*", and "or" like "+"). 
 {% endhint %}
 
 {% hint style="info" %}
@@ -701,8 +499,6 @@ def __iter__(self):
             
 return prange_iter(self.start, self.stop ,self.step)
 ```
-
-
 
 
 

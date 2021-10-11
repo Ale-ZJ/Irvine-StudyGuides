@@ -1,10 +1,10 @@
 ---
-description: 'Nazeih Botros, "HDL with Digital Design VHDL AND VERILOG"'
+description: Nazeih Botros, "HDL with Digital Design VHDL AND VERILOG"
 ---
 
 # VHDL
 
-Hardware Description Language \(**HDL**\) is a computer-aided design \(**CAD**\) used to design high-density programmable chips such as application-specific integrated circuits \(**ASICs**\) and field-programmable gate arrays \(**FPGAs**\), which are used in the design of digital systems. The two widely used hardware description languages are **VHDL** and **Verilog**.
+Hardware Description Language (**HDL**) is a computer-aided design (**CAD**) used to design high-density programmable chips such as application-specific integrated circuits (**ASICs**) and field-programmable gate arrays (**FPGAs**), which are used in the design of digital systems. The two widely used hardware description languages are **VHDL **and **Verilog**.
 
 ## Structure of VHDL Module
 
@@ -12,7 +12,7 @@ The VHDL module consists of: `ENTITY` and `ARCHITECTURE`.
 
 ### Entity
 
-`ENTITY` declares the input \(input ports\) and output \(output ports\) signals of the system.
+`ENTITY` declares the input (input ports) and output (output ports) signals of the system.
 
 ```cpp
 ENTITY <name> IS
@@ -30,7 +30,7 @@ END half_adder;
 * `IN` instantiates the mode of the port as input
 * `bit` is the _signal type_ and determines the allowed values that signals `a` and `b` can take 
   * other types: `std_logic`, `std_logic_vector`,  `real`,  `integer` 
-* `;` \(semicolon\) indicates a new statement
+* `;` (semicolon) indicates a new statement
 * `END` indicates the end of the entity. You can add the name of the entity after `END` or not.
 
 {% hint style="warning" %}
@@ -64,53 +64,23 @@ The architecture recognizes the information declared in the entity.
 
 There can be multiple or none processes inside an architecture. A process groups commands under a process name.
 
-`PROCESS` is the VHDL behavioral description keyword. Every VHDL behavioral description has to include a `PROCESS`. The statement `PROCESS (I1, I2)` , with `I1` and `I2` as inputs, is a concurrent statement, so its execution is determined by the occurrence of an event. `I1` and `I2` constitute a sensitivity list of the process. The process is executed \(activated\) only if an event occurs on any element of the sensitivity list; otherwise, the process remains inactive. If the `PROCESS` has no sensitivity list, the process is executed continuously.
+`PROCESS` is the VHDL behavioral description keyword. Every VHDL behavioral description has to include a `PROCESS`. The statement `PROCESS (I1, I2)` , with `I1` and `I2` as inputs, is a concurrent statement, so its execution is determined by the occurrence of an event. `I1` and `I2 `constitute a sensitivity list of the process. The process is executed (activated) only if an event occurs on any element of the sensitivity list; otherwise, the process remains inactive. If the `PROCESS` has no sensitivity list, the process is executed continuously.
 
 ### Data Flow Description 
 
-* **Behavioral** describes _how_ the outputs change with the inputs to model the system.
+* **Behavioral **describes _how _the outputs change with the inputs to model the system.
   * usually used when the Boolean function or the digital logic is hard to obtain
-* **Structural** models the system as components or gates or equations.
+* **Structural **models the system as components or gates or equations.
 * **Switch-Level** is the lowest description model. It models the system with transistors and switches.
 
 ## Operators
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">OPERATORS</th>
-      <th style="text-align:left">OPERAND</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Logical</td>
-      <td style="text-align:left"><code>AND</code>, <code>OR</code>, <code>NAND</code>, <code>NOR</code>, <code>XOR</code>, <code>XNOR</code>, <code>NOT</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Relational</td>
-      <td style="text-align:left"><code>=</code>, <code>/=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Arithmetic</td>
-      <td style="text-align:left"><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>MOD</code>, <code>REM</code>, <code>ABS</code>, <code>&amp;</code>, <code>**</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Shift</td>
-      <td style="text-align:left">
-        <p>(logical shift) <code>SSL 1</code>, <code>SSL 2</code>, <code>SRL 1</code>, <code>SRL 2</code>
-        </p>
-        <p>(arithmetic shift) <code>SLA 1</code>, <code>SRA 1</code>
-        </p>
-        <p>(rotate) <code>ROL 1</code>, <code>ROR 1</code>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| OPERATORS   | OPERAND                                                                                                                                                                                                                     |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Logical     | `AND`, `OR`, `NAND`, `NOR`, `XOR`, `XNOR`, `NOT`                                                                                                                                                                            |
+| Relational  | `=`, `/=`, `<`, `<=`, `>`, `>=`                                                                                                                                                                                             |
+| Arithmetic  | `+`, `-`, `*`, `/`, `MOD`, `REM`, `ABS`, `&`, `**`                                                                                                                                                                          |
+| Shift       | <p>(logical shift) <code>SSL 1</code>, <code>SSL 2</code>, <code>SRL 1</code>, <code>SRL 2</code></p><p>(arithmetic shift) <code>SLA 1</code>, <code>SRA 1</code></p><p>(rotate) <code>ROL 1</code>, <code>ROR 1</code></p> |
 
 ## Signals
 
@@ -129,7 +99,7 @@ TYPE StateType IS
 SIGNAL CurrentState, NextState: StateType;
 ```
 
-You can also **encode** \(use numbers instead of names\) for each state:
+You can also **encode** (use numbers instead of names) for each state:
 
 ```cpp
 SUBTYPE StateType IS std_logic_vector(3 DOWNTO 0);
@@ -146,7 +116,7 @@ SIGNAL regArray : regArray_type :=
     (X"0000", X"000B", X"0023", X"0007", X"000A", X"0000", X"0000", X"0000"); 
 ```
 
-### std\_logic\_vector
+### std_logic_vector
 
 * All bits in a vector can be zeroed by using the aggregate assignment `(others => '0')`
 * A signal is **high impedance** when all it's values are "Z"
@@ -164,7 +134,7 @@ Variable assignments are sequencial.
 
 ## Events
 
-* An event is a change in the value of a signal or variable \(e.g. from 0 to 1 or from 1 to 0\). 
+* An event is a change in the value of a signal or variable (e.g. from 0 to 1 or from 1 to 0). 
 
 ```cpp
 StateReg: PROCESS (Clk, Rst)
@@ -180,4 +150,3 @@ END PROCESS StateReg;
 ```
 
 ## Testbench
-
