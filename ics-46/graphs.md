@@ -84,7 +84,35 @@ BFS( startV )
 * starts at starting idx
 * follows ONE path from start to end&#x20;
   * traces back to visit undiscovered vertices
-*
-  *
+* not unique because you can backtrack to diff vertices
 
 ![](<../.gitbook/assets/image (14).png>)
+
+```
+DFS( startV )
+{
+    Push startV to stack
+    
+    while (stack is not empty)
+    {
+        currentV = Pop stack
+        
+        if (currentV is not in visitedSet)
+        {
+            "Visit" currentV
+            Add currentV to visitedSet
+            for each vertex adjV adjacent to currentV
+                Push adjV to stack
+        }
+    }
+}
+```
+
+{% hint style="info" %}
+DFS terminated when the stack is empty
+{% endhint %}
+
+Another way to write the algorithm using recursion:
+
+
+
