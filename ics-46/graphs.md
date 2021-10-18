@@ -114,5 +114,22 @@ DFS terminated when the stack is empty
 
 Another way to write the algorithm using recursion:
 
+```
+RecursiveDFS(currentV)
+{
+    if (currentV is not in visitedSet)
+    {
+        Add currentV to visitedSet
+        "Visit" currentV
+        for each vertex adjV adjacent to currentV
+        {
+            RecursiveDFS(adjV)
+        }
+    }
+}
+```
 
+{% hint style="info" %}
+This algorithm is implemented using the program's stack instead of an explicit stack!!
+{% endhint %}
 
