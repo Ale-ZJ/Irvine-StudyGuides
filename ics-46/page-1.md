@@ -44,7 +44,61 @@ How to deal when two or more items are hashed to the same bucket?
 Each bucket has a list (we did a linked list for an ics45c project!). This way, one bucket can store multiple items in a list.&#x20;
 
 ```cpp
+// Inserts uses the item's key to determine the bucket where it belongs
+// and inserts a new node containing the item as data at the end of 
+// the bucket list
 HashInsert(hashTable, item)
 {
+    // if the item is not in the bucket list already
+    if ( HashSearch(hashTable, item->key) == null)
+    {
+        bucketList = hashTable[ Hash(item->key) ]
+        node = Allocate new linked list node
+        node->next = null
+        node->data = item
+        ListAppend(bucketList, node)
+    }
+}
+
+// Searching determines the bucket where the key is and then looks for the key
+// in the list and returns the data that goes with given key
+// Basically it tells you whether the key is in the hashTable already
+HashSearch(hashTable, key)
+{
+    bucketList = hashTable[ Hash(key) ]
+    itemNode = ListSearch( bucketList, key )
+    if(itemNode is not null)
+        return itemNode -> data
+    else
+        return null
+}
+
+// Removes an item fron the hashTable only if it is in the table 
+hashRemove(hashTable, item)
+{
+    bucketList = hashTable[ Hash(item->key) ]
+    itemNode = ListSearch( bucketList, item->key )
+    
+    // we only remove the item if IT IS in the list to begin with
+    if ( itemNode is not null )
+    {
+        ListRemove( bucketList, itemNode )
+    }
 }
 ```
+
+### Linear Probing
+
+* Handles collisions by storing a collision item at the next subsequent empty bucket.
+  * it can loop around
+    * ex) if the hashed bucket (where collision happens) is the last one, then you start looking for an empty bucket from the very beginning&#x20;
+* when searching for an item it begins at the hashed bucket and continues down the list until an empty bucket is found
+
+#### Empty Bucket types
+
+Linear probing needs to distinguish between two types of empty buckets:
+
+* **empty-since-start**
+  *
+* **empty-after-removal**
+
