@@ -207,3 +207,57 @@ HashSearch(hashTable, key)
 }
 
 ```
+
+### Quadratic probing
+
+Handles collisions by starting at the key's mapped bucket and quadratically searches a subsequent bucket until an empty bucket is found.
+
+#### How to determine the item's index in the hash table?
+
+* With `H` = item's mapped bucket
+* `c1` and `c2` are programmer-defined constants for quadratic probing
+
+```
+(H + c1 * i + c2 * i^2)mod(tablesize)
+```
+
+Inserting a key uses the formula, starting with `i = 0` to search the hash table until an empty bucket is found. Each time an empty bucket is not found, i is incremented by 1.
+
+![](<../.gitbook/assets/image (13).png>)
+
+#### Insert
+
+```
+HashInsert(hashTable, item)
+{
+    i = 0
+    bucketsProbed = 0
+    
+    // Hash function idetermines initial bucket
+    bucket = Hash(item->key) % N
+    
+    while (bucketsProbed < N)
+    {
+        // Insert item in next empty bucket
+        if (hashTable[bucket] is Empty)
+        {
+            hashTable[bucket] = item
+            return true
+        }
+        
+        // Increment i and recompute bucket index
+        // c1 and c2 are constants
+        i = i + 1
+        bucket = (Hash(item->key) + c1 + i + c2 + i * i) % N
+        
+        // Increment number of buckets probed
+        bucketsProbed = bucketsProbbed + 1
+    }
+    
+    return false
+}
+```
+
+**Remove**
+
+****
