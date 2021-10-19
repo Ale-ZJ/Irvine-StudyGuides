@@ -43,7 +43,8 @@
 * [Queues, Deques](ics-46/queues-deques.md)
 * [Array-based Lists](ics-46/array-based-lists.md)
 * [Graphs](ics-46/graphs.md)
-* [Hash Tables](ics-46/page-1.md)
+* [Hash Tables](ics-46/hash-tables/README.md)
+  * [Collision Resolution Techniques](ics-46/hash-tables/collision-resolution-techniques.md)
 
 ## EECS-31L
 
