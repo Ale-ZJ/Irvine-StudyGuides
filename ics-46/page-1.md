@@ -99,6 +99,111 @@ hashRemove(hashTable, item)
 Linear probing needs to distinguish between two types of empty buckets:
 
 * **empty-since-start**
-  *
+  * bucket empty since hash table was created
 * **empty-after-removal**
+  * bucket is empty because the last item was removed
 
+{% hint style="warning" %}
+searching only stops for empty-since-start buckets!!
+{% endhint %}
+
+#### Insert
+
+Uses item's key to determine initial bucket, checks each bucket and inserts the item in the next empty bucket (the empty kind doesnt matter)
+
+```cpp
+hashInsert(hashTable, item)
+{
+    // Hash function determines initial bucket
+    bucket = Hash(item.key)
+    bucketsProbed = 0
+    N = hashTable's size
+    
+    while (bucketsProbed < N)
+    {
+        //Insert item in next empty bucket
+        if (hashTable(bucket) is Empty)
+        {
+            hashTable(bucket) = item
+            return true // gets out of the loop
+        }
+        
+        // Increment bucket index
+        bucket = (bucket + 1) % N
+        
+        // Increment number of buckets probed
+        ++bucketsProbed
+    }
+    
+    return false // bucketsProbed == N, then the list is full
+}
+```
+
+#### Remove
+
+uses item's key to determine initial bucket. Probes each bucket until we either:
+
+* find a matching item to remove
+  * watch out to mark empty-after-removal
+* an empty-since-start bucket
+  * because subsequent buckets do not contain an item that was inserted as linear probing&#x20;
+    * algorithm will keep probing if it encounters an empty-after-removal
+* all buckets have been probed
+
+```cpp
+HashRemove(hashTable, key)
+{
+    // Hash function determines the initial bucket
+    bucket = Hash(key)
+    bucketsProbed = 0
+    
+    while ( (hashTable[bucekt] is not EmptySinceStart) and (bucketsProbbed < N) 
+    {
+        if ( (hashTable[bucket] is not Empty and (hashTable[bucket]->key == key )
+        {
+            hashTable[bucket] = EmptyAfterRemoval //remove and mark
+            return
+        }    
+        
+        // Increment bucket index
+        bucket = (bucket + 1) % N
+
+        // Increment number of buckets probed
+        ++bucketsProbed
+    }
+}
+```
+
+#### Search
+
+item's key to determine initial buckets. probes until:
+
+* matching item found (returns item)
+* empty-since-start (returns null)
+* al buckets probed (returns null)
+
+```cpp
+HashSearch(hashTable, key) 
+{
+   // Hash function determines initial bucket
+   bucket = Hash(key)
+   bucketsProbed = 0
+
+   while ((hashTable[bucket] is not EmptySinceStart) and (bucketsProbed < N)) 
+   {
+      if ((hashTable[bucket] is not Empty) and (hashTable[bucket]⇢key == key)) 
+      {
+         return hashTable[bucket]
+      }
+
+      // Increment bucket index
+      bucket = (bucket + 1) % N
+
+      // Increment number of buckets probed
+      ++bucketsProbed
+   }
+
+   return null  // Item not found
+}
+
+```
