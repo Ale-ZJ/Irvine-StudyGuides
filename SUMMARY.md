@@ -42,7 +42,8 @@
 * [Stacks](ics-46/stacks.md)
 * [Queues, Deques](ics-46/queues-deques.md)
 * [Array-based Lists](ics-46/array-based-lists.md)
-* [Graphs](ics-46/graphs.md)
+* [Graphs](ics-46/graphs/README.md)
+  * [Page 1](ics-46/graphs/page-1.md)
 * [Hash Tables](ics-46/hash-tables/README.md)
   * [Collision Resolution Techniques](ics-46/hash-tables/collision-resolution-techniques.md)
 

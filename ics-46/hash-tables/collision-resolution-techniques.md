@@ -285,3 +285,6 @@ HashSearch(hashTable, key)
     return false //key not found
 }
 ```
+
+## Cuckoo Hashing
+

@@ -28,13 +28,13 @@ The adjacent list size will be **O(V + E)**  because each vertex appears once an
 
 For example:&#x20;
 
-![](<../.gitbook/assets/image (12) (1) (1).png>)
+![](<../../.gitbook/assets/image (12) (1) (1).png>)
 
 ### Adjacency Matrix
 
 Each vertex is assigned to a matrix row and column. A matrix element is 1 if the corresponding two vertices have an edge or 0 otherwise.
 
-![](<../.gitbook/assets/image (13) (1).png>)
+![](<../../.gitbook/assets/image (13) (1).png>)
 
 Common programming implementation would be a 2-d array. Therefore, it would have a size of **O(V^2). **Meanwhile, it has a key benefit of **O(1) **because the corresponding element is just checked for 0 or 1.
 
@@ -54,7 +54,7 @@ How to visit every vertex in a graph?
 * WITHOUT REVISITING a vertex!
   * traversal is therefore not unique&#x20;
 
-![](<../.gitbook/assets/image (12) (1).png>)
+![](<../../.gitbook/assets/image (12) (1).png>)
 
 ```clike
 BFS( startV )
@@ -86,7 +86,7 @@ BFS( startV )
   * traces back to visit undiscovered vertices
 * not unique because you can backtrack to diff vertices
 
-![](<../.gitbook/assets/image (14).png>)
+![](<../../.gitbook/assets/image (14).png>)
 
 ```
 DFS( startV )
@@ -132,4 +132,55 @@ RecursiveDFS(currentV)
 {% hint style="info" %}
 This algorithm is implemented using the program's stack instead of an explicit stack!!
 {% endhint %}
+
+## Directed Graph
+
+A **directed graph** consists of vertices connected by directed edges. If there is an edge pointing from X to Y, then Y (terminating) is adjacent to X (starting).
+
+* **path:** sequence of directed edges from a starting vertex to a destination vertex
+* **cycle: **a path that starts and ends at the same vertex
+  * a self loop is a cycle
+
+## Topological Sort
+
+of a directed, acyclic graph produces a list of the graphs vertices such that for every edg from a vertex X to a vertex Y, X comes first bfore Y in the list
+
+* vertex has no incoming edge -> first vertices in topological sort
+* ends with a vertex with no outgoing edges
+* topological sort exist even with unconnected vertices
+
+```
+GraphTopologicalSort(graph)
+{
+    resultList = mpty list of vertices
+    noIncoming = list of all vertices with no incoming eedges 
+    remainingEges = list of all edges in the graph 
+    
+    while( noIncoming is not empty)
+    {
+        currentV = remove any vertex from noIncoming 
+        Add currentV to result 
+        outgoingEdges = remove currentV's outgoing edge from remaaingEdge
+        for each edge currentE in outgoingEdges 
+        {
+            inCount = GraphGetIncomingEdgeCount(remainingEdges, currentE⇢toVertex)
+            if (inCount == 0)
+                Add currentE⇢toVertex to noIncoming
+        }
+    }
+}
+
+GraphGetIncomingEdgeCount(edgeList, vertex) {
+   count = 0
+   for each edge currentE in edgeList {
+      if (edge⇢toVertex == vertex)
+         count = count + 1
+   }
+   return count
+}
+```
+
+
+
+
 
