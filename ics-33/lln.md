@@ -27,9 +27,9 @@ def str_ll(ll):
     return answer + 'None'
 ```
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](<../.gitbook/assets/image (1).png>)
 
-writing recusive functions  
+writing recusive functions\
 
 
 * base case is then LN = None
@@ -47,6 +47,4 @@ def sum_ll_r(ll):
 {% hint style="info" %}
 In tuples/lists, using a slice to skip the first value in a recursive call is INEFFICIENT in both time and space. It must COPY the entire tuple/list. But using ll.next to skip the first value in a recursive call is EFFICIENT in both time and space.
 {% endhint %}
-
-
 

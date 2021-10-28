@@ -38,7 +38,7 @@ An index will give you an **l-value**. This means that you can write and read to
 
 * Because you might not know how many elements it needs to have 
 * Because you might need it to outlive the function it's created in
-* The rin-time stack has a limited size
+* The run-time stack has a limited size
 
 ## Dynamically Allocated Arrays 
 

@@ -12,7 +12,7 @@ What can we do with variables:
 * store them in member variables of a class and initialize them in a constructor 
 
 {% hint style="info" %}
-function\(\) when using parenthesis, you are telling the compiler to use the function right now. 
+function() when using parenthesis, you are telling the compiler to use the function right now. 
 
 function without the parentheses it will return a function pointer
 {% endhint %}
@@ -86,7 +86,7 @@ int main()
 
 ### Function literals - lambdas 
 
-**Literal** means an object without a name. So `"Boo"` or `10` or `'A'i` are all literals. And there is also function literals called **lambd**a expression.
+**Literal **means an object without a name. So `"Boo"` or `10` or `'A'` are all literals. And there is also function literals called **lambd**a expression.
 
 ```cpp
 transform(a, 10, []      (int i)      { return i + i });
@@ -94,7 +94,7 @@ transform(a, 10, []      (int i)      { return i + i });
                  lambda  param list   the function job
 ```
 
-* \[\] tells the compiler the next thing is a lambda expression 
+* \[] tells the compiler the next thing is a lambda expression 
 * you don't need a return type because the compiler will figure it out on its own
 
 ```cpp
@@ -108,8 +108,9 @@ transform(a, 10, [=]      (int i){ return x + i });
 
 ## Linked Data Structures
 
-* Arrays: each element lives contiguously \(next to each other\) in memory address 
-* 
+* Arrays: each element lives contiguously (next to each other) in memory address 
+*  
+
 ```cpp
 // LinkedList.hpp
 
@@ -232,9 +233,5 @@ TEST(SongTest, truncateArtistAtCreationIfTooLong)
 Anything you **assert**, you can **expect**.
 {% endhint %}
 
-
-
-Assert: if this isn't true then test fail and the test immediatly stops
-
-* Expect: check this, and if it is wrong tell me, and keep running the test
-
+* **Assert**: if this isn't true then test fail and the test immediatly stops
+* **Expect**: check this, and if it is wrong tell me, and keep running the test

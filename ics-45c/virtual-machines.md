@@ -4,6 +4,10 @@ description: ics45c-2021spring
 
 # Virtual Machines
 
+We are using a Virtual Machine for the class.
+
+
+
 VMware is a **hypervisor** used to arbitrate virtualization between the host and the guest.
 
 * `passwd` to change password
@@ -16,7 +20,6 @@ VMware is a **hypervisor** used to arbitrate virtualization between the host and
 * `sudo shutdown -h now` safe way to shutting down the VM
 * `sudo reboot` to reboot VM
 * `sudo netplan apply` to restart the network interfaces
-* \`\`
 
 
 
@@ -31,6 +34,8 @@ VMware is a **hypervisor** used to arbitrate virtualization between the host and
   * `gtest`
 * `./run app`
 * `./run app >output.txt`
+* `./run app <inputs/sample.in`
+* `./run --memcheck gtest` 
 * `more output.txt` show one page of info
 
 #### Text editors you can use:

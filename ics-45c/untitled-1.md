@@ -23,8 +23,8 @@ std::string
 * you can also use relational operators 
   * compares lexicographical order
 * splicing `s[1]` 
-  * if you go out of bounds, it is an `undefined behavior` \(not illegal - compiler wont complain\) 
-  * so instead of using `[]` use `s.at(5)` because it will always fail
+  * if you go out of bounds, it is an `undefined behavior` (not illegal - compiler wont complain) 
+  * so instead of using `[]` use `s.at(5)` because it will never fail
     * `at` costs more tho! 
 
 Member functions 
@@ -47,26 +47,26 @@ i++ //post-increment, get value of i and add 1 to i
 
 Pre-incrementation means the variable is incremented before the expression is set or evaluated. Post-incrementation means the expression is set or evaluated, and then the variable is altered.
 
-```text
+```
 b = x++;
 ```
 
 is really:
 
-```text
+```
 b = x;
 x++;
 ```
 
 and
 
-```text
+```
 b = ++x;
 ```
 
 is really:
 
-```text
+```
 x++;
 b = x;
 ```
@@ -75,7 +75,7 @@ pre-incrementing is efficient and faster because you don't use the variable retu
 
 ## StandardIO
 
-in linux there are three types of standardIO: output, input and error \(not covered\)
+in linux there are three types of standardIO: output, input and error (not covered)
 
 ### Standard Output
 
@@ -83,15 +83,15 @@ in linux there are three types of standardIO: output, input and error \(not cove
   * the output goes to the shell by default in linux
   * you can redirect the output to another place `./run app >output.txt` 
 * `./run app >output.txt`
-* `./run app | xxd` xxd is a program that shows the output in hexadecimal \(pipping?\)
+* `./run app | xxd` xxd is a program that shows the output in hexadecimal (pipping?)
 
 {% hint style="info" %}
-using these commands didn't change the program
+using these commands doesn't change the program
 {% endhint %}
 
 * `std::endl` 
   * tells the console to add a new carriage return at the end 
-  * it _flushes_ the string so that it doesnt get buffered later 
+  * it _flushes_ the string so that it doesnt get _buffered_ later 
   * if you dont add it then the carriage will remain at the end of the line of output
 
 ```cpp
@@ -132,14 +132,14 @@ void inputExample()
 
 ## Separate Compilation
 
-Writing programs in one than one file. 
+Writing programs in more than one file. 
 
 * files ending in `.cpp` compiles separately and have amnesia -they forget- after they compile them 
   * put the signature of the method of module 1 in module 2 where you want to use it
 * `.cpp` is source file 
   * we can think of them as "modules"
 * `.hpp` is **header file**
-  * just communicates the declarations NOT definitions
+  * just communicates the declarations (function signatures) NOT definitions
   * include the `.hpp` file in module 2 that uses module 1
 * objects files are created
 * Linking - makes sure that all promises to the compiler are fulfilled
@@ -149,7 +149,7 @@ Writing programs in one than one file.
 
 *  You can't include `.hpp` files more than one time. 
 * So we use the following:
-*  `#`  preprocessor directive
+* `  #  ` preprocessor directive
   * tells the compiler that you want to treat something differently 
 
 ```cpp
@@ -161,10 +161,10 @@ int methodNames();
 #endif
 ```
 
-* One definition rule 
+* **One definition rule **
   * you can only have one definition for a name
 
-### Behind the Scenes
+## Behind the Scenes
 
 #### How to understand the abstraction layer of your programming language
 
@@ -177,11 +177,11 @@ Other programming languages are considered higher abstraction level because ther
 * Who decides how and when values are organized in memory?
 * How do you interact with devices other than the processor and memory?
 
-The abstraction level of C++ abstraction level is close to the abstraction level of your machine \(it is of lower level\).
+The abstraction level of C++ abstraction level is close to the abstraction level of your machine (it is of lower level).
 
 To use C++, we need to better understand some eecs stuff:
 
-* Computer organization  \(processors, registers, the memory hierarchy\)
+* Computer organization  (processors, registers, the memory hierarchy)
 * The runtime organization of memory 
 * What determines the real cost of the things we're doing
 
@@ -194,20 +194,20 @@ To use C++, we need to better understand some eecs stuff:
   * one of them is called: **instruction pointer** 
     * tells you where in the main memory are stuff stored
 
-1- Read instruction   
-2- Decode it - what bits do you need - processes - what to do  
-3- read operands  
-4- execute the instruction   
+1- Read instruction \
+2- Decode it - what bits do you need - processes - what to do\
+3- read operands\
+4- execute the instruction \
 5- store the result 
 
---&gt; every statement and expressions in code is a collection of instructions
+\--> every statement and expressions in code is a collection of instructions
 
 #### Implementing C++ features
 
-A C++ compiler has two jobs:  //basically it translates into assembly language  
-\(1\) Check syntax and semantics   
-\(2\) Emit machine instructions that have the same observable effect as your program  
-          -- includes optimizations
+A C++ compiler has two jobs:  //basically it translates into assembly language\
+(1) Check syntax and semantics \
+(2) Emit machine instructions that have the same observable effect as your program\
+          \-- includes optimizations
 
 #### Implementing variables
 
@@ -215,19 +215,17 @@ When you are declaring a variable, you are asking for memory space.
 
 #### Implementing control structures 
 
-CPUs have "jump instructions" \(the next thing you need to do is over there\) and "branch instructions" \(there is a condition\)
+CPUs have "jump instructions" (the next thing you need to do is over there) and "branch instructions" (there is a condition)
 
 ```cpp
 if (???) <--- conditional expression of an integral type
 ```
 
-If the conditional expression evaluates to 0 then the expression is False, any other value is True \(0=FALSE, anything else = TRUE\). The C++ if statement is the same.
+If the conditional expression evaluates to 0 then the expression is False, any other value is True (0=FALSE, anything else = TRUE). The C++ if statement is the same.
 
 #### What about functions?
 
 There is a cost for the organization. Run time stacks have activation records that keep track of all the variables and stuff needed to run a function.
-
-
 
 
 

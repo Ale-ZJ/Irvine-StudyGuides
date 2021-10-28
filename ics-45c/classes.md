@@ -9,7 +9,7 @@ Like other programming languages, a class in C++ is a blueprint for a new kind o
 
 ## Data types in C++
 
-Unlike Java, which has primitive and class types, C++ does not make a distinction between different types. All types in C++ are on \(more or less\) equal footing. 
+Unlike Java, which has primitive and class types, C++ does not make a distinction between different types. All types in C++ are on (more or less) equal footing. 
 
 Types characteristics:
 
@@ -25,7 +25,7 @@ Types characteristics:
   * `std::string s;` // initialized empty if you don't say otherwise
 * A type specifies how resources it holds are released when its objects are destroyed
   * Resources include memory, open files, open connections over a network...
-* A type specifies how or whether or not its objects can be _copied_ or _moved_
+* A type specifies how or whether or not its objects can be _copied _or _moved_
   * `std::string s = "Boo";`
 * What can be done to "const" objects of a type?
 
@@ -33,11 +33,11 @@ Types characteristics:
 
 
 
-| Song.hpp | Song.cpp |
-| :--- | :--- |
-| interface | implementation |
+| Song.hpp                                 | Song.cpp                    |
+| ---------------------------------------- | --------------------------- |
+| interface                                | implementation              |
 | what you need to know in order to use it | how does it work internally |
-| use `#ifndef CLASS_HPP` |  |
+| use `#ifndef CLASS_HPP`                  |                             |
 
 ```cpp
 // Song.hpp
@@ -123,12 +123,12 @@ void Song::setTitle(const std::string& newTitle)
 
 * `Song::Song` tells the compiler that we want the function Song inside the class Song.
   * same as when using`std::string`
-* `const std::string&` 
+* `const std::string& `
   * we pass by reference because if not we would have to make a copy every time
   * there is no reason why the initial parameters will change
   * remember to make the same changes in the hpp file - same signature
 * **initializers**
-  * if you put `artist = initialArtist` inside Song constructor \(inside curly braces\) you are initializing the value of artist again. You already initialized it to be empty \(in hpp\) before entering the body of Song. 
+  * if you put `artist = initialArtist` inside Song constructor (inside curly braces) you are initializing the value of artist again. You already initialized it to be empty (in hpp) before entering the body of Song. 
   * instead, after the constructor signature add `: artist{initialArtist}, title{initialTitle}`
     * this way artist and title are "born" with the correct type of initialization
 
@@ -156,3 +156,4 @@ int main()
 curly braces mean initialization
 {% endhint %}
 
+* When writing member functions in a class, they always have a `this` parameter! 

@@ -1,10 +1,6 @@
 # Table of contents
 
-* [~Hi](README.md)
-
-## ICS-32
-
-* [tba](ics-32/untitled.md)
+* [\~Hi](README.md)
 
 ## ICS-33
 
@@ -23,6 +19,7 @@
 
 ## ICS-45C
 
+* [\[credits\]](ics-45c/untitled-3.md)
 * [Virtual Machines](ics-45c/virtual-machines.md)
 * [week1](ics-45c/untitled.md)
 * [week2](ics-45c/untitled-1.md)
@@ -31,9 +28,26 @@
 * [week4](ics-45c/untitled-2.md)
 * [Classes](ics-45c/classes.md)
 * [week5](ics-45c/week5.md)
+* [week6](ics-45c/week6.md)
+* [week7](ics-45c/week7.md)
+* [Inheritance](ics-45c/object-oriented-programming.md)
+* [Sanity check for myself](ics-45c/sanity-check-for-myself.md)
+* [week 8](ics-45c/week-8.md)
+* [week 9](ics-45c/untitled-4.md)
 
-## EECS-31
+## ics-46
 
-* [\[credits\]](eecs-31/untitled.md)
-* [VHDL](eecs-31/vhdl.md)
+* [\[credits\]](ics-46/credits.md)
+* [Doubly-linked lists](ics-46/untitled.md)
+* [Stacks](ics-46/stacks.md)
+* [Queues, Deques](ics-46/queues-deques.md)
+* [Array-based Lists](ics-46/array-based-lists.md)
+* [Graphs](ics-46/graphs/README.md)
+  * [Traversing Graphs](ics-46/graphs/traversing-graphs.md)
+* [Hash Tables](ics-46/hash-tables/README.md)
+  * [Collision Resolution Techniques](ics-46/hash-tables/collision-resolution-techniques.md)
 
+## EECS-31L
+
+* [\[credits\]](eecs-31l/credits.md)
+* [VHDL](eecs-31l/vhdl.md)

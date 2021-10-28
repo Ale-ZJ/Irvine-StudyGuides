@@ -6,15 +6,15 @@ description: 'week 1: ''Python review'''
 
 ## Mutable vs immutable
 
-* **mutable:** values can change later 
-* **immutable:** values can't change once created
+* **mutable: **values can change later 
+* **immutable: **values can't change once created
 
 ## Hashable vs unhashable
 
-Think of hashability as indexability  
-- a key needs to be unique  
-- thus an object needs to be hashable in order for Python to create a unique hash \(index\) to use as the key  
-- since immutable objects do not change, then immutable objects are hashable
+Think of hashability as indexability\
+\- a key needs to be unique\
+\- thus an object needs to be hashable in order for Python to create a unique hash (index) to use as the key\
+\- since immutable objects do not change, then immutable objects are hashable
 
 {% hint style="info" %}
 All immutable objects are hashable but not all hashable objects are immutable.
@@ -22,9 +22,9 @@ All immutable objects are hashable but not all hashable objects are immutable.
 
 ## Comparing Iterable objects 
 
-* **Sequence types**: **list** \(mutable\) and **tuples** \(immutable\)
-* **Set type**: **set** \(mutable\) and **frozenset** \(immutable\)
-* **Mapping type**: **dict** \(mutable\) and **defaultdict** \(mutable\)
+* **Sequence types**: **list **(mutable) and **tuples **(immutable)
+* **Set type**: **set **(mutable) and **frozenset **(immutable)
+* **Mapping type**: **dict **(mutable) and **defaultdict **(mutable)
 
 ### defaultdict
 
@@ -43,10 +43,10 @@ print(freq_dict)
 
 ## Sorting
 
-* `list.sort()` ****= returns None, it mutates the list
+* `list.sort()`** **= returns None, it mutates the list
 * `sorted()` = returns a sorted list from a given ITERABLE object
 
-when sorting a list of tuples \(from a dict\), python never compares the 2nd value because all keys in a dictionary are unique
+when sorting a list of tuples (from a dict), python never compares the 2nd value because all keys in a dictionary are unique
 
 ```python
 votes = [('Charlie', 20), ('Able', 10), ('Baker' ,20), ('Dog', 15)]
@@ -78,7 +78,7 @@ Do not use comprehensions when mutating during the comprehension
  1        2                     3 (optional, default = True)
 ```
 
-Basically: Make a list of iterable \(2\), only when the value iterated \(1\) satisfies predicate \(3\)
+Basically: Make a list of iterable (2), only when the value iterated (1) satisfies predicate (3)
 
 ```python
 x = [i**2 for i in range(1,11) if i%2==0]
@@ -112,4 +112,3 @@ Tuple comprehensions are special because they return a _**generator**_.
 x = (i for i in 'abc') returns a generator
 x = tuple(i for i in 'abc') returns a tuple
 ```
-
