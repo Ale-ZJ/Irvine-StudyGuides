@@ -46,6 +46,7 @@
   * [Traversing Graphs](ics-46/graphs/traversing-graphs.md)
 * [Hash Tables](ics-46/hash-tables/README.md)
   * [Collision Resolution Techniques](ics-46/hash-tables/collision-resolution-techniques.md)
+* [Trees](ics-46/trees.md)
 
 ## EECS-31L
 
