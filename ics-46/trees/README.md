@@ -16,7 +16,7 @@ some vocab about binary trees:&#x20;
 * **ancestors: **node's parents, parent's parent, etc until root
 * **root: **node without a parent that you can find at the top of the tree
 
-![](<../.gitbook/assets/image (20).png>)
+![](<../../.gitbook/assets/image (20).png>)
 
 more vocab:&#x20;
 
@@ -26,7 +26,7 @@ more vocab:&#x20;
   * **level: **nodes on the same depth
 * **height: **largest depth of any node
 
-![](<../.gitbook/assets/image (18).png>)
+![](<../../.gitbook/assets/image (18).png>)
 
 ### Types of Binary Trees
 
@@ -34,7 +34,7 @@ more vocab:&#x20;
 * **complete: **all levels contain all possible nodes and last level is to the far left as possible
 * **perfect: **internal nodes have 2 children and all lead nodes are at the same level
 
-![](<../.gitbook/assets/image (19).png>)
+![](<../../.gitbook/assets/image (19).png>)
 
 ## Binary Seach Trees
 
