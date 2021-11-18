@@ -48,6 +48,7 @@
   * [Collision Resolution Techniques](ics-46/hash-tables/collision-resolution-techniques.md)
 * [Trees](ics-46/trees/README.md)
   * [AVL Trees](ics-46/trees/avl-trees.md)
+* [Heaps and Priority Queues](ics-46/heaps-and-priority-queues.md)
 
 ## EECS-31L
 
