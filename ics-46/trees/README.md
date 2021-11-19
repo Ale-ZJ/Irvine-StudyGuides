@@ -148,3 +148,42 @@ BSTRemove(tree, key) {
    return // Node not found
 }
 ```
+
+## Traversals
+
+### In-Order&#x20;
+
+```
+inOrder(Node* n) 
+{
+    inOrder(n->left)
+    std::cout << n -> key
+    inOrder(n->right)
+}
+```
+
+### Pre-Order&#x20;
+
+If you insert into a BST with this sequence, it will giv you an exact BST tree.
+
+```
+preOrder(Node* n)
+{
+    std::cout << n->key
+    preOrder(n->left)
+    preOrder(n->right)
+}
+```
+
+### Post-Order
+
+Applications: syntax diagrams, compilers
+
+```
+postOrder(node* n)
+{
+    postOrder(n->left)
+    postOrder(n->right)
+    std::cout << n->key
+}
+```
