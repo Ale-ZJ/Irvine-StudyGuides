@@ -49,6 +49,7 @@
 * [Trees](ics-46/trees/README.md)
   * [AVL Trees](ics-46/trees/avl-trees.md)
 * [Heaps and Priority Queues](ics-46/heaps-and-priority-queues.md)
+* [Sorting Algorithms](ics-46/sorting-algorithms.md)
 
 ## EECS-31L
 
