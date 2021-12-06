@@ -288,3 +288,11 @@ HashSearch(hashTable, key)
 
 ## Cuckoo Hashing
 
+{% hint style="info" %}
+**O(1)** guaranteed lookups
+
+**O(1)** guaranteed removal
+
+**O(1)** expected insertions
+{% endhint %}
+
