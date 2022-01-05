@@ -2,7 +2,7 @@
 
 ## Constness
 
- In C++, there are tools to keep things constant. 
+&#x20;In C++, there are tools to keep things constant.&#x20;
 
 ```cpp
 const int x = 3;
@@ -47,7 +47,7 @@ const int* const t; // t is const, *t is const
 
 ## Structure
 
- A `struct` is a combination of things (whether they are different or homogeneous).
+&#x20;A `struct` is a combination of things (whether they are different or homogeneous).
 
 This is how you declare a struct:
 
@@ -101,9 +101,9 @@ When a static struct dies, all the variables inside struct dies too.
 
 ## StructLayout
 
-The compiler needs to allocate space for the structure and its members. 
+The compiler needs to allocate space for the structure and its members.&#x20;
 
-C++ has a `sizeof(object)` operator that tells you how big an object is. Using it in the example below, we get: 
+C++ has a `sizeof(object)` operator that tells you how big an object is. Using it in the example below, we get:&#x20;
 
 ```cpp
 struct X // 24 BYTES
@@ -115,7 +115,7 @@ struct X // 24 BYTES
 };
 ```
 
-Should not struct b 15 BYTES then? Why 24? Sometimes there is **padding **(blank spaces) because a type can only be allocated in memory indexes that are by the type size ( ? )
+Should not struct b 15 BYTES then? Why 24? Sometimes there is **padding** (blank spaces) because a type can only be allocated in memory indexes that are by the type size ( ? )
 
 ![](<../.gitbook/assets/image (11).png>)
 
@@ -125,7 +125,7 @@ Should not struct b 15 BYTES then? Why 24? Sometimes there is **padding **(blank
 2. What legal C++ program "means"
 3. What is included in the C++ Standard Library
 
-#### Undefined Behaviors 
+#### Undefined Behaviors&#x20;
 
 C++ is built around the zero-overhead principle: features shouldn't cost anything unless you use them.
 
@@ -135,15 +135,15 @@ A **segmentation** fault is an attempt to access memory that our program is not 
 
 ## Memcheck
 
-Memcheck is a memory error detector tool. This tool is found inside a package called Valgrind. 
+Memcheck is a memory error detector tool. This tool is found inside a package called Valgrind.&#x20;
 
 * values that were never assigned, which means the outcome is undefined in condition tests for control structures.
 * Attempting to use memory that's never been allocated
-* Attempting to use memory beyond the boundaries of memory that's been allocated 
+* Attempting to use memory beyond the boundaries of memory that's been allocated&#x20;
 * Attempting to deallocate memory that was never allocated, or deallocate the same memory twice
 * When a program ends, any memory that's been dynamically allocated and never deallocated is reported as a **memory leak**.
 
-Here is an example code to use memcheck on: 
+Here is an example code to use memcheck on:&#x20;
 
 ```cpp
 #include <iostream>
@@ -171,7 +171,7 @@ int main()
 }
 ```
 
-Use the following command to run memcheck. The `--memcheck` tag tells the compiler that you want to run the program with memcheck watching step by step. The error are printed in the order they occured: 
+Use the following command to run memcheck. The `--memcheck` tag tells the compiler that you want to run the program with memcheck watching step by step. The error are printed in the order they occured:&#x20;
 
 ```cpp
 ./run --memcheck app
@@ -271,11 +271,11 @@ void bar()
 ==3691==  in frame #2, created by bar() (main.cpp:22)
 ```
 
-#### Memory Leaks 
+#### Memory Leaks&#x20;
 
 Memory leaks can be found under `HEAP SUMMARY` and `LEAK SUMMARY` that memcheck prints to the console. There are several ways in which a block (a box) can be "lost" at the end of a program:
 
-* **Definitely:** blocks with no pointers pointing to them 
+* **Definitely:** blocks with no pointers pointing to them&#x20;
 * **Indirectly:** you can't access the pointers that are pointing the blocks
 * **Possibly:** there are pointers pointing to stuff inside the block but not the box itself. We will treat this like definitely lost.
 * **Still reachable:** blocks with pointers pointing to them (usually global variables since all the run-time stack were destroyed)

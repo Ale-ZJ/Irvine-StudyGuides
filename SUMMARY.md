@@ -17,6 +17,11 @@
 * [Inheritance](ics-33/inheritance.md)
 * [Big O-Notation](ics-33/big-o-notation.md)
 
+## EECS-31L
+
+* [\[credits\]](eecs-31l/credits.md)
+* [VHDL](eecs-31l/vhdl.md)
+
 ## ICS-45C
 
 * [\[credits\]](ics-45c/untitled-3.md)
@@ -51,7 +56,11 @@
 * [Heaps and Priority Queues](ics-46/heaps-and-priority-queues.md)
 * [Sorting Algorithms](ics-46/sorting-algorithms.md)
 
-## EECS-31L
+## CS-141
 
-* [\[credits\]](eecs-31l/credits.md)
-* [VHDL](eecs-31l/vhdl.md)
+* [Page 1](cs-141/page-1.md)
+
+## ICS-6D
+
+* [\[credit\]](ics-6d/credit.md)
+* [Induction and Recursion](ics-6d/induction-and-recursion.md)

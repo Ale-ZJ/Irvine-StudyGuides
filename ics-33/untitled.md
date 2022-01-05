@@ -10,17 +10,17 @@ When we define a class in Python, we bind the class name to an object that repre
 
 #### Python does three things when constructing new instance objects:
 
-1. Python calls a special function that _constructs _an empty `__dict__`.
-2. Python calls the class' `__init__(self, *args, **kargs)` with self as the object created in (1). It also _initializes _attributes by binding their name with their respective values in the namespace `__dict__`.
+1. Python calls a special function that _constructs_ an empty `__dict__`.
+2. Python calls the class' `__init__(self, *args, **kargs)` with self as the object created in (1). It also _initializes_ attributes by binding their name with their respective values in the namespace `__dict__`.
 3. A reference to the object that was **created in (1)** and **initialized in (2)** is returned.
 
-## Types of variables 
+## Types of variables&#x20;
 
 | name                          | definition and use                                                                                                                                                                                                                                                           |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | local variables               | <ul><li>defined and used inside functions/methods.</li><li>parameters considered local vars too </li><li>local var dies when the function finishes execution</li></ul>                                                                                                       |
 | instance attributes/variables | <ul><li>defined in <code>__init__</code> and used inside class methods</li><li><code>self.name</code></li><li>exists while the instance object exists</li></ul>                                                                                                              |
-| class attributes/variables    | <ul><li>defined in classes (same level as methods)</li><li><p>stores info common to all objects of a class </p><ul><li>info shared among all objects created from class</li></ul></li><li>methods are actually<em> class attributes </em>bound to function objects</li></ul> |
+| class attributes/variables    | <ul><li>defined in classes (same level as methods)</li><li><p>stores info common to all objects of a class </p><ul><li>info shared among all objects created from class</li></ul></li><li>methods are actually <em>class attributes</em> bound to function objects</li></ul> |
 | global variables              | <ul><li>defined in modules </li><li>use them with precaution</li></ul>                                                                                                                                                                                                       |
 
 {% hint style="info" %}
@@ -56,7 +56,7 @@ Person.fingers = 10 #the class fingers doesnt change but the bob intance fingers
 
 We usually don't want clients or outside code to directly access class attributes. Indirect access can be given by writing 'getters' and 'setters':
 
-* **accessors **(or query): o.method(...) returns information about o's state without changing it
+* **accessors** (or query): o.method(...) returns information about o's state without changing it
 * **mutator** (or command): they change o's state
 
 Python allows us to hide variables or attributes in two ways (although neither truly prohibits access to the variables' content):
@@ -77,7 +77,7 @@ print(o._ia, o._f())
 >>> 1 True
 ```
 
-#### \__ double underscore prefix
+#### \_\_ double underscore prefix
 
 `__variable` is harder to access outside the class than with a single underscore because you need to include a **mangled name** that includes the name of the class. In other words, because`__dict__` stores `__vars` as `_Classname__vars` you need to use the second way to access a double underscore attribute.
 
@@ -100,9 +100,9 @@ print(o._C__ia, o._C__f())
 
 ## Operator Overloading
 
-Overloading is giving more than one job to one function name. It usually differentiates between each job based on the arguments. 
+Overloading is giving more than one job to one function name. It usually differentiates between each job based on the arguments.&#x20;
 
-Python has special methods used to manage classes. You can think of them as magic methods haha. Their technical name is 'dunder' + method name and they are surrounded by two underscores, e.g. `__init__` . **Remember FEOOP when overloading! **
+Python has special methods used to manage classes. You can think of them as magic methods haha. Their technical name is 'dunder' + method name and they are surrounded by two underscores, e.g. `__init__` . **Remember FEOOP when overloading!**&#x20;
 
 | purpose                            | dunder method                                                                                                                                                                                                                              |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -115,11 +115,11 @@ Python has special methods used to manage classes. You can think of them as magi
 | arithmetic incrementing delimeters | `__iadd__, __isub__, __imul__` ... represents: `+=, -=, *=` ...                                                                                                                                                                            |
 | container                          | <p><code>__getitem__, __setitem__, __delitem__, __contains__</code> </p><p>represents: <code>l[-1], l[2] = 3, del l[2], 3 in l</code></p>                                                                                                  |
 | function call                      | `__call__`                                                                                                                                                                                                                                 |
-| iterators                          | `__iter__, __next__, `                                                                                                                                                                                                                     |
+| iterators                          | `__iter__, __next__,`                                                                                                                                                                                                                      |
 | attributes                         | `__getattr__, __setattr__, __delattr__`                                                                                                                                                                                                    |
 | context managers                   | `__enter__, __exit__`                                                                                                                                                                                                                      |
 
-### Misc 
+### Misc&#x20;
 
 They are all parameterless except for init
 
@@ -127,7 +127,7 @@ They are all parameterless except for init
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `__init__` | <p>cmon you have used it before</p><ul><li>initializes a class by binding attr names to values in <code>__dict__</code></li></ul>                                                                                                                                                                                                                                                                                                                  |
 | `__len__`  | <ul><li>when we call <code>len(object)</code> </li><li><p>ints do not have a len implementation </p><ul><li>TypeError: object of type 'int' has no len()</li></ul></li></ul>                                                                                                                                                                                                                                                                       |
-| `__bool__` | <ul><li>called whenever Python needs to interpret some object as a boolean value</li><li>like test conditions for <code>if </code>or <code>while </code>statements</li><li>if there is no <code>__bool__</code> implementation in the class, Python return <code>len(object) != 0</code> . If there is no <code>__len__</code> function then Python returns True.</li></ul>                                                                        |
+| `__bool__` | <ul><li>called whenever Python needs to interpret some object as a boolean value</li><li>like test conditions for <code>if</code> or <code>while</code> statements</li><li>if there is no <code>__bool__</code> implementation in the class, Python return <code>len(object) != 0</code> . If there is no <code>__len__</code> function then Python returns True.</li></ul>                                                                        |
 | `__str__`  | <ul><li>called when we call the conversion function <code>str(object)</code> </li></ul>                                                                                                                                                                                                                                                                                                                                                            |
 | `__repr__` | <ul><li>When <code>print()</code> or <code>format()</code> is called and there's no <code>__str__</code> , then we use <code>__repr__</code>as a backup</li><li>if there is no <code>__repr__</code> then Python uses the location of the object. e.g. <code>&#x3C;__main__.C object at [address]></code> </li><li>convention: it returns a string that when passed to <code>eval()</code> it will produce an object with the same state</li></ul> |
 
@@ -168,14 +168,14 @@ Technically you can write all the other dunder relational operators using only `
 
 **Relational operations are simetrical/mirrored**, so they serve as 'backups' that can be called when one operation is `NotImplemented`
 
-* `__lt__` and `__gt__` 
+* `__lt__` and `__gt__`&#x20;
 * `__le__` and `__ge__`
 
- Except for these special cases. The mirror is not used as the backup.
+&#x20;Except for these special cases. The mirror is not used as the backup.
 
-* `__eq__` and itself 
+* `__eq__` and itself&#x20;
   * when no `__eq__` is defined, Python uses the `is` operator
-* `__ne__` and itself 
+* `__ne__` and itself&#x20;
   * when no `__ne__` defined, Python uses `__eq__` and negates it
 
 {% hint style="info" %}
@@ -204,7 +204,7 @@ Do not mutate `self` and remember to **return** a new Class with the new results
 
 | left hand operator                                                                            | right hand operator                                                                                                               |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| <p><code>def __add__(self, right):</code></p><p><code>   #some implementation here</code></p> | <p><code>def __radd__(self, left):</code></p><p><code>   return self + left</code></p><p>*works here because of commutativity</p> |
+| <p><code>def __add__(self, right):</code></p><p>   <code>#some implementation here</code></p> | <p><code>def __radd__(self, left):</code></p><p>   <code>return self + left</code></p><p>*works here because of commutativity</p> |
 
 ```python
 def __add__(self,right):
@@ -303,8 +303,8 @@ class List1:
 
 {% hint style="danger" %}
 **Be careful when overloading** `__setattr__` since it gets called by `__init__` to initialize attributes. \
-**ALWAYS **include `self.__dict__[name] = value` somewhere in the `__setattr__` . \
-**NEVER **write `pass` in `__setattr__` body.
+**ALWAYS** include `self.__dict__[name] = value` somewhere in the `__setattr__` . \
+**NEVER** write `pass` in `__setattr__` body.
 {% endhint %}
 
 ```python
@@ -362,7 +362,7 @@ while not (test):     # not is HIGH precedence, so I put test in ()
 ```
 
 {% hint style="info" %}
-In Python "not" has a higher precedence than "and", which has a higher precedence than "or" (think of "not" like unary "-", "and" like "\*", and "or" like "+"). 
+In Python "not" has a higher precedence than "and", which has a higher precedence than "or" (think of "not" like unary "-", "and" like "\*", and "or" like "+").&#x20;
 {% endhint %}
 
 {% hint style="info" %}
@@ -370,9 +370,9 @@ In Python "not" has a higher precedence than "and", which has a higher precedenc
 {% endhint %}
 
 * `iter(iterable)` returns an **iterator**, an object which `next()` can be called on.
-* `next(it)` returns a value and advances the state of the iteration, until no more values, then raise `StopIteration` 
+* `next(it)` returns a value and advances the state of the iteration, until no more values, then raise `StopIteration`&#x20;
 
-#### From for loop to while loop 
+#### From for loop to while loop&#x20;
 
 ```python
 for i in range(1,6): # for the values 1-5
@@ -476,7 +476,7 @@ for a in c:
 '''
 ```
 
-to avoid the precious problem we define a class to keep track of information. ????? 
+to avoid the precious problem we define a class to keep track of information. ?????&#x20;
 
 ```python
 def __iter__(self):

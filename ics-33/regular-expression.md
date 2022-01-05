@@ -4,7 +4,7 @@ description: 'week 2: ''Regular Expressions'''
 
 # Regular Expression
 
-A regular expression specifies a sequence for which a string must match. We will always use _greedy _matching (matching the most letters).
+A regular expression specifies a sequence for which a string must match. We will always use _greedy_ matching (matching the most letters).
 
 Generally, **characters match themselves** except this:
 
@@ -31,7 +31,7 @@ Let R be a regex sequence, there are more rules:
 
 **Parenthesis** are used for:
 
-1. grouping 
+1. grouping&#x20;
 2. remember text matching subpattern names i.e. capturing group
 
 | group          | what it means                                                                   |
@@ -91,7 +91,7 @@ re.sub('(a+)','(\g<1>)','aabcaaadaf')
 (aa)bc(aaa)d(a)f
 ```
 
-## re methods on Match Object 
+## re methods on Match Object&#x20;
 
 | function                                                         | what it does                                                                                                         |
 | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |

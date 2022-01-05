@@ -9,9 +9,9 @@ description: >-
 Important terminologies:
 
 * **Iterable:** object that can be iterated over (you can call `iter` on them)
-* **Iterator:** object which `next()` can be called 
-* **Generator function: **function with one or more `yield` statements
-* **Generator: **special kind of iterator 
+* **Iterator:** object which `next()` can be called&#x20;
+* **Generator function:** function with one or more `yield` statements
+* **Generator:** special kind of iterator&#x20;
 * **Decorator:** returns the 'same kind' of object that its argument but decorated, i.e. with a change in behavior
   * takes in an iterable and returns the same iterable but with diff stuff
 
@@ -188,18 +188,18 @@ def pfilter(iterable, p):
 ```
 
 {% hint style="info" %}
-Generators embodies a small amount of code and does not often store any large data type. It also produces one value at a time. Therefore generators are space efficient. 
+Generators embodies a small amount of code and does not often store any large data type. It also produces one value at a time. Therefore generators are space efficient.&#x20;
 {% endhint %}
 
-* to build generators you need some sort of looping 
-  * for loop 
+* to build generators you need some sort of looping&#x20;
+  * for loop&#x20;
   * while loop - more control over iterator
     * StopIteration
-* DO NOT put everything into a list 
+* DO NOT put everything into a list&#x20;
   * iterables can be infinite
-  * ok to do a list of iterables 
-* DO NOT use len or slicing 
-  * ok to use zip 
+  * ok to do a list of iterables&#x20;
+* DO NOT use len or slicing&#x20;
+  * ok to use zip&#x20;
 
 ```python
 #generator - for version
