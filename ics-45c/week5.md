@@ -4,15 +4,15 @@
 
 In C++, a function object is an object that can be called like a function
 
-What can we do with variables:&#x20;
+What can we do with variables: 
 
-* store them in variables&#x20;
-* pass them as arguments to functions&#x20;
-* return them as the result of functions&#x20;
-* store them in member variables of a class and initialize them in a constructor&#x20;
+* store them in variables 
+* pass them as arguments to functions 
+* return them as the result of functions 
+* store them in member variables of a class and initialize them in a constructor 
 
 {% hint style="info" %}
-function() when using parenthesis, you are telling the compiler to use the function right now.&#x20;
+function() when using parenthesis, you are telling the compiler to use the function right now. 
 
 function without the parentheses it will return a function pointer
 {% endhint %}
@@ -84,9 +84,9 @@ int main()
 }
 ```
 
-### Function literals - lambdas&#x20;
+### Function literals - lambdas 
 
-**Literal** means an object without a name. So `"Boo"` or `10` or `'A'` are all literals. And there is also function literals called **lambd**a expression.
+**Literal **means an object without a name. So `"Boo"` or `10` or `'A'` are all literals. And there is also function literals called **lambd**a expression.
 
 ```cpp
 transform(a, 10, []      (int i)      { return i + i });
@@ -94,7 +94,7 @@ transform(a, 10, []      (int i)      { return i + i });
                  lambda  param list   the function job
 ```
 
-* \[] tells the compiler the next thing is a lambda expression&#x20;
+* \[] tells the compiler the next thing is a lambda expression 
 * you don't need a return type because the compiler will figure it out on its own
 
 ```cpp
@@ -108,8 +108,8 @@ transform(a, 10, [=]      (int i){ return x + i });
 
 ## Linked Data Structures
 
-* Arrays: each element lives contiguously (next to each other) in memory address&#x20;
-* &#x20;
+* Arrays: each element lives contiguously (next to each other) in memory address 
+*  
 
 ```cpp
 // LinkedList.hpp
@@ -191,7 +191,7 @@ namespace
 }
 ```
 
-Inside the `gtest` file, create a new source file with your tests.&#x20;
+Inside the `gtest` file, create a new source file with your tests. 
 
 ```cpp
 // SongTests.cpp

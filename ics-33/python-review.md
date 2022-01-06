@@ -4,20 +4,20 @@ description: 'week 1: "Python Review"'
 
 # Python review
 
-## Python in 4 sentences&#x20;
+## Python in 4 sentences 
 
-1. **NAMES:** Names (in namespaces) are _**bound**_ to objects.
-2. **REFERENCE:** Every object has its own **namespace**.
-3. **OBJECTS:** Objects are the fundamental unit with which Python computes.
-   1. We can compute with int objects in mathematical operations&#x20;
-   2. We can compute with **functions** by calling on them&#x20;
-   3. We can compute with a module object by **importing** them&#x20;
-   4. We can compute with class objects by constructing **instances** of the class
+1. **NAMES: **Names (in namespaces) are _**bound **_to objects.
+2. **REFERENCE: **Every object has its own **namespace**.
+3. **OBJECTS: **Objects are the fundamental unit with which Python computes.
+   1. We can compute with int objects in mathematical operations 
+   2. We can compute with **functions **by calling on them 
+   3. We can compute with a module object by **importing **them 
+   4. We can compute with class objects by constructing **instances **of the class
 4. Python has rules about how names are bound and how things work.
 
 ### Binding
 
-**Binding:** making a name refer to a value \
+**Binding: **making a name refer to a value \
 \- Using the = symbol\
 \- Using imports, function definitions and class definitions
 
@@ -32,9 +32,9 @@ By using \_ your variable is basically 'unnamed' and the interpreter does not ex
 | not using \_                               | using \_                                                               |
 | ------------------------------------------ | ---------------------------------------------------------------------- |
 | `kv = [k,v for k, v in [list of 2-tuple]]` | `only_k = [k for k, _ in [list of 2-tuple]]`                           |
-|                                            | <p><code>for _ in [1,2,3]:</code></p><p>    <code>print(_)</code> </p> |
+|                                            | <p><code>for _ in [1,2,3]:</code></p><p><code>    print(_) </code></p> |
 
-### Namespaces (for objects): \_\_dict\_\_
+### Namespaces (for objects): \__dict\_\_
 
 Every object has a special variable named `__dict__` that stores bindings in a dictionary in which keys are objects' names and values are the objects themselves.
 
@@ -61,17 +61,17 @@ from module-name import *
 
 ### Scope
 
-Visibility of a variable. Can be **local** or **global.** We normally want to avoid using global variables, but if a global variable needs to be rebound, then use the keyword `global` to declare that it is global.
+Visibility of a variable. Can be** local **or **global. **We normally want to avoid using global variables, but if a global variable needs to be rebound, then use the keyword `global` to declare that it is global.
 
 | This is better                                                                                                                                                                                                             | **DON'T**                                                                                                                                                                                         |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <p><code>x = 1</code></p><p><code>def f():</code><br>   <code>global x</code><br>   <code>y = 2</code></p><p>   <code>print(x,y)</code></p><p>   <code>x = 2</code></p><p><code>f()</code></p><p><code>print(x)</code></p> | <p><code>x = 1</code></p><p><code>def f():</code></p><p>   <code>y = 2</code></p><p>   <code>print(x,y)</code></p><p>   <code>x = 2</code></p><p><code>f()</code></p><p><code>print(x)</code></p> |
+| <p><code>x = 1</code></p><p><code>def f():</code><br><code>   global x</code><br><code>   y = 2</code></p><p><code>   print(x,y)</code></p><p><code>   x = 2</code></p><p><code>f()</code></p><p><code>print(x)</code></p> | <p><code>x = 1</code></p><p><code>def f():</code></p><p><code>   y = 2</code></p><p><code>   print(x,y)</code></p><p><code>   x = 2</code></p><p><code>f()</code></p><p><code>print(x)</code></p> |
 | <p>>>> 1 2</p><p>>>> 2</p>                                                                                                                                                                                                 | <p>UnboundLocalError exception: </p><p>local variable 'x' referenced before assignment</p>                                                                                                        |
 
 #### Python looks up / binds names in the following order
 
-1. in the **local** **scope** of the function
-2. in any of the **enclosing scopes**&#x20;
+1. in the **local** **scope **of the function
+2. in any of the **enclosing scopes** 
 3. in the **global scope**
 4. in the **builtins scope**
 5. raise NameError
@@ -80,8 +80,8 @@ Visibility of a variable. Can be **local** or **global.** We normally want to av
 
 #### Functions vs Methods
 
-* **Functions:** called by function(args)
-* **Methods:** object.method()&#x20;
+* **Functions: **called by function(args)
+* **Methods: **object.method() 
 
 #### Function Calls
 
@@ -119,13 +119,13 @@ bigger_than(60)(70)
 ### Lamda
 
 * **lambda:** unnamed function object that represents a very simple function
-* **predicate:** a function that returns a boolean
+* **predicate: **a function that returns a boolean
 
 | This                      | Same as                                                             |
 | ------------------------- | ------------------------------------------------------------------- |
-| `...(lambda x,y: x+y)...` | <p><code>def f(x,y):</code></p><p>    <code>return x + y</code></p> |
+| `...(lambda x,y: x+y)...` | <p><code>def f(x,y):</code></p><p><code>    return x + y</code></p> |
 
-examples:&#x20;
+examples: 
 
 ```python
 print((lambda x : x)('Hello World'))
@@ -182,26 +182,26 @@ print(l,m,n,o)
 
 ## Arguments vs Parameters
 
-* **arguments:** passed to a function when **calling** it&#x20;
-  * **positional argument:** an argument NOT preceded by `name=`
+* **arguments: **passed to a function when **calling **it 
+  * **positional argument: **an argument NOT preceded by `name=`
   * **named argument**: argument preceded by the `name=` option
     * must be written at the end of the function call
-* **parameters:** values in a function **header**
+* **parameters: **values in a function **header**
   * **name-only parameter:** a parameter with NO default value
-  * **default-argument parameter:** a parameter including a default argument value
+  * **default-argument parameter: **a parameter including a default argument value
 
 #### How matching works?
 
-* M1. match positional arguments to the respective parameter&#x20;
-* M2. if \* is an arg, then store all remaining pos args in a tuple and match&#x20;
-* M3. match named args to the named parameter&#x20;
-* M4. default args&#x20;
+* M1. match positional arguments to the respective parameter 
+* M2. if \* is an arg, then store all remaining pos args in a tuple and match 
+* M3. match named args to the named parameter 
+* M4. default args 
 * M5. exceptions
 
 ### \*args and \*\*kargs
 
-* `*args:`&#x20;
-  * puts all positional arguments that have not been bound into a tuple&#x20;
+* `*args:` 
+  * puts all positional arguments that have not been bound into a tuple 
 * `**kargs:` keyword arguments
   * there are more named arguments than named parameters, then it will store the extra arguments in a dictionary named kargs
 
@@ -231,15 +231,15 @@ g(1,2,c=3,d=4)
 
 #### Important notes
 
-1. Writing `*` __ and _`**`_ for parameters, binds said parameter to tuple/dict resp.&#x20;
+1. Writing `*`_ _and _`**`_ for parameters, binds said parameter to tuple/dict resp. 
 2. A parameter name by itself is using the tuple/dict
-3. Using _ `*`_ and `**` followed by parameter name as arguments in fxn calls, _expands_ all the values in the tuple/dict to represent all arguments
+3. Using_ `*`_ and `**` followed by parameter name as arguments in fxn calls, _expands _all the values in the tuple/dict to represent all arguments
 
 ## None and pass
 
 * None is a value / instance / object of NoneType
   * all functions return None as default
-* pass: inside a body, means do nothing&#x20;
+* pass: inside a body, means do nothing 
 
 ```python
 def function() -> None:
@@ -321,20 +321,20 @@ print(list(e))
 
 ## Exceptions
 
-Exceptions are _raised_ and we _handle_ them. A function raises an exception when it fails to finish its job.&#x20;
+Exceptions are _raised _and we _handle _them. A function raises an exception when it fails to finish its job. 
 
 * `raise` allows you to throw an exception at any time.
 * `assert` verifies if a given condition is met and throws an `AssertionError` exception if it isn’t.
 
 | Good and simple                 | Inefficient                                                                                   |
 | ------------------------------- | --------------------------------------------------------------------------------------------- |
-| `assert x >= 0, 'not positive'` | <p><code>if x &#x3C; 0:</code></p><p>   <code>raise AssertionError('not positive')</code></p> |
+| `assert x >= 0, 'not positive'` | <p><code>if x &#x3C; 0:</code></p><p><code>   raise AssertionError('not positive')</code></p> |
 
 We can also handle exceptions with a `try-except` statement.
 
 * The `try` body is executed normally until an exception is raised.
 * `except` catches and handles the exception(s).
-* `else` body will run only when the try finishes without any exception&#x20;
+* `else` body will run only when the try finishes without any exception 
 * `finally` body will always execute no matter if there's an exception or not
 
 ```python

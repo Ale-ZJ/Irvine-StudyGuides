@@ -8,7 +8,7 @@ description: >-
 
 ## References
 
-In C++, when naming a storage location (a variable or parameter) you give that location (think of it as a box) a type (which dictates how much memory is required to store it or how big the box is) and a name.&#x20;
+In C++, when naming a storage location (a variable or parameter) you give that location (think of it as a box) a type (which dictates how much memory is required to store it or how big the box is) and a name. 
 
 A reference can be thought of as an "alternative name" for a variable, like a synonym. This means that changes made to a reference are reflected on the original.
 
@@ -26,7 +26,7 @@ int& x = 4; // illegal because 4 is a r-value
 
 There are two important rules about references:
 
-1. References must be **initialized explicitly** when they're **defined**
+1. References must be **initialized explicitly **when they're **defined**
 2. Once a reference is initialized, it **cannot be changed** to refer to something else (like another object)
 
 Here is an example of everything above:
@@ -78,7 +78,7 @@ int main()
 
 ### Pass-by-reference parameters
 
-When passing a parameter by a reference, no copies are made. Change made to the parameter will be reflected on the original. It enables functions to alter the arguments that are passed to them.&#x20;
+When passing a parameter by a reference, no copies are made. Change made to the parameter will be reflected on the original. It enables functions to alter the arguments that are passed to them. 
 
 ```cpp
 void foo(int& x)
@@ -104,7 +104,7 @@ int main()
 
 ### Implicit type conversion
 
-Some types can be implicitly converted to another if they are _compatible_ when there is a known conversion between them.
+Some types can be implicitly converted to another if they are _compatible _when there is a known conversion between them.
 
 ```cpp
 int i1 = 4;
@@ -117,18 +117,18 @@ long l3 = 5000000000;
 int i3 = l3;       // 705032704
 ```
 
-### Function overloading&#x20;
+### Function overloading 
 
-Overloading means writing more than one function with the same name. In C++ it is ok to overload functions as long as the compiler has a way to differentiate them (in this case the parameters).&#x20;
+Overloading means writing more than one function with the same name. In C++ it is ok to overload functions as long as the compiler has a way to differentiate them (in this case the parameters). 
 
-Overload resolution rules:&#x20;
+Overload resolution rules: 
 
-* Exact matches have priority&#x20;
-* Matches involving promotion&#x20;
+* Exact matches have priority 
+* Matches involving promotion 
   * int -> long
-  * int -> double&#x20;
+  * int -> double 
   * float -> double
-* matches involving other standard conversions&#x20;
+* matches involving other standard conversions 
   * double -> int
   * float -> char
 
@@ -143,7 +143,7 @@ double vectorLength(double x, double y, double z = 0.0)
 }
 ```
 
-## Static and Dynamic Allocation&#x20;
+## Static and Dynamic Allocation 
 
 | Static allocation                               | Dynamic allocation                  |
 | ----------------------------------------------- | ----------------------------------- |

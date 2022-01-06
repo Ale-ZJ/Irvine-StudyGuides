@@ -10,29 +10,29 @@ each node has two children: left and right.
 
 some vocab about binary trees:&#x20;
 
-* **leaf:** a tree node with no children
-* **internal node:** at least one child
-* **parent:** obviously a node that has a child
-* **ancestors:** node's parents, parent's parent, etc until root
-* **root:** node without a parent that you can find at the top of the tree
+* **leaf: **a tree node with no children
+* **internal node: **at least one child
+* **parent: **obviously a node that has a child
+* **ancestors: **node's parents, parent's parent, etc until root
+* **root: **node without a parent that you can find at the top of the tree
 
 ![](<../../.gitbook/assets/image (20).png>)
 
 more vocab:&#x20;
 
-* **edge:** link between node to child node
-* **depth:** number of edges on the path from the root to the node.
+* **edge: **link between node to child node
+* **depth: **number of edges on the path from the root to the node.
   * root node has depth 0
-  * **level:** nodes on the same depth
-* **height:** largest depth of any node
+  * **level: **nodes on the same depth
+* **height: **largest depth of any node
 
 ![](<../../.gitbook/assets/image (18).png>)
 
 ### Types of Binary Trees
 
-* **full:** every node has 0 or 2 children
-* **complete:** all levels contain all possible nodes and last level is to the far left as possible
-* **perfect:** internal nodes have 2 children and all lead nodes are at the same level
+* **full: **every node has 0 or 2 children
+* **complete: **all levels contain all possible nodes and last level is to the far left as possible
+* **perfect: **internal nodes have 2 children and all lead nodes are at the same level
 
 ![](<../../.gitbook/assets/image (19).png>)
 

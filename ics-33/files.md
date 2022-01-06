@@ -8,7 +8,7 @@ description: >-
 
 ## Reading Files
 
-:x: To write space-efficient code avoid using `.read()` (returns a giant string of lines) or `.readlines()` (returns a list of lines).&#x20;
+:x: To write space-efficient code avoid using `.read()` (returns a giant string of lines) or `.readlines()` (returns a list of lines). 
 
 ```python
 open_file = open(file_name: str)
@@ -21,7 +21,7 @@ for line in open(file_name).readlines():
     process(line)
 ```
 
-:white\_check\_mark: Instead, directly iterate open file objects:
+:white_check_mark: Instead, directly iterate open file objects:
 
 ```python
 for line in open(file_name: str):
@@ -29,13 +29,13 @@ for line in open(file_name: str):
     process(line)
 ```
 
-:white\_check\_mark: Or use a list comprehension to create a list of file lines
+:white_check_mark: Or use a list comprehension to create a list of file lines
 
 ```python
 line_list = [line.rstrip('\n') for line in open(file_name)]
 ```
 
-:white\_check\_mark: We can also use `open` as a context manager in a `with` statement.\
+:white_check_mark: We can also use `open` as a context manager in a `with` statement.\
 \- handles file exceptions \
 \- closes the file  when context manager finishes
 
@@ -81,8 +81,8 @@ for name, test1, test2 in parse_lines(open(file_name), ',', (str,int,int)):
 
 ## Pickling
 
-* **Text files:** composed of ASCII characters - readable
-* **Binary files:** 0 and 1's - need to decode
+* **Text files: **composed of ASCII characters - readable
+* **Binary files: **0 and 1's - need to decode
 
 To write binary files we use `pickle.dump(object, open-file)`
 
