@@ -43,7 +43,7 @@ ArrayListAppend(list, newItem)
 
 ### Prepend
 
-Inserts a new item at the start of the list. 
+Inserts a new item at the start of the list.&#x20;
 
 ```cpp
 ArrayListPrepend(list, newItem)
@@ -66,7 +66,7 @@ ArrayListPrepend(list, newItem)
 
 ### InsertAfter
 
-Inserts a new element _after _a given index. 
+Inserts a new element _after_ a given index.&#x20;
 
 ```cpp
 ArrayListInsertAfter(list, index, newItem)

@@ -2,7 +2,7 @@
 
 ## Stack Abstract Data Type (ADT)
 
-A **stack** is an ADT where elements can only be inserted or removed from the top of the stack. Also known as **last-in first-out **ADT. Can be implemented using a linked list, an array, or a vector.
+A **stack** is an ADT where elements can only be inserted or removed from the top of the stack. Also known as **last-in first-out** ADT. Can be implemented using a linked list, an array, or a vector.
 
 There is a pointer that keeps track of where the "top" is.
 
@@ -22,8 +22,8 @@ There is a pointer that keeps track of where the "top" is.
 
 ## What problems does Stack solve?
 
-* web browser "back" button 
-* postfix notation 
+* web browser "back" button&#x20;
+* postfix notation&#x20;
   * ( (5+2) \* (8-3)) / 4
   * 5 2 + 8 3 - \* 4 /
   * if it is a number then push it to a stack
@@ -31,9 +31,9 @@ There is a pointer that keeps track of where the "top" is.
 
 ## Stacks using Array
 
-Here is a **template **to implement Stacks with Arrays. Remember that a template is a **set of classes** and the template is implemented in `.hpp`
+Here is a **template** to implement Stacks with Arrays. Remember that a template is a **set of classes** and the template is implemented in `.hpp`
 
-###  .hpp
+### &#x20;.hpp
 
 ```cpp
 // .hpp file
@@ -130,15 +130,15 @@ TEST(StackTests, StackIsEmptyAtStart2)
 
 ## TODO
 
-write ArrayQueue functions for 
+write ArrayQueue functions for&#x20;
 
 
 
 ## Stacks using Linked Lists
 
-* **Stacks **can be implemented with **linked lists**. The head of the list is the stack's "top". 
-* A push creates a new list node, assigns the data,  and _prepends _the node to the front of the list
-* A pop assigns a local variable with the head's node data, removes the head node from the list, and returns the local variable. 
+* **Stacks** can be implemented with **linked lists**. The head of the list is the stack's "top".&#x20;
+* A push creates a new list node, assigns the data,  and _prepends_ the node to the front of the list
+* A pop assigns a local variable with the head's node data, removes the head node from the list, and returns the local variable.&#x20;
 
 ```cpp
 StackPush( stack, item )
