@@ -59,7 +59,9 @@
 ## CS-141
 
 * [\[credit\]](cs-141/credit.md)
+* [Reading Notes](cs-141/reading-notes.md)
 * [Java](cs-141/java.md)
+* [Object-Oriented Programming](cs-141/object-oriented-programming.md)
 
 ## ICS-6D
 
