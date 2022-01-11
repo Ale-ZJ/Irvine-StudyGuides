@@ -58,14 +58,10 @@
 
 ## CS-141
 
-* [Page 1](cs-141/page-1.md)
+* [\[credit\]](cs-141/credit.md)
 * [Java](cs-141/java.md)
-
-## CS-141
-
-* [Page 2](cs-141-1/page-2.md)
 
 ## ICS-6D
 
 * [\[credit\]](ics-6d/credit.md)
-* [Induction and Recursion](ics-6d/induction-and-recursion.md)
+* [Recursion and Induction](ics-6d/recursion-and-induction.md)

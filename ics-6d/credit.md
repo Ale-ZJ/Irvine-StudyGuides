@@ -1,3 +1,5 @@
 # \[credit]
 
-Book:&#x20;
+Zybook:&#x20;
+
+Notes from Professor Gassko

@@ -1,4 +1,4 @@
-# Induction and Recursion
+# Recursion and Induction
 
 ## Sequences
 
@@ -67,5 +67,28 @@ you can also change the variables in a summation, consider `i = k + 2`
 
 is a proof technique. two components:&#x20;
 
-* base case: establishese that the theorem is true for the first value in the sequence.
-* inductive step: if the theorem is true for k, then the theorem also holds for k + 1
+* **base case:** establishes that the theorem is true for the first value in the sequence.
+  * usually n = 0 or n = 1
+* **inductive hypothesis:** assume the theorem is true for `k`
+* **inductive step:** if the theorem is true for `k`, then show that the theorem also holds for `k + 1`
+
+## Strong Induction
+
+Similar to regular induction
+
+* base case: S(0) and S(1) are true
+  * finding the base cases is actually the hardeset part!
+    * trial and error dw
+* inductive hypothesis: S(0) ∧ S(1) ∧ ... ∧ S(k)
+  * from first base case to k
+* inductive step: For every k ≥ 1, (S(0) ∧ S(1) ∧ ...... ∧ S(k)) implies S(k + 1)
+  * basically you assume that the statement is true for all values `>= k`, which will then be used to show that it holds for `k+1`
+
+## Well-Ordering Principle
+
+math induction is related to this.&#x20;
+
+The well-ordering principle ays that any non-empty subset of the non-negative integers has a smallest element
+
+
+
