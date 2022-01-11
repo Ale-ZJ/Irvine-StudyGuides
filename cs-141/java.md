@@ -31,14 +31,12 @@ class LinkedList{ // you can change the name to Picture for hw1
 
 
 ```
-class ListNode
-{
+class ListNode{
     Object info;
     ListNode next;
     
     // this is a constructor
-    ListNode( Object info, ListNode next) 
-    {
+    ListNode( Object info, ListNode next) {
         this.info;
         this.next
     }
@@ -50,29 +48,27 @@ class ListNode
 Java uses references, but they are really a pointer
 
 ```
-public class LinkedList
-{
+public class LinkedList{
     ListNode head;
-}
 
-public LinkedList()
-{
-    head = null;
+    //constructor
+    public LinkedList(){
+        head = null;
+    }
 }
 ```
 
 
 
 ```
-public class LinkedList
-{
-    public void add( Object x ) 
-    {
+public class LinkedList{
+
+    // adds a new node at the beginning of the list
+    public void add( Object x ) {
         head = new ListNode(x, head);
     }
     
-    public int length()
-    { 
+    public int length(){ 
         // keeping a member variable is more error prone!
         // you also don't 
         
