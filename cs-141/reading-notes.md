@@ -24,3 +24,10 @@
     * counting loops and selections
   * efficiency primary concern
     * Fortan&#x20;
+* **Business**
+* **Artificial Intelligence**
+* **Systems Programming**
+  * operating systems&#x20;
+* **Web Software**
+  * markup (not programming) languages: HTML
+  * Java
