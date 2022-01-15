@@ -90,5 +90,103 @@ A derived class is a subtype if it has an **is-a** relationship with its parent 
 
 #### Single and Multiple Inheritance
 
+Multiple inheritance is very useful but it has complex dependencies and maintaining code is hard. It also raises a lot of ambiguiety when a child inherits from two non-related parents.&#x20;
 
+Interfaces are an alternative to multiple inheritance.&#x20;
 
+C++ supports multiple inheritance.
+
+Java only has single inheritance but a way around is to use interfaces
+
+### OO Programming in C++
+
+C++ was the frist videly used object oriented programming. Smalltalk being the first one considered OO.&#x20;
+
+#### General Characteristics&#x20;
+
+* C++ built for efficiency!
+  * therefore design choices found in C++ language are often the most efficient (that doesnt mean the most flexible)
+* C++ retain the type system of C and adds classes to it
+* Supports both prodedural programing and object oriented programming&#x20;
+* Objects in C++ can be static, stack dynamic or heap dynamic&#x20;
+  * `delete` to deallocate memory stored in the heap&#x20;
+* class definitions include a destructor
+* programmer can specify whether an object will be static or dynamic bind
+  * static is faster (allocated before runtime in the compiler)
+  * dynamic is more flexible (allocated at runtime)
+
+#### Inheritance&#x20;
+
+* C++ class can be derived from an existing class or can be stand alone&#x20;
+* class are composed of data members and data functions&#x20;
+  * can be private, protected or public
+* all objects must be initialized before they are used&#x20;
+  * classes must have at least one contructor&#x20;
+    * if not defined the compiler creates a default one&#x20;
+
+#### Dynamic Binding&#x20;
+
+* Publicly derived subclasses are subtypes if none of the members of the base class are private
+* member functions that must be dynamically bound must be declared to be virtual functions with the keyword `virtual` in the function definition
+
+```
+Square sq;         // Allocate a Square object on the stack
+Rectangle rect;    // Allocate a Rectangle object on the stack
+rect = sq;         // Copies the data member values from the Square object
+rect.draw();       // Calls the draw from the Rectangle object
+```
+
+### Implementation of Object-Oriented Constructs
+
+We will look at storage structures for instance variables and the dynamic bindings of messages to methods.
+
+#### Instance Data Storage
+
+* In C++. classes are defined as extensions of C's `struct`
+  * storage structure used is that of a record
+    * this is called Class Instance Record (CIR)
+    * built at compile time
+
+#### Dynamic Binding of Method Calls to Methods
+
+dynamic methods must have entries in the CIR
+
+```
+public class A {
+    public int a, b;
+    public void draw() { . . . }
+    public int area() { . . . }
+}
+
+public class B extends A {
+    public int c, d;
+    public void draw() { . . . }
+    public void sift() { . . . }
+}
+```
+
+![](<../.gitbook/assets/image (15).png>)
+
+```
+class A {
+public:
+    int a;
+    virtual void fun() { . . . }
+    virtual void init() { . . . }
+};
+
+class B {
+public:
+    int b;
+    virtual void sum() { . . . }
+};
+
+class C : public A, public B {
+public:
+    int c;
+    virtual void fun() { . . . }
+    virtual void dud() { . . . }
+};
+```
+
+![](<../.gitbook/assets/image (12).png>)

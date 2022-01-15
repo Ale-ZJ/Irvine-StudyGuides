@@ -28,7 +28,7 @@ The adjacent list size will be **O(V + E)**  because each vertex appears once an
 
 For example:&#x20;
 
-![](<../../.gitbook/assets/image (12) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (12) (1) (1) (1) (1).png>)
 
 ### Adjacency Matrix
 

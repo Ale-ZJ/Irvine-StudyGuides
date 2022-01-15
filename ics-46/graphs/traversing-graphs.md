@@ -10,7 +10,7 @@ How to visit every vertex in a graph?
 * WITHOUT REVISITING a vertex!
   * traversal is therefore not unique&#x20;
 
-![](<../../.gitbook/assets/image (12) (1) (1).png>)
+![](<../../.gitbook/assets/image (12) (1) (1) (1).png>)
 
 ```clike
 BFS( startV )
@@ -258,6 +258,6 @@ There is only one unique MST for a graph that has no duplicate edge weights
 
 Here is a nice diagram that I found on stack [overflow](https://stackoverflow.com/questions/1195872/when-should-i-use-kruskal-as-opposed-to-prim-and-vice-versa).
 
-![](<../../.gitbook/assets/image (15).png>)
+![](<../../.gitbook/assets/image (15) (1).png>)
 
 ![](<../../.gitbook/assets/image (14).png>)
