@@ -90,5 +90,47 @@ math induction is related to this.&#x20;
 
 The well-ordering principle ays that any non-empty subset of the non-negative integers has a smallest element
 
+## Recursive Definitions
 
+We can write the **factorial** definition as an explicit equation
+
+```
+f(n) = n! = n x (n-1) x ... x 1
+```
+
+but it is confusing and it is not clear what 0! should be. So we can also rewrite this as a recursive definiition&#x20;
+
+```
+f(0) = 1
+f(n) = n x f(n-1) for n >= 1
+```
+
+### Recursively defined sets
+
+* **basis:** states that one or more elements are in the set
+* **recursive rule:** how to construct more elements (often more than one recursive rule)
+* **exclusion statement:** explicitly saying that all elements can be obtained from either the basis or the recursive rules
+  * implied so maybe no need to write it out every single time
+
+for example: parenthesis in programming languages!&#x20;
+
+* Basis: The sequence () is properly nested.
+* Recursive rules: If u and v are properly-nested sequences of parentheses then:
+  1. (u) is properly nested.
+  2. uv is properly nested.
+* Exclusion statement: a string is properly nested only if it is given in the basis or can be constructed by applying the recursive rules to strings in the basis.
+
+## Structural Induction
+
+It is like math induction, but guess what, structural induction proceeds over the recursive structure itself. So instead of using solely numbers, we analyze the recursive rules. The rules are more or less like this:
+
+1. show that for every x in  recursively defined set P, x has a particular property&#x20;
+2. Base case: show that all elements in the basis satisfy the property&#x20;
+3. Inductive step:
+   1. divide into cases if there is more than one rule
+   2. assume that property holds for smaller elements and prove the property holds for the larger elements
+
+What a cool thing, with a little bit of work and words you can use structural induction to prove algorithms! (not excited)
+
+![](<../.gitbook/assets/image (20).png>)
 

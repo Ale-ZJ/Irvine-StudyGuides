@@ -16,7 +16,7 @@ some vocab about binary trees:&#x20;
 * **ancestors:** node's parents, parent's parent, etc until root
 * **root:** node without a parent that you can find at the top of the tree
 
-![](<../../.gitbook/assets/image (20).png>)
+![](<../../.gitbook/assets/image (20) (1).png>)
 
 more vocab:&#x20;
 
