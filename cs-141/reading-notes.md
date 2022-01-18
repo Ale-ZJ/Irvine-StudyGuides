@@ -190,3 +190,36 @@ public:
 ```
 
 ![](<../.gitbook/assets/image (12).png>)
+
+## Variables
+
+A variable is an abstraction of a computer memory cell.&#x20;
+
+A variable has 6 characteristics:&#x20;
+
+* **name:** string that denotest he variable, most variables have a name, some don't, most names start with a character not a number
+  * often called identifiers
+  * may or may not be case sensitive
+  * `keywords`: special names with language meaning
+  * reserved keywords in a language may not be used as identifiers
+* **address:** machine memory which the variable is associated with
+  * sometimes called l-value&#x20;
+  * you can have multiple variables that have the same address (aka alias) but it makes code more difficult to maintain
+    * two pointer variabl that point to the same memory location for example
+* **type**: determines the range of values that the variable can store and te set of operations that it can perform
+* **value:** the content of the memory cell
+  * also called the r-value
+
+### Binding
+
+Binding is an association between an attribute and an entity, between a variable and its type or value.&#x20;
+
+Binding can take place at: language design time, language implementation time, compile time, load time, link time, or run time.
+
+`count = count + 5`
+
+* type of `count` is bound at compile time
+* set of possible values of `count` is bound at compiler design time
+* meaning of `+` is bound at compile time
+* the internal representation of `5` is bound at compiler design time
+* the value of `count` is bound at execution time&#x20;
