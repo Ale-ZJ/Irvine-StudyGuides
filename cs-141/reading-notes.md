@@ -224,20 +224,56 @@ Binding can take place at: language design time, language implementation time, c
 * the internal representation of `5` is bound at compiler design time
 * the value of `count` is bound at execution time&#x20;
 
-## 6.5 Array Types
+## 6 Data Types
 
-Homogeneous (sam type) aggregation of data.&#x20;
+### 6.5 Array Types
 
-There are five categories of arrays:
+Homogeneous (same type) aggregation of data. There are five categories of arrays:
 
-1. **static array:** subscript ranges and storage allocation is statically bound. Super efficient
+| Array                    | Subscript Ranges                                          | Storage Allocation                            | Benfits                                                                                                                                |
+| ------------------------ | --------------------------------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **static**               | statically bound                                          | statically bound                              | <ul><li>super efficient</li><li>can't change</li></ul>                                                                                 |
+| **fixed stack dynamic**  | statically bound                                          | declaration elaboration time during execution | <ul><li>space efficiency</li><li>two different arrays can use the same space as long as they are not active at the same time</li></ul> |
+| **stack dynamic**        | dynamically bound at elaboration time                     | dynamically bound at elaboration time         | <ul><li>flexibility </li><li>fixed after storage is allocated</li></ul>                                                                |
+| **fixed heap dynamic**   | dynamically bound when the user requests during execution | dynamically bound in the heap                 | <ul><li>flexible </li><li>allocation takes longer</li></ul>                                                                            |
+| **heap dynamic**         | heap                                                      | heap                                          | <ul><li>array can change </li></ul>                                                                                                    |
 
+* `malloc` and `free` used in C for heap allocation and deallocation
+* `new` and `delete` manages heap storage
 
+### 6.7 Record Types
 
-| Array                         | Subscript Ranges                                          | Storage Allocation                            | Benfits                                                                                                                                |
-| ----------------------------- | --------------------------------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| **static**                    | statically bound                                          | statically bound                              | <ul><li>super efficient</li><li>can't change</li></ul>                                                                                 |
-| **fixed stack dynamic**       | statically bound                                          | declaration elaboration time during execution | <ul><li>space efficiency</li><li>two different arrays can use the same space as long as they are not active at the same time</li></ul> |
-| **stack dynamic**             | dynamically bound at elaboration time                     | dynamically bound at elaboration time         | <ul><li>flexibility </li><li>fixed after storage is allocated</li></ul>                                                                |
-| **fixed heap dynamicfffffff** | dynamically bound when the user requests during execution | dynamically bound in the heap                 | <ul><li>flexible </li><li>allocation takes longer</li></ul>                                                                            |
-| a                             |                                                           |                                               |                                                                                                                                        |
+Aggregate of data elements that are not the same, but don't confuse with heterogeneous arrays. Heterogeneous arrays have elements scatered in the heaap, while records have elements of potentially different sizes that lives in adjacent memory locations.&#x20;
+
+#### How are they supported?
+
+* OOP, data classes serves as records&#x20;
+* C, C++, and C#, records are supported with the `struct` data type
+* Python and Ruby: hashes
+
+{% hint style="info" %}
+Fields are not referenced by indices! Fields are named!&#x20;
+{% endhint %}
+
+### 6.10 Union Types
+
+Type whose variables may store different type values at different time during program execution.
+
+### 6.11 Pointer and Reference Types
+
+**Pointer** is a variable that stores a memory address or `nil`. It doesn't store data, they reference some other varaiable. Not a structured type.  Pointers provide some of the power of indirect addressing and manage dynamic storage.&#x20;
+
+* **dyanamic variable:** variables that are dynamically allocated in the heap&#x20;
+* **anonymous variable:** variables without names
+
+Two fundamental pointer operation: assignment and dereferencing.
+
+#### Common pointer problems&#x20;
+
+1. dangling pointers: pointer that has the address of a heap variable that has been deeallocated.&#x20;
+2. lost heap dynamic variables: dynamic variable that is no longer accessible to the user program
+   1. memory leak
+
+{% hint style="info" %}
+Pointers refer to an address in memory, while a reference refers to an object or value in memory
+{% endhint %}
