@@ -277,3 +277,47 @@ Two fundamental pointer operation: assignment and dereferencing.
 {% hint style="info" %}
 Pointers refer to an address in memory, while a reference refers to an object or value in memory
 {% endhint %}
+
+### 6.12 Type Checking
+
+Making sure that types are compatible for an operand. A **type error** otherwise.&#x20;
+
+* Type checking is done statically if all variable bindings in a program is static
+* Type checking is dynamic when variable is binded dynamically&#x20;
+
+### 6.13 Strong Typing&#x20;
+
+Programming Language that is able to detect type errors.
+
+## 7 Expression and Assignment Statement
+
+* Imperative Language:
+  * dominant role of assignment statements that have side effects&#x20;
+* Functional Language:
+  * parameters of functions as variable
+  * still it has declaration statements that bind values to names&#x20;
+  * no side effects&#x20;
+
+### 7.3 Operator Overloading
+
+Literally what is sounds like. Define another function for a preexisting operator. Like `+` to add numbers or concatenate strings.&#x20;
+
+C++ has some operators that cannot be overloaded&#x20;
+
+#### Some problems&#x20;
+
+1. Using the same symbol for two completely unrelated operations -> confusing
+2. compiler can't detect errors for you.
+   1. you have an unary and a binary operator that uses the same symbol for example&#x20;
+
+### 7.6 Short Circuit Evaluation
+
+result determined before evaluating the whole expression. Normally seen with boolean operations
+
+### 7.7 Assignment Statements
+
+Critical for imperative languages as it allows them to change the value of a variabale dynamically.&#x20;
+
+`=` used by most progamming languages&#x20;
+
+`:=` used by others like ALGOL 60
