@@ -223,3 +223,21 @@ Binding can take place at: language design time, language implementation time, c
 * meaning of `+` is bound at compile time
 * the internal representation of `5` is bound at compiler design time
 * the value of `count` is bound at execution time&#x20;
+
+## 6.5 Array Types
+
+Homogeneous (sam type) aggregation of data.&#x20;
+
+There are five categories of arrays:
+
+1. **static array:** subscript ranges and storage allocation is statically bound. Super efficient
+
+
+
+| Array                         | Subscript Ranges                                          | Storage Allocation                            | Benfits                                                                                                                                |
+| ----------------------------- | --------------------------------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **static**                    | statically bound                                          | statically bound                              | <ul><li>super efficient</li><li>can't change</li></ul>                                                                                 |
+| **fixed stack dynamic**       | statically bound                                          | declaration elaboration time during execution | <ul><li>space efficiency</li><li>two different arrays can use the same space as long as they are not active at the same time</li></ul> |
+| **stack dynamic**             | dynamically bound at elaboration time                     | dynamically bound at elaboration time         | <ul><li>flexibility </li><li>fixed after storage is allocated</li></ul>                                                                |
+| **fixed heap dynamicfffffff** | dynamically bound when the user requests during execution | dynamically bound in the heap                 | <ul><li>flexible </li><li>allocation takes longer</li></ul>                                                                            |
+| a                             |                                                           |                                               |                                                                                                                                        |
