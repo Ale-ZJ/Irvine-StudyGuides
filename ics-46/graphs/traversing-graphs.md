@@ -42,7 +42,7 @@ BFS( startV )
   * traces back to visit undiscovered vertices
 * not unique because you can backtrack to diff vertices
 
-![](<../../.gitbook/assets/image (14) (1).png>)
+![](<../../.gitbook/assets/image (14) (1) (1).png>)
 
 ```
 DFS( startV )
@@ -260,4 +260,4 @@ Here is a nice diagram that I found on stack [overflow](https://stackoverflow.co
 
 ![](<../../.gitbook/assets/image (15) (1).png>)
 
-![](<../../.gitbook/assets/image (14).png>)
+![](<../../.gitbook/assets/image (14) (1).png>)

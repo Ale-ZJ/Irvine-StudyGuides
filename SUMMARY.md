@@ -71,3 +71,7 @@
 ## CS-143A
 
 * [\[credit\]](cs-143a/credit.md)
+* [Operating Systems](cs-143a/operating-systems.md)
+* [Processes and Threads](cs-143a/processes-and-threads.md)
+* [CPU Scheduling](cs-143a/cpu-scheduling.md)
+* [Process Synchronization](cs-143a/process-synchronization.md)
