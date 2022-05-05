@@ -67,3 +67,7 @@
 
 * [\[credit\]](ics-6d/credit.md)
 * [Recursion and Induction](ics-6d/recursion-and-induction.md)
+
+## CS-143A
+
+* [\[credit\]](cs-143a/credit.md)
