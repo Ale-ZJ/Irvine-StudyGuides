@@ -1,10 +1,10 @@
 # week 8
 
-## Type Casting 
+## Type Casting&#x20;
 
 Changing the type of a variable or object to another variable or object type. In C++ there is implicit type conversion between a lot of types. But there are some conversions that can't be done implicitly, so how do we do it explicitly?
 
-### C-Style Cast 
+### C-Style Cast&#x20;
 
 C-Style Cast is a blunt instrument.
 
@@ -72,7 +72,7 @@ void foo(Shape* s)
 }
 ```
 
-We can also use `static_cast` cast that is only checked at compile time. It will give you the pointer you asked for anyways and using the pointer later will fail. 
+We can also use `static_cast` cast that is only checked at compile time. It will give you the pointer you asked for anyways and using the pointer later will fail.&#x20;
 
 You can also have explicit conversions amongst built-in types
 
@@ -97,7 +97,7 @@ Other types of casting, but you rarely will use:
 
 Members that belongs to the class as a whole have the keyword `static` in front of them.
 
-* In a static member function, there is no `this` because the function pertains to all objects and there is not a singlular "this". 
+* In a static member function, there is no `this` because the function pertains to all objects and there is not a singlular "this".&#x20;
 * There is also no direct access to non-static member variables or non-static member functions.
 
 ```cpp
@@ -208,13 +208,13 @@ Describe how a function should work.
 Classes also have contracts associated with them. Every member function has a contract.
 
 * **class invariants**: post conditions that apply to all member functions
-* for example with `std::vector<int>` 
+* for example with `std::vector<int>`&#x20;
   * `size <= capacity`
   * `size >= 0`
   * `capacity >= 0`
-  * `capacity == number of elemetns in the underlying array` 
+  * `capacity == number of elemetns in the underlying array`&#x20;
 
-**Poposed syntax for contracts in C++20** (got shot down) 
+**Poposed syntax for contracts in C++20** (got shot down)&#x20;
 
 ```cpp
 double sqrt(double n)
@@ -241,7 +241,7 @@ class DivideByZeroException
 };
 ```
 
-Then you can **statically create a `DivideByZeroException` **and throw it in your code. We statically allocate it so that the error can be carried through. If we were to dynamically allocate it, we would be throwing a pointer.
+Then you can **statically create a `DivideByZeroException` ** and throw it in your code. We statically allocate it so that the error can be carried through. If we were to dynamically allocate it, we would be throwing a pointer.
 
 ```cpp
 double divide(double n, double m)
@@ -287,7 +287,7 @@ void foo()
 
 Statically allocated variables are destroyed automatically when you throw an exception. BUT dynamically allocated variables are a whole new story. (tba)
 
-* for instance `std::bad_alloc` is thrown when dynamic memory allocation fails 
+* for instance `std::bad_alloc` is thrown when dynamic memory allocation fails&#x20;
 
 {% hint style="danger" %}
 Destructors should never, ever, ever, ever, ever, ever, ever, ever, ever throw exceptions
@@ -301,7 +301,7 @@ Pinciple of ensuring that we have reasonable outcomes in cases when exceptions a
 
 Classes in the C++ Standard Library make "guarantees" about what happens when their member functions fail.
 
-* no guarantee 
+* no guarantee&#x20;
 * basic guarantee
   * if member function fails, the objext is left in a consistent (i.e. all class invariants are met).
 * strong guarantee
@@ -309,5 +309,5 @@ Classes in the C++ Standard Library make "guarantees" about what happens when th
   * too expensive sometimes
 * No throw guarantee
   * this function will never throw an exception
-  * almost impossible 
+  * almost impossible&#x20;
   * for example: getters

@@ -6,8 +6,8 @@ description: 'week 1: ''Python review'''
 
 ## Mutable vs immutable
 
-* **mutable: **values can change later 
-* **immutable: **values can't change once created
+* **mutable:** values can change later&#x20;
+* **immutable:** values can't change once created
 
 ## Hashable vs unhashable
 
@@ -20,15 +20,15 @@ Think of hashability as indexability\
 All immutable objects are hashable but not all hashable objects are immutable.
 {% endhint %}
 
-## Comparing Iterable objects 
+## Comparing Iterable objects&#x20;
 
-* **Sequence types**: **list **(mutable) and **tuples **(immutable)
-* **Set type**: **set **(mutable) and **frozenset **(immutable)
-* **Mapping type**: **dict **(mutable) and **defaultdict **(mutable)
+* **Sequence types**: **list** (mutable) and **tuples** (immutable)
+* **Set type**: **set** (mutable) and **frozenset** (immutable)
+* **Mapping type**: **dict** (mutable) and **defaultdict** (mutable)
 
 ### defaultdict
 
-A defaultdict gives a default value to a key that does not exist, thus never raises a KeyError. 
+A defaultdict gives a default value to a key that does not exist, thus never raises a KeyError.&#x20;
 
 ```python
 from collections import defaultdict
@@ -43,7 +43,7 @@ print(freq_dict)
 
 ## Sorting
 
-* `list.sort()`** **= returns None, it mutates the list
+* `list.sort()` **** = returns None, it mutates the list
 * `sorted()` = returns a sorted list from a given ITERABLE object
 
 when sorting a list of tuples (from a dict), python never compares the 2nd value because all keys in a dictionary are unique
@@ -63,7 +63,7 @@ sorted(votes, key=lambda t : (-t[1],t[0]) )
 
 ## Comprehension
 
-Comprehension is a compact way to generate a list, set, dictionary, tuple. 
+Comprehension is a compact way to generate a list, set, dictionary, tuple.&#x20;
 
 {% hint style="danger" %}
 Do not use comprehensions when mutating during the comprehension

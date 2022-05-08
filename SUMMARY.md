@@ -17,6 +17,11 @@
 * [Inheritance](ics-33/inheritance.md)
 * [Big O-Notation](ics-33/big-o-notation.md)
 
+## EECS-31L
+
+* [\[credits\]](eecs-31l/credits.md)
+* [VHDL](eecs-31l/vhdl.md)
+
 ## ICS-45C
 
 * [\[credits\]](ics-45c/untitled-3.md)
@@ -46,8 +51,27 @@
   * [Traversing Graphs](ics-46/graphs/traversing-graphs.md)
 * [Hash Tables](ics-46/hash-tables/README.md)
   * [Collision Resolution Techniques](ics-46/hash-tables/collision-resolution-techniques.md)
+* [Trees](ics-46/trees/README.md)
+  * [AVL Trees](ics-46/trees/avl-trees.md)
+* [Heaps and Priority Queues](ics-46/heaps-and-priority-queues.md)
+* [Sorting Algorithms](ics-46/sorting-algorithms.md)
 
-## EECS-31L
+## CS-141
 
-* [\[credits\]](eecs-31l/credits.md)
-* [VHDL](eecs-31l/vhdl.md)
+* [\[credit\]](cs-141/credit.md)
+* [Reading Notes](cs-141/reading-notes.md)
+* [Java](cs-141/java.md)
+* [Object-Oriented Programming](cs-141/object-oriented-programming.md)
+
+## ICS-6D
+
+* [\[credit\]](ics-6d/credit.md)
+* [Recursion and Induction](ics-6d/recursion-and-induction.md)
+
+## CS-143A
+
+* [\[credit\]](cs-143a/credit.md)
+* [Operating Systems](cs-143a/operating-systems.md)
+* [Processes and Threads](cs-143a/processes-and-threads.md)
+* [CPU Scheduling](cs-143a/cpu-scheduling.md)
+* [Process Synchronization](cs-143a/process-synchronization.md)

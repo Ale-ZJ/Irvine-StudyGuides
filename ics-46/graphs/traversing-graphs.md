@@ -10,7 +10,7 @@ How to visit every vertex in a graph?
 * WITHOUT REVISITING a vertex!
   * traversal is therefore not unique&#x20;
 
-![](<../../.gitbook/assets/image (12) (1) (1).png>)
+![](<../../.gitbook/assets/image (12) (1) (1) (1).png>)
 
 ```clike
 BFS( startV )
@@ -42,7 +42,7 @@ BFS( startV )
   * traces back to visit undiscovered vertices
 * not unique because you can backtrack to diff vertices
 
-![](<../../.gitbook/assets/image (14).png>)
+![](<../../.gitbook/assets/image (14) (1) (1).png>)
 
 ```
 DFS( startV )
@@ -181,24 +181,24 @@ After completing the Dijkstra's algorithm, you can find the shortest path by che
 
 * if `unvisitedVertexQueue` implemented with a list -> **O(V^2)**
   * outer loop executes V times to visit every vertex&#x20;
-  * dequeueing the vertex from queue needs **O(V) **because you need to search all vertices in the list
+  * dequeueing the vertex from queue needs **O(V)** because you need to search all vertices in the list
   * For each `currentV` we search the subset of adjacent edges **E**
-    * ** E < V^2 **
+    * &#x20;**E < V^2**&#x20;
     * then the runtime is **O(V^2 + E) = O(V^2)**
-* if `unvisitedVertexQueue` is implemented with a standard binary heap -> **O( (E + V) log V ) **
+* if `unvisitedVertexQueue` is implemented with a standard binary heap -> **O( (E + V) log V )**&#x20;
 * if `unvisitedVertexQueue` uses Fibonacci head data structure **O(E + V log V)**
 
 {% hint style="warning" %}
 Dijkstra's algorithm may not find the shortest path with negative edges
 {% endhint %}
 
-## Kruskal's Minimum Spanning Tree
+## Kruska's Minimum Spanning Tree
 
-A **Minimum Spanning Tree **is a subset of all edges that conenct all vertices in the graph together with the minimum sim of edge weights. Imagine you are trapped in an archipielago and want to connect all islands with the least amount of resources.&#x20;
+A **Minimum Spanning Tree** is a subset of all edges that conenct all vertices in the graph together with the minimum sim of edge weights. Imagine you are trapped in an archipielago and want to connect all islands with the least amount of resources.&#x20;
 
 Here is a vocab term: **connected** graph contains a path between every pair of vertices
 
-![](<../../.gitbook/assets/image (13).png>)
+![](<../../.gitbook/assets/image (13) (1) (1).png>)
 
 Kruskal's algorithm uses:
 
@@ -240,3 +240,24 @@ KruskalsMST( graph )
 {% hint style="info" %}
 There is only one unique MST for a graph that has no duplicate edge weights
 {% endhint %}
+
+## Prim's Minimum Spanning Tree
+
+
+
+## Prim vs. Kruska
+
+| Kruska                                                                    |                                                                           |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| builds tree by adding one **edge** at a time                              | builds tree by ading one **vertex** at a tome                             |
+| next edge is always the shortest ONLY if it does not create a cycle       | next vertex added is always th on neared to a vertex already on the graph |
+| Time: **O(E log V)**                                                      | Time: **O(E + V log V)** amortized time, if Fibonacci Heap is used        |
+| performs better with spars graphs because it uses simpler data structures | faster for dense graphs                                                   |
+| optimal implementation: union find                                        | optimal implementation: fibonacci heap                                    |
+| easier implementation                                                     | hard to implement man                                                     |
+
+Here is a nice diagram that I found on stack [overflow](https://stackoverflow.com/questions/1195872/when-should-i-use-kruskal-as-opposed-to-prim-and-vice-versa).
+
+![](<../../.gitbook/assets/image (15) (1).png>)
+
+![](<../../.gitbook/assets/image (14) (1).png>)

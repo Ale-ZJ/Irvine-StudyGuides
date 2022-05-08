@@ -186,7 +186,7 @@ Handles collisions by starting at the key's mapped bucket and quadratically sear
 
 Inserting a key uses the formula, starting with `i = 0` to search the hash table until an empty bucket is found. Each time an empty bucket is not found, i is incremented by 1.
 
-![](<../../.gitbook/assets/image (13) (1).png>)
+![](<../../.gitbook/assets/image (13) (1) (1) (1).png>)
 
 #### Insert
 
@@ -287,4 +287,12 @@ HashSearch(hashTable, key)
 ```
 
 ## Cuckoo Hashing
+
+{% hint style="info" %}
+**O(1)** guaranteed lookups
+
+**O(1)** guaranteed removal
+
+**O(1)** expected insertions
+{% endhint %}
 

@@ -4,9 +4,9 @@
 
 Objects of a well-behaved class have these properties:
 
-1. Statically-allocated portion is small and fits on the run-time stack 
-2. Clean up after themselves when they die 
-3. Can be passed by value and preserve the original stuff 
+1. Statically-allocated portion is small and fits on the run-time stack&#x20;
+2. Clean up after themselves when they die&#x20;
+3. Can be passed by value and preserve the original stuff&#x20;
 4. Can be assigned to objects of the same type, with respective copying and clean up.
 5. Can be **const** while preserving the ability to perform any const operation
 6. Are efficient: no unnecessary work.
@@ -17,7 +17,7 @@ Objects of a well-behaved class have these properties:
 
 ## Constructors
 
-If you don't declare a constructor, one will be created for you. The default constructor will use the default initialization for the member variables' type. (For `std::string` the default initialization is an empty string, but for `int` and `pointer` it is an unknown behavior). So we use **initializers **for the member variables after the construction signature.
+If you don't declare a constructor, one will be created for you. The default constructor will use the default initialization for the member variables' type. (For `std::string` the default initialization is an empty string, but for `int` and `pointer` it is an unknown behavior). So we use **initializers** for the member variables after the construction signature.
 
 ```cpp
 ArrayList::ArrayList()
@@ -31,12 +31,12 @@ ArrayList::ArrayList()
 
 Classes whose objects manage resources that live outside of themselves — such as dynamically-allocated memory, open files, open connections to networks, etc. — generally require three new kinds of functions to be implemented. They come together, don't forget them!
 
-### Destructor 
+### Destructor&#x20;
 
 Member function that will be called right before the object dies. Its job is to perform cleanup of dynamically allocated memory (_not_ member variables, as they are handled automatically).
 
-* takes NO parameters 
-* Same name as constructor 
+* takes NO parameters&#x20;
+* Same name as constructor&#x20;
 * begins with `~`
 
 ```cpp
@@ -54,7 +54,7 @@ ArrayList::~ArrayList()
 
 It initializes new objects that are created as _copies of existing ones._
 
-* object has been passed by value 
+* object has been passed by value&#x20;
   * `foo(ClassType& object);`
 * object has been used to explicitly initialize another
   * `ClassType object1;`
@@ -78,11 +78,11 @@ ArrayList::ArrayList(const ArrayList& other)
 
 ### Assignment Operator
 
-It is called every time an _existing object_ is assigned into _another existing object. _(Note that both objects already exists).
+It is called every time an _existing object_ is assigned into _another existing object._ (Note that both objects already exists).
 
 * `ClassType object1;`
 * `ClassType object2;`
-* `object1 = object2;` this is a copy assignment 
+* `object1 = object2;` this is a copy assignment&#x20;
 
 The default assignment will copy all the objects' member variables one by one. This is a problem for the pointer `items` because the copy pointer `items` will also point to what the original `items` points.
 
