@@ -132,8 +132,8 @@ for (int a = 3; a<10; a++)
      * `int a;`&#x20;
      * creates a name `a` with type `int`&#x20;
   2. **function declaration**&#x20;
-     * write their signature&#x20;
-       * int square(int n);&#x20;
+     * write their _signature_&#x20;
+       * `int square(int n);`&#x20;
      * declaration of a function doesnt mean that the function has meaning&#x20;
        * you need to define them too!
 * definitions: gives a name life, makes it exist
@@ -161,7 +161,14 @@ for (int a = 3; a<10; a++)
 
 ## First C++ program
 
-A program in C++ begins with a call to `main` and ends when `main` returns. The return type `main`&#x20;
+A program in C++ begins with a call to `main` and ends when `main` returns. The C++ Standard requires `main` to return an integer value. We usually return 0 because an exit code of 0 is used to indicate program success. Other integers indicate other kinds of failures (not covered).
+
+```
+int main()
+{
+    return 0;
+}
+```
 
 
 
