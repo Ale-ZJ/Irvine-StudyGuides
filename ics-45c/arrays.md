@@ -2,20 +2,20 @@
 
 ## Statically Allocated Arrays
 
-To create a single-dimension array of homogeneous collection (a collection of the same type of things):
+To create a single-dimension array of homogeneous collection \(a collection of the same type of things\):
 
 ```cpp
 int a[10];
 ```
 
-* You need to specify how big your array will be before compile time so that our compiler knows to allocate 40 bytes for this array.&#x20;
-* Arrays are stored contiguously (they live next to each other) in memory - cells in the array are "indexed" starting from 0.
-* The size of an array CANNOT change for as long as it lives&#x20;
+* You need to specify how big your array will be before compile time so that our compiler knows to allocate 40 bytes for this array. 
+* Arrays are stored contiguously \(they live next to each other\) in memory - cells in the array are "indexed" starting from 0.
+* The size of an array CANNOT change for as long as it lives 
 * Given an array, you can't ask a static array its size. It is as if they don't know
 
-![](<../.gitbook/assets/image (9).png>)
+![](../.gitbook/assets/image%20%289%29.png)
 
-The compiler uses a "formula" to index into cells. Every cell has a memory address at the beginning. Each subsequent cell memory address can be found by:&#x20;
+The compiler uses a "formula" to index into cells. Every cell has a memory address at the beginning. Each subsequent cell memory address can be found by: 
 
 ```cpp
 address of cell i = address of cell0 + (sizeof(int) * i)
@@ -31,29 +31,29 @@ std::cout << a[3] << std::endl //read
 An index will give you an **l-value**. This means that you can write and read to it.
 
 {% hint style="danger" %}
-**Be careful!** Unlike Python, there are no negative indexes in C++ and you can go out-of-boundaries without failing (compiles and run).&#x20;
+**Be careful!** Unlike Python, there are no negative indexes in C++ and you can go out-of-boundaries without failing \(compiles and run\). 
 {% endhint %}
 
 #### Why can't we statically allocate every array?
 
-* Because you might not know how many elements it needs to have&#x20;
+* Because you might not know how many elements it needs to have 
 * Because you might need it to outlive the function it's created in
 * The run-time stack has a limited size
 
-## Dynamically Allocated Arrays&#x20;
+## Dynamically Allocated Arrays 
 
-As the descriptor "dynamically" suggests, this array is created in the heap. Hence this array can change in size and outlive a function. As with any object created in the heap, we use the keyword `new` and store it in a pointer.&#x20;
+As the descriptor "dynamically" suggests, this array is created in the heap. Hence this array can change in size and outlive a function. As with any object created in the heap, we use the keyword `new` and store it in a pointer. 
 
 ```cpp
 int* a = new int[10]; // instead of 10, you can use a variable
 ```
 
-![](<../.gitbook/assets/image (8).png>)
+![](../.gitbook/assets/image%20%288%29.png)
 
-The expression above allocated a block of memory on the heap large enough to store 10 ints (10 bytes in our VM).&#x20;
+The expression above allocated a block of memory on the heap large enough to store 10 ints \(10 bytes in our VM\). 
 
 {% hint style="info" %}
-Notice that `int*` is the syntax we learned to declare a _pointer to an integer_. Then how does the compiler know we are talking about an array of ints and not an int? - sike, it doesn't and can't, you need to keep track yourself. Arrays are implemented as pointer to their first cell (in this case an int)
+Notice that `int*` is the syntax we learned to declare a _pointer to an integer_. Then how does the compiler know we are talking about an array of ints and not an int? - sike, it doesn't and can't, you need to keep track yourself. Arrays are implemented as pointer to their first cell \(in this case an int\)
 {% endhint %}
 
 You can treat a dynamically allocated array as a pointer to a static array of integers. Indexing and such is the same.
@@ -121,6 +121,7 @@ void zeroFill(int* a, unsigned int size)
 }
 ```
 
-#### Optimization&#x20;
+#### Optimization 
 
 Compilers with optimizers do not necessarily translate code exactly the same. It doesn't matter as long as the result is the same. The compiler in the VM we are using is smart and translates both `zeroFill` to a better function that are the same.
+

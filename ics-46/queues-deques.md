@@ -4,21 +4,21 @@
 
 A **queue** is an Abstract Data Type in which items are inserted at the end of the queue and removed from the front. A queue can be implemented with a linked list or an array.
 
-## Queue Operations&#x20;
+## Queue Operations 
 
 | Operation           | Description                                                 |
 | ------------------- | ----------------------------------------------------------- |
 | `Enqueue(queue, x)` | inserts `x` at the end of the queue                         |
 | `Dequeue(queue)`    | returns and removes the first element of the queue          |
 | `Peek(queue)`       | returns but does NOT remove the first element of the queue  |
-| `IsEmpty(queue)`    | returns `true` if queue has no elements                     |
+| `IsEmpty(queue)`    | returns `true `if queue has no elements                     |
 | `GetLength(queue)`  | returns the number of elements in the queue                 |
 
 {% hint style="warning" %}
 `Dequeue` and `Peek` should NOT be applied to an empty queue. Undefined behavior.
 {% endhint %}
 
-## &#x20;Queues using Linked Lists
+##  Queues using Linked Lists
 
 The head's node of a linked list is the queue's front and the list's tail node is the queue's end.
 

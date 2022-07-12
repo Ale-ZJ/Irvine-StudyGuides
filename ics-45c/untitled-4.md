@@ -32,7 +32,7 @@ void doTheJob()
 }
 ```
 
-That is cringe. So we use RAII: Resource Acquisition Is Initialization.&#x20;
+That is cringe. So we use RAII: Resource Acquisition Is Initialization. 
 
 ```cpp
 std::vector<int> getFunctionValues(int n, std::function<int(int)> f)
@@ -50,13 +50,13 @@ std::vector<int> getFunctionValues(int n, std::function<int(int)> f)
 
 Even tho the function above has the potential to throw exceptions, this function does not leak memory.
 
-1. Prefer to acquire dynamic resources in constructors.&#x20;
+1. Prefer to acquire dynamic resources in constructors. 
    1. If that acquisition fails, throw an exception from the constructor.
 2. Always release those resources in the corresponding destructors.
 
 If every kind of resource is managed by its own class this way, and if we otherwise endeavor to use statically-allocated objects of these classes when we can, then a lot of what would be error-prone cleanup becomes automatic.
 
-## Smart Pointers&#x20;
+## Smart Pointers 
 
 Pointers are dumb. They only know the address where they point. So let's create a smarter one.
 
@@ -100,7 +100,7 @@ private:
 };
 ```
 
-If we can't make copies of `SmartIntPtr` then how are we going to pass it as a parameter? We dont't. We pass a reference (SmartIntPtr loans the value) to it.
+If we can't make copies of `SmartIntPtr` then how are we going to pass it as a parameter? We dont't. We pass a reference \(SmartIntPtr loans the value\) to it.
 
 ```cpp
 // main.cpp
@@ -201,7 +201,7 @@ Function templates should be written in header files.
 
 ## Class Template
 
-You can also have class templates! But there is a small tweak.&#x20;
+You can also have class templates! But there is a small tweak. 
 
 When using `template` you get an infinite set of classes. Because you have an infinite set of `Point` classes, you also need an infinite set of `Point` member functions when declaring its body.
 
@@ -302,3 +302,4 @@ const Coordinate& Point<Coordinate>::z()
 
 #endif
 ```
+

@@ -3,10 +3,10 @@
 Three main features:
 
 * Classes
-* Inheritance&#x20;
+* Inheritance 
 * Polymorphism
 
-## Inheritance&#x20;
+## Inheritance 
 
 * Use `:` to inherit from a class
 * Use `public` before the parent class tells the entire program child class to be aware of this inheritance relationship
@@ -81,7 +81,7 @@ Person& pref = s;    // acts as Studnet ONLY IF YOU USE THE KEYWORD VIRTUAL IN F
 
 ### Virtual Keyword
 
-By adding the keyword virtual in a member function signature, you are telling the compiler (during run-time) to look for the appropriate version of a member function ( in this case, `toString()` from Student or Person) based on the type of object. Virtual is ultimately something you choose to use because it comes with a run time cost.
+By adding the keyword virtual in a member function signature, you are telling the compiler \(during run-time\) to look for the appropriate version of a member function \( in this case, `toString()` from Student or Person\) based on the type of object. Virtual is ultimately something you choose to use because it comes with a run time cost.
 
 `virtual` means that this member function is called on the basis of the type of the object and not based on the type of the pointer.
 
@@ -90,7 +90,7 @@ virtual std::string toString() const;
 ```
 
 {% hint style="warning" %}
-Write `virtual` only on the base ( parent ) class because derived classes will automatically also be virtual.
+Write `virtual` only on the base \( parent \) class because derived classes will automatically also be virtual.
 {% endhint %}
 
 #### Virtual Destructors
@@ -125,8 +125,8 @@ std::string toString() const override;
 
 An abstract base class is a class that has at least one pure virtual function in it.
 
-* You can't have objects of an abstract base class&#x20;
-* but you can have Shape references and pointers&#x20;
+* You can't have objects of an abstract base class 
+* but you can have Shape references and pointers 
 
 ```cpp
 //Shape.hpp
@@ -206,4 +206,6 @@ private:
 ```
 
 ## Inlining
+
+
 

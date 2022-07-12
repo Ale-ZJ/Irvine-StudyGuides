@@ -2,14 +2,14 @@
 
 Both structure and order property
 
-* structure&#x20;
-  * every parent has 0,1,2 children&#x20;
+* structure 
+  * every parent has 0,1,2 children 
 * order property
-  * values in the left subtree are less than that node&#x20;
-  * values in the right subtree are greater than that node&#x20;
-  * if there are duplicates, then you choose which side, but be consistent&#x20;
-* **size:** number of total nodes&#x20;
-* **height:** rows of nodes -1&#x20;
+  * values in the left subtree are less than that node 
+  * values in the right subtree are greater than that node 
+  * if there are duplicates, then you choose which side, but be consistent 
+* **size:** number of total nodes 
+* **height:** rows of nodes -1 
 
 ```python
 class TN:
@@ -37,5 +37,7 @@ def str_tree(atree,indent_char ='.',indent_delta=2):
     return str_tree_1(0,atree) 
 ```
 
-![](<../.gitbook/assets/image (2).png>)
+![](../.gitbook/assets/image%20%282%29.png)
+
+
 

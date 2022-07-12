@@ -2,32 +2,32 @@
 
 ## Proof Rules
 
-1. Base case&#x20;
-2. Smaller input&#x20;
+1. Base case 
+2. Smaller input 
 3. Combine everything while assuming all recursion works
 
 ## Divide and Conquer
 
 * BASE CASE
-  * smallest thing you can plug in&#x20;
+  * smallest thing you can plug in 
     * a lil brute force
     * often element = 1 or empty
 * DIVIEDE - SMALLER INPUT
-  * number decreased somhow&#x20;
-    * slicing, splitting&#x20;
-  * leave behind the first element of a list (inefficient but always works)
-  * sorting (n/2) (efficient but not always work)
+  * number decreased somhow 
+    * slicing, splitting 
+  * leave behind the first element of a list \(inefficient but always works\)
+  * sorting \(n/2\) \(efficient but not always work\)
     * divide in halves
       * takes one element as pivot
 * MERGE AND CONQUER
-  * assume recursive function works&#x20;
-  * how to combine things together&#x20;
+  * assume recursive function works 
+  * how to combine things together 
   * **ONE LEVEL APPROACH - do not think about all the layers**
     * non trivial instance of a problem
-    * compute what your final answer should be (no code)
+    * compute what your final answer should be \(no code\)
     * make your split and apply recursive functions appropriately
 
-try to keep Tail recursive&#x20;
+try to keep Tail recursive 
 
 ```python
 #example of GREEDY algorithms
@@ -47,9 +47,9 @@ def mns(amount: int, denom: (int)) -> int:
 
 Three higher-order functions that are common in functional programming are:
 
-### Map&#x20;
+### Map 
 
-Also known as Transform.&#x20;
+Also known as Transform. 
 
 Takes a unary function and some list/iterable and produces a list/iterable of transformed values by substituting each value with the result of calling the function on values
 
@@ -130,3 +130,4 @@ def right_reduce_l(f,alist,unit):
     else:
         return f( alist[0], right_reduce_l(f,alist[1:],unit) )
 ```
+

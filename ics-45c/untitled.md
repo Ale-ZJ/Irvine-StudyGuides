@@ -16,7 +16,7 @@ C++ is a subset of the C programming language that comes with classes. C++ is on
 
 Since C++ is a compiled language, it needs a compiler to convert the source code into executable code (machine language). Linux has a preinstalled compiler C compiler called GCC, and a C++ compiler called G++. We use the commands `gcc` and `g++` respectively.
 
-### Basic built-in data types
+## Basic built-in data types
 
 * Integral types&#x20;
   * `int` 32 bits -2.1bil ... 2.1bil
@@ -44,34 +44,36 @@ Since C++ is a compiled language, it needs a compiler to convert the source code
   * `float` 32bits
   * `double` 64bits
   * scientific notation but with 2 as base
-    * how many bits in front and how many bits as exponent ( base x 2^exponent)
+    * base x 2^exponent
   * amount of bits correlates to the precision of the decimal
 
-### Expressions and Statements
+## Expressions and Statements
 
-* Bodies of functions are made up of statements&#x20;
-* statements are tasks&#x20;
+* Functions are made up of statements&#x20;
+* A function performs a specific task&#x20;
 * statements can contain expressions&#x20;
 * expressions calculate a value and return it (which means they also have a type)
 
-
+Here are some examples:
 
 * What does expression look like?
-  * a / b
+  * `a / b`
 * What kinds of statements are there?
-  * expression statement&#x20;
-    * a + b;
-  * assignment
-    * a = 3&#x20;
-      * this is an expression too tho&#x20;
-      * so it returns the value three
-        * you could do a = ( a + 3 ) + (b + 2)
-  * compound/block statements
-    * { ..// .. // ..}
-      * control structures
+  1. expression statement&#x20;
+     * `a + b;`
+  2. assignment
+     * `a = 3`&#x20;
+       * this is an expression too&#x20;
+       * so it returns the value `3`
+         * you could do `a = ( a + 3 ) + (b + 2)`
+  3. compound/block statements
+     * `{ ..// .. // ..}`
+       * such as control and loop structures
+
+### Control Structures
 
 ```cpp
-//control structures
+// if statements
 if (a < 3 && b > 2)
 {
 }
@@ -79,6 +81,7 @@ else
 {
 }
 
+// switch case statements
 switch (a) //controlling expression in parenthesis, must be integral
 {
 case 0:
@@ -92,10 +95,13 @@ case 1:
 default: //technically a FLAW
     std::cout << "zero" << std::endl;
     break
-    
 }
+```
 
-//loops! 
+### Loops
+
+```cpp
+// while loop
 int a = 3;
 while (a < 10)
 {
@@ -103,6 +109,8 @@ while (a < 10)
     a++;
 }
 
+
+// do while loop
 int a = 3;
 do
 {
@@ -110,22 +118,24 @@ do
 }
 while (a < 10)
 
+
+// for loop
 for (int a = 3; a<10; a++)
 {
-}
+} 
 ```
 
-### &#x20;Declarations and Definitions&#x20;
+### Declarations and Definitions&#x20;
 
-* declarations introduce a name into a C++ program and associate it with a type (`name` exists! wow)
-  * variable declaration&#x20;
-    * int a;&#x20;
-    * creates a name `a` with type `int`&#x20;
-  * function declaration&#x20;
-    * write their signature&#x20;
-      * int square(int n);&#x20;
-    * declaration of a function doesnt mean that the function has meaning&#x20;
-      * you need to define them too!
+* A declaration introduces a name into a C++ program and associates the name with a type
+  1. **variable declaration**&#x20;
+     * `int a;`&#x20;
+     * creates a name `a` with type `int`&#x20;
+  2. **function declaration**&#x20;
+     * write their signature&#x20;
+       * int square(int n);&#x20;
+     * declaration of a function doesnt mean that the function has meaning&#x20;
+       * you need to define them too!
 * definitions: gives a name life, makes it exist
   * int a; //variable declaration AND definition&#x20;
   * int a = 3; //declaration + definition + initialization&#x20;
@@ -146,6 +156,12 @@ for (int a = 3; a<10; a++)
 * linker: all promises must be made
 * `void` functions&#x20;
   * doesn't return anything
+
+
+
+## First C++ program
+
+A program in C++ begins with a call to `main` and ends when `main` returns. The return type `main`&#x20;
 
 
 
