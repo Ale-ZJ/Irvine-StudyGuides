@@ -1,8 +1,12 @@
-# week7
+---
+description: week 7
+---
+
+# Containers, Iterators
 
 ## Containers
 
-The C++ Standard Library provides a set of what are called containers \(or data structures\), some examples of which include:
+The C++ Standard Library provides a set of what are called containers (or data structures), some examples of which include:
 
 * **std::vector**, an array-based sequence, in the same spirit as the ArrayList class we wrote in a previous example
 * **std::list**, a doubly-linked list with head and tail pointers
@@ -10,13 +14,13 @@ The C++ Standard Library provides a set of what are called containers \(or data 
 
 ## Standard Libraries
 
-* Containers 
-  * are data structures that store other things. 
-* Generic Algorithm 
+* Containers&#x20;
+  * are data structures that store other things.&#x20;
+* Generic Algorithm&#x20;
 * Iterators
-  * loop through 
-  * abstract details 
-    * doesnt need to know what data structures they are working with 
+  * loop through&#x20;
+  * abstract details&#x20;
+    * doesnt need to know what data structures they are working with&#x20;
 
 ### Vectors
 
@@ -80,14 +84,14 @@ void notSpecifyingTypes()
 
 Benefits
 
-* Forward iterators `*` `->` `++` `==` `!=` 
-  * move one by one 
-  * `std::forward_list` \(singly-linked list\)
-* Bidirectional iterators `--` 
+* Forward iterators `*` `->` `++` `==` `!=`&#x20;
+  * move one by one&#x20;
+  * `std::forward_list` (singly-linked list)
+* Bidirectional iterators `--`&#x20;
   * like forward but now you can go backwards
-  * `std::list` \(doubly-linked list\)
-* Random-access iterators 
-  * pointer arithmetic `+=` `-=` 
+  * `std::list` (doubly-linked list)
+* Random-access iterators&#x20;
+  * pointer arithmetic `+=` `-=`&#x20;
   * you can go forward by 5, 6 , back by 7 , 8, etc
 
 ```cpp
@@ -120,7 +124,7 @@ for (std::vector<std::string>::iterator j = v.begin(); i != v.end(); ++i)
 
 but std::vector::iterator is a mouthful so you can use auto instead
 
-#### Type Inference 
+#### Type Inference&#x20;
 
 compiler will deduce what type to assign a variable based on the code you already have.
 
@@ -131,7 +135,7 @@ for (std::vector<std::string>::iterator j = v.begin(); i != v.end(); ++i)
 for (auto j = v.begin(); i != v.end(); ++i)
 ```
 
-When you pass a vector as a parameter, pass it by reference always \(and const if you can\). But what is the type of `i` inside the for loop if you pass by reference and say that it's content will remain constant. 
+When you pass a vector as a parameter, pass it by reference always (and const if you can). But what is the type of `i` inside the for loop if you pass by reference and say that it's content will remain constant.&#x20;
 
 ```cpp
 void printAll(const std::vector<std::string>& v)
@@ -144,7 +148,7 @@ There is a `const_iterator` in every container!
 
 ## range-based "for" loop
 
-Ever miss python for loops? 
+Ever miss python for loops?&#x20;
 
 ```python
 a = [1,2,3,4,5]
@@ -198,6 +202,4 @@ int main
     
 }
 ```
-
-
 

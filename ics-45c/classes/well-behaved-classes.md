@@ -1,4 +1,4 @@
-# week6
+# Well Behaved Classes
 
 ## Well Behaved classes
 

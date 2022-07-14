@@ -12,9 +12,9 @@ What can we do with variables:&#x20;
 * store them in member variables of a class and initialize them in a constructor&#x20;
 
 {% hint style="info" %}
-function() when using parenthesis, you are telling the compiler to use the function right now.&#x20;
+`function()` when using parenthesis, you are telling the compiler to use the function right now.&#x20;
 
-function without the parentheses it will return a function pointer
+`function` without the parentheses it will return a function pointer
 {% endhint %}
 
 
@@ -158,80 +158,3 @@ int LinkedList::sum() const
 }
 ```
 
-## Unitest
-
-In this course, we are using UNITEST from Google Test.
-
-```cpp
-// putting these functions into the "unnamed namespace"
-// only visible in this source file
-namespace
-{
-    std::string truncate(const std::string& s, unsigned int length)
-    {
-        if (s.size() > length)
-        {
-            return s.substr(0, length);
-        }
-        else
-        {
-            return s;
-        }
-    }
-    
-    std::string truncateArtist(const std::string& artist)
-    {
-        return truncate(artist, Song::MAX_ARTIST_LENGTH);
-    }
-    
-    std::string truncateTitle(const std::string& title)
-    {
-        return truncate(title, Song::MAX_TITLE_LENGTH);
-    }
-}
-```
-
-Inside the `gtest` file, create a new source file with your tests.&#x20;
-
-```cpp
-// SongTests.cpp
-
-#include <gtest/gtest.h>
-#include "Song.hpp" // all files in gtest are seen in app
-
-TEST(SongTests, containArtistGivenWhenCreated)
-{
-    Song s{"U2", "Breath"};
-    ASSERT_EQ("U2", s.getArtist());
-}
-
-TEST(SongTests, containTitleGivenWhenCreated)
-{
-    Song s{"Arcade Fire", "After Life"};
-    ASSERT_EQ("After Life", s.getTitle());
-}
-
-TEST(SongTests, afterChangingArtist_ContainNewArtist)
-{
-    Song s{"U2", "Afterlife"};
-    s.setArtist("Arcade Fire");
-    ASSERT_EQ("Arcade Fire", s.getArtist());
-    EXPECT_EQ("Arcade Fire", s.getArtist());
-}
-
-TEST(SongTest, truncateArtistAtCreationIfTooLong)
-{
-    std::string longArtist(Song::MAX_ARTITST_LENGTH + 5, 'x');
-    std::string truncatedArtist(Song::MAX_ARTIST_LENGTH,  'x');
-    
-    Song s{longArtist, "Some Title"};
-    ASSERT_EQ(truncatedArtist, s.getArtist());
-}
-```
-
-{% hint style="info" %}
-Anything you **assert**, you can **expect**.
-{% endhint %}
-
-* **Assert**: if this isn't true then test fail and the test immediatly stops
-* **Expect**: check this, and if it is wrong tell me, and keep running the test
