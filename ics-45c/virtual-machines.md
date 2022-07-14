@@ -45,3 +45,5 @@ We are using a Virtual Machine for the class. VMware is a **hypervisor** used to
 
 \*Note: to run a program in the VM, there shsould be no warnings nor errors from the compiler.
 
+\*Note2: in the VM, to run a program, you use `./build` to compile the source code and then `./run` to execute the program
+

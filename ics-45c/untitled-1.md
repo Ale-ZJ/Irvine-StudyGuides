@@ -4,14 +4,16 @@ description: week 2
 
 # C++ Standard Library
 
-C++ Standard Library is a collection of libraries that contain functions, classes, algorithms,  iterators, etc that are useful when writing programs. C++ Standard Library inherits from C Standard Library with some modifications. These libraries are written to use _system calls_ (see notes) to interact with the program's operating system.&#x20;
+C++ Standard Library is a collection of libraries that contain functions, classes, algorithms,  iterators, etc that are useful when writing programs. C++ Standard Library inherits from C Standard Library with some modifications. These libraries are written to use _system calls_ (see notes) to interact with an operating system.&#x20;
 
 Before using any of the standard libraries in the `std` namespace, we need to include the respective headers using the _preprocessor directive_ `#include`.&#x20;
 
 {% hint style="info" %}
-fun small tiny detail to keep in the back of your head:&#x20;
+Fun small tiny detail to keep in the back of your head:&#x20;
 
-when including standard libraries, we surround the name with <> and we also don't add&#x20;
+When including standard libraries in C++, we surround the name with <> . Usually libraries in C end in `.h` (like`math.h)` and libraries in C++ follow this format `cmath`
+
+Librariess that the user write end in .h ([header files](untitled-1.md#separate-compilation)) and are surrounded by `"" .`
 {% endhint %}
 
 ## Strings&#x20;
@@ -25,7 +27,7 @@ std::string
 ```
 
 {% hint style="info" %}
-`::` is the _scope resolution operator_. In this example it tells the program to look for the name `string` in the namespace `std`&#x20;
+`::` is the _scope resolution operator_. In this example it tells the program to look for the name `string` in the namespace `std` &#x20;
 {% endhint %}
 
 * string concatenation&#x20;
@@ -107,20 +109,21 @@ void inputExample()
 
 ## Separate Compilation
 
-Writing programs in more than one file.&#x20;
+Writing programs in more than one file
 
-* files ending in `.cpp` compiles separately and have amnesia -they forget- after they compile them&#x20;
-  * put the signature of the method of module 1 in module 2 where you want to use it
-* `.cpp` is source file&#x20;
+* the compiler compiles one source file at a time into a single _object file_
+  * when the compiler compiles a second source file, it has amnesia and forgets all the declarations and definitions in the previous source file&#x20;
+* `.cpp` is **source file**&#x20;
   * we can think of them as "modules"
 * `.hpp` is **header file**
   * just communicates the declarations (function signatures) NOT definitions
   * include the `.hpp` file in module 2 that uses module 1
 * objects files are created
 * Linking - makes sure that all promises to the compiler are fulfilled
+  * links an object file with libraries
   * adding `.hpp` makes a promise to `main.cpp` that there's a module somewhere in the library that has the implementation of `.hpp`&#x20;
 
-
+There are some rules tho
 
 * &#x20;You can't include `.hpp` files more than one time.&#x20;
 * So we use the following:
@@ -136,8 +139,9 @@ int methodNames();
 #endif
 ```
 
-* **One definition rule**&#x20;
-  * you can only have one definition for a name
+{% hint style="warning" %}
+**One definition rule:** you can only have one definition for a name
+{% endhint %}
 
 ## Behind the Scenes
 
@@ -163,7 +167,7 @@ To use C++, we need to better understand some eecs stuff:
 #### The Von Neuman Architecture
 
 * **CPU**: grab one instruction at the time&#x20;
-* **Main memory**:&#x20;
+* **Main memory**: stores instructions and data&#x20;
 * **bus**: wires that connect from the CPU to the main memory&#x20;
 * **registers**: scratch paper inside CPU to temporarily remember small stuff&#x20;
   * one of them is called: **instruction pointer**&#x20;
