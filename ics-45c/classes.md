@@ -17,7 +17,7 @@ Types characteristics:
 * A type specifies a layout for that memory
 * Some types support "operators" that allow us to manipulate their objects
   * when making a class, you can overload operators&#x20;
-  * `std::cin >> x`
+  * e.g. the `>>` operator in `std::cin >> x`
 * Some types support "member functions" that can be called on objects of those types.
   * `s.length()` or `s.size()`
   * &#x20;`int` do not have member functions
@@ -29,9 +29,7 @@ Types characteristics:
   * `std::string s = "Boo";`
 * What can be done to "const" objects of a type?
 
-
-
-
+Here is a class example:
 
 | Song.hpp                                 | Song.cpp                    |
 | ---------------------------------------- | --------------------------- |

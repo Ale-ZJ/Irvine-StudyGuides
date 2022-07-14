@@ -1,3 +1,7 @@
+---
+description: week 6
+---
+
 # Well Behaved Classes
 
 ## Well Behaved classes
@@ -13,7 +17,41 @@ Objects of a well-behaved class have these properties:
 
 ## Unnamed Namespace
 
+The professor explained this in a unit test example, but I can't find the lecture or notes so this is straight from StackOverflow.&#x20;
 
+An unnamed namespace is a utility to make a name _translation unit_ local. A translation unit is a file that is generated after compilation that is used to generate an _object file,_ library, or an excutable program. It consists of the contents of one source file + included header files.
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+namespace {
+   const int i = 4;
+   int variable;
+   void boo(int i) { cout << i << endl; }
+}
+
+int main()
+{
+   cout << i << endl;
+   variable = 100;
+   boo(variable);
+   return 0;
+}
+```
+
+This means that you can have multiple functions `boo()` that exist in multiple translation units, and they won't clash at linking time.
+
+{% hint style="info" %}
+The effect of using an unnamed namespace is the same as using the `static` keyword.&#x20;
+
+&#x20;   `namespace{int a1;}`
+
+&#x20;   `static int a2;`
+
+The only difference is that an unnamed namespace is superior because `a1` gets an unique name.
+{% endhint %}
 
 ## Constructors
 

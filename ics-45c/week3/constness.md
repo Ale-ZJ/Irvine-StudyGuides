@@ -4,11 +4,7 @@ description: week 4
 
 # Constness
 
-
-
-## Constness
-
-&#x20;In C++, there are tools to keep things constant. Once the value of a constant variable has been initialize, it's value can never be changed again.&#x20;
+In C++, there are tools to keep things constant. Once the value of a constant variable has been initialize, it's value can never be changed again.&#x20;
 
 ```cpp
 const int x = 3;
@@ -19,7 +15,7 @@ const int w = z;
 ```
 
 {% hint style="info" %}
-Not that `const` is part of the variable's type
+Note that `const` is part of the variable's type
 {% endhint %}
 
 {% hint style="danger" %}

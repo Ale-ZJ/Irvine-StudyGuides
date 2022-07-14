@@ -34,7 +34,7 @@ For example:&#x20;
 
 Each vertex is assigned to a matrix row and column. A matrix element is 1 if the corresponding two vertices have an edge or 0 otherwise.
 
-![](<../../.gitbook/assets/image (13) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (13) (1) (1) (1) (1) (1).png>)
 
 Common programming implementation would be a 2-d array. Therefore, it would have a size of **O(V^2).** Meanwhile, it has a key benefit of **O(1)** because the corresponding element is just checked for 0 or 1.
 

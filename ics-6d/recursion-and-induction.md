@@ -61,7 +61,7 @@ sometimes it is usful to pull out the final term in the summation, why idk, book
 
 you can also change the variables in a summation, consider `i = k + 2`
 
-``![](<../.gitbook/assets/image (13).png>)``
+``![](<../.gitbook/assets/image (13) (1).png>)``
 
 ## Induction
 

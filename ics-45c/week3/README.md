@@ -41,108 +41,6 @@ i = 5;                          // a change to i is also a change to r
 std::cout << r << std::endl;    // writes 5
 ```
 
-Another example:
-
-```cpp
-int i = 3;
-int* p = i;
-int* q = p;
-int** r = q
-```
-
-![](<../../.gitbook/assets/image (6).png>)
-
-### Pass-by-value parameters
-
-When passing a parameter by value, a copy of the parameter is created and lives in the function. Any change or usage of the copy does not affect the original. When the function ends, the copy dies.
-
-```cpp
-void foo(int x)
-{
-    x++;
-    std::cout << x << std::endl;
-}
-
-int main()
-{
-    int i = 3;
-    foo(i);
-    std::cout << i << std::endl;
-    return 0;
-}
-
-// console:
-// 4
-// 3
-```
-
-### Pass-by-reference parameters
-
-When passing a parameter by a reference, no copies are made. Change made to the parameter will be reflected on the original. It enables functions to alter the arguments that are passed to them.&#x20;
-
-```cpp
-void foo(int& x)
-{
-    x++;
-    std::cout << x << std::endl;
-}
-
-int main()
-{
-    int i = 3;
-    foo(i);
-    std::cout << i << std::endl;
-    return 0;
-}
-
-// console 
-// 4
-// 4
-```
-
-## Compatibility - basic conversions
-
-### Implicit type conversion
-
-Some types can be implicitly converted to another if they are _compatible_ when there is a known conversion between them.
-
-```cpp
-int i1 = 4;
-double d1 = i1;    // 4
-
-double d2 = 3.5;
-int i2 = d2;       // 3 truncated
-
-long l3 = 5000000000;
-int i3 = l3;       // 705032704
-```
-
-### Function overloading&#x20;
-
-Overloading means writing more than one function with the same name. In C++ it is ok to overload functions as long as the compiler has a way to differentiate them (in this case the parameters).&#x20;
-
-Overload resolution rules:&#x20;
-
-* Exact matches have priority&#x20;
-* Matches involving promotion&#x20;
-  * int -> long
-  * int -> double&#x20;
-  * float -> double
-* matches involving other standard conversions&#x20;
-  * double -> int
-  * float -> char
-
-### Default Arguments
-
-ALWAYS appear after ALL the named parameters.
-
-```cpp
-double vectorLength(double x, double y, double z = 0.0)
-{
-    return std::sqrt(x * x + y * y + z * z);
-}
-```
-
 ## Static and Dynamic Allocation&#x20;
 
 | Static allocation                               | Dynamic allocation                  |
@@ -165,7 +63,7 @@ But what is that blue arrow? It can't be a reference because references can't ch
 
 ## Pointers
 
-A **pointer** in C++ is another way to store components loation.
+A **pointer** in C++ is another way to store a variable location.
 
 In other words, a pointer won't just say "I'm pointing to memory location x." It'll say "I'm pointing to an integer stored at memory location x."
 
@@ -186,6 +84,26 @@ int* p = &i;
 
 ![](<../../.gitbook/assets/image (5).png>)
 
+Be careful tho,
+
+```
+int i = 3;
+int* p = i; // invalid conversion from int to int*
+```
+
+Another example:
+
+```cpp
+int i = 3;
+int* p = &i;
+int* q = p; // note that this does NOT point to p, but to i directly
+int** r = q
+```
+
+![](<../../.gitbook/assets/image (6).png>)
+
+Things get a little bit more confusing when you have both references and pointers.
+
 ```cpp
 int* p = new int;
 *p = 3;
@@ -200,13 +118,13 @@ int*& s = p;
 *s = 6;
 ```
 
-![](<../../.gitbook/assets/image (4).png>)
+![](<../../.gitbook/assets/image (13).png>)
 
 There are also null pointers. Pointers that point at the absence of something. Useful in linked lists.
 
 ```cpp
 int* p = nullptr; //this is bueno
-int* p = 0;    
+int* p = 0;    // legal, but why would you do this
 int* p = NULL; // C library
 
 if (p != nullptr)...
@@ -223,7 +141,7 @@ int* p = nullptr;
 int* p = new int;
 ```
 
-`delete` used to de-allocate **the object/value a pointer is pointing at**, it does not get rid of the name of the pointer.
+`delete` used to de-allocate **the object/value a pointer is pointing at**, it does not get rid of the name of the pointer. The pointer itself will stop existing automatically when it is out of scope.
 
 ```cpp
 delete p; //deletes whatever p points at
@@ -235,7 +153,8 @@ dangling problem
 int* p = new int;
 *p = 3;
 delete p;
-std::cout << *p << std::endl; //once deleted you can't find it anymore
+std::cout << *p << std::endl; // once the pointer is deleted
+                              // you can't find the value anymore
 ```
 
 ## Statically Allocated Arrays
@@ -294,7 +213,7 @@ The expression above allocated a block of memory on the heap large enough to sto
 Notice that `int*` is the syntax we learned to declare a _pointer to an integer_. Then how does the compiler know we are talking about an array of ints and not an int? - sike, it doesn't and can't, you need to keep track yourself. Arrays are implemented as pointer to their first cell (in this case an int)
 {% endhint %}
 
-You can treat a dynamically allocated array as a pointer to a static array of integers. Indexing and such is the same.
+You can treat a dynamically allocated array as a pointer to the first element of a static array of integers. Indexing and such is the same.
 
 #### How to delete a dynamic array
 

@@ -140,5 +140,5 @@ int methodNames();
 ```
 
 {% hint style="warning" %}
-**One definition rule:** you can only have one definition for a name
+**One Definition Rule (ODR):** you can only have one definition for a name
 {% endhint %}

@@ -198,7 +198,7 @@ A **Minimum Spanning Tree** is a subset of all edges that conenct all vertices i
 
 Here is a vocab term: **connected** graph contains a path between every pair of vertices
 
-![](<../../.gitbook/assets/image (13) (1) (1).png>)
+![](<../../.gitbook/assets/image (13) (1) (1) (1).png>)
 
 Kruskal's algorithm uses:
 
