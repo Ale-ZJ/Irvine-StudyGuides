@@ -2,11 +2,21 @@
 description: week 2
 ---
 
-# week2
+# C++ Standard Library
+
+C++ Standard Library is a collection of libraries that contain functions, classes, algorithms,  iterators, etc that are useful when writing programs. C++ Standard Library inherits from C Standard Library with some modifications. These libraries are written to use _system calls_ (see notes) to interact with the program's operating system.&#x20;
+
+Before using any of the standard libraries in the `std` namespace, we need to include the respective headers using the _preprocessor directive_ `#include`.&#x20;
+
+{% hint style="info" %}
+fun small tiny detail to keep in the back of your head:&#x20;
+
+when including standard libraries, we surround the name with <> and we also don't add&#x20;
+{% endhint %}
 
 ## Strings&#x20;
 
-you need to include strings before using it&#x20;
+you need to include `string` before using it&#x20;
 
 ```cpp
 #include <string>
@@ -15,7 +25,7 @@ std::string
 ```
 
 {% hint style="info" %}
-`std::` is part of the C++ standard library that represents a namespace
+`::` is the _scope resolution operator_. In this example it tells the program to look for the name `string` in the namespace `std`&#x20;
 {% endhint %}
 
 * string concatenation&#x20;
@@ -25,9 +35,9 @@ std::string
 * splicing `s[1]`&#x20;
   * if you go out of bounds, it is an `undefined behavior` (not illegal - compiler wont complain)&#x20;
   * so instead of using `[]` use `s.at(5)` because it will never fail
-    * `at` costs more tho!&#x20;
+    * `at()` costs more tho bc it needs to check if you out of boundaries&#x20;
 
-Member functions&#x20;
+Some member functions are below, find more in the cpp online documentation
 
 ```cpp
 if (s.empty())
@@ -36,42 +46,7 @@ if (s.empty())
 
 s.size()
 s.length() //same as size, they return an unsigned int 
-
-for (unsigned int i = 0; i < s.size(); ++i)
-{
-}
-
-++i //pre-increment, add value to i and then return
-i++ //post-increment, get value of i and add 1 to i
 ```
-
-Pre-incrementation means the variable is incremented before the expression is set or evaluated. Post-incrementation means the expression is set or evaluated, and then the variable is altered.
-
-```
-b = x++;
-```
-
-is really:
-
-```
-b = x;
-x++;
-```
-
-and
-
-```
-b = ++x;
-```
-
-is really:
-
-```
-x++;
-b = x;
-```
-
-pre-incrementing is efficient and faster because you don't use the variable returned.
 
 ## StandardIO
 

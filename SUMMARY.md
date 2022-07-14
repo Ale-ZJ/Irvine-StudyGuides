@@ -27,8 +27,8 @@
 * [\[credits\]](ics-45c/untitled-3.md)
 * [Virtual Machines](ics-45c/virtual-machines.md)
 * [C++ Basics](ics-45c/untitled.md)
-* [week2](ics-45c/untitled-1.md)
-* [week3](ics-45c/week3.md)
+* [C++ Standard Library](ics-45c/untitled-1.md)
+* [References and Pointers](ics-45c/week3.md)
 * [Arrays](ics-45c/arrays.md)
 * [week4](ics-45c/untitled-2.md)
 * [Classes](ics-45c/classes.md)
@@ -75,3 +75,7 @@
 * [Processes and Threads](cs-143a/processes-and-threads.md)
 * [CPU Scheduling](cs-143a/cpu-scheduling.md)
 * [Process Synchronization](cs-143a/process-synchronization.md)
+
+## EECS-112
+
+* [Page 1](eecs-112/page-1.md)

@@ -1,10 +1,10 @@
 ---
 description: >-
-  lost my original notes smh, this is a shorter version bc i am not watching 3
-  hours of lecture again
+  week 3 - lost my original notes smh, this is a shorter version bc i am not
+  watching 3 hours of lecture again
 ---
 
-# week3
+# References and Pointers
 
 ## References
 

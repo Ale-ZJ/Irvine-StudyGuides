@@ -13,6 +13,7 @@ C++ is a subset of the C programming language that comes with classes. C++ is on
 | _dynamically_ typed language: checks for types _while_ the program runs | _statically_ typed language: checks for types _before_ the program runs                               |
 | you don't need to specify the type of variables nor functions           | strict type checking, you need to specify the type of variable and function to pass, store or  return |
 | two-step process: edit and run                                          | three-step process: edit, compile and run                                                             |
+| no pointers, every variable is a reference to an object                 | objects can be passed as references or pointers ([see notes](week3.md#pointers))                      |
 
 Since C++ is a compiled language, it needs a compiler to convert the source code into executable code (machine language). Linux has a preinstalled compiler C compiler called GCC, and a C++ compiler called G++. We use the commands `gcc` and `g++` respectively.
 
@@ -50,9 +51,9 @@ Since C++ is a compiled language, it needs a compiler to convert the source code
 ## Expressions and Statements
 
 * Functions are made up of statements&#x20;
-* A function performs a specific task&#x20;
-* statements can contain expressions&#x20;
-* expressions calculate a value and return it (which means they also have a type)
+* Statements perform a job
+* Statements can contain expressions&#x20;
+* An expression evaluates to a value and returns it (which means they also have a type)
 
 Here are some examples:
 
@@ -62,15 +63,15 @@ Here are some examples:
   1. expression statement&#x20;
      * `a + b;`
   2. assignment
-     * `a = 3`&#x20;
+     * `a = 3;`&#x20;
        * this is an expression too&#x20;
        * so it returns the value `3`
-         * you could do `a = ( a + 3 ) + (b + 2)`
+         * you could do `a = (a + 3) + (b + 2)`
   3. compound/block statements
      * `{ ..// .. // ..}`
        * such as control and loop structures
 
-### Control Structures
+#### Control Structures
 
 ```cpp
 // if statements
@@ -98,7 +99,7 @@ default: //technically a FLAW
 }
 ```
 
-### Loops
+#### Loops
 
 ```cpp
 // while loop
@@ -114,7 +115,7 @@ while (a < 10)
 int a = 3;
 do
 {
-//code executes at least ONCE
+    //code executes at least ONCE
 }
 while (a < 10)
 
@@ -125,43 +126,89 @@ for (int a = 3; a<10; a++)
 } 
 ```
 
+#### Post and Pre increment&#x20;
+
+```cpp
+++i //pre-increment, add value to i and then return
+i++ //post-increment, get value of i and add 1 to i
+```
+
+Pre-incrementation means the variable is incremented before the expression is set or evaluated. Post-incrementation means the expression is set or evaluated, and then the variable is altered.
+
+```
+b = x++;
+```
+
+is really:
+
+```
+b = x;
+x++;
+```
+
+and
+
+```
+b = ++x;
+```
+
+is really:
+
+```
+x++;
+b = x;
+```
+
+pre-incrementing is efficient and faster because you don't use the variable returned.
+
 ### Declarations and Definitions&#x20;
 
 * A declaration introduces a name into a C++ program and associates the name with a type
   1. **variable declaration**&#x20;
      * `int a;`&#x20;
-     * creates a name `a` with type `int`&#x20;
-  2. **function declaration**&#x20;
-     * write their _signature_&#x20;
-       * `int square(int n);`&#x20;
+     * creates a name `a` of type `int`&#x20;
+     * it gives a block of memory of size(int) where values can be stored
+     * the value of `a` is _**undefined**_ unless you assigned a value to `a` later or you _**initialize**_ it when you declare `a`
+  2. **function declaration** &#x20;
+     * `int square(int n);`&#x20;
+       * creates a definition of a function named `square` of return type `int` that takes a parameter with name `n` and type `int`
+       * this is called a function's _**signature**_
+       * note the `;` at the end
      * declaration of a function doesnt mean that the function has meaning&#x20;
        * you need to define them too!
 * definitions: gives a name life, makes it exist
-  * int a; //variable declaration AND definition&#x20;
-  * int a = 3; //declaration + definition + initialization&#x20;
-  * int square(int n) { } //a promise
-  * int square(int n) { return n\*n }
+  * `int a;`&#x20;
+    * //variable declaration AND definition&#x20;
+  * `int a = 3;`&#x20;
+    * //declaration + definition + initialization&#x20;
+  * `int square(int n) { }`&#x20;
+    * //a promise
+  * `int square(int n) { return n*n }`
+    * //declaration + definition
 
 ### Lvalues and Rvalues
 
-* lvalue: an expression that would be legal on the left-hand side of an assignment&#x20;
+* **lvalue**: an expression that would be legal on the left-hand side of an assignment&#x20;
   * place to live&#x20;
   * piece of storage
-* rvalue: an expression that would be legal on their right-hand side of an assignment
+  * location in memory
+    * later you will learn that this is a [_reference_](week3.md)__
+* **rvalue**: an expression that would be legal on their right-hand side of an assignment
+  * usually a temporary value that is not stored anywhere
+  * e.g. a constant
 
-### Functions
+## Functions
 
 * order matters!&#x20;
 * names must be declared before they are used!&#x20;
-* linker: all promises must be made
+* linker: checks that all promises are made
+  * promises of defining a function declaration later on for example
 * `void` functions&#x20;
   * doesn't return anything
 
-
-
 ## First C++ program
 
-A program in C++ begins with a call to `main` and ends when `main` returns. The C++ Standard requires `main` to return an integer value. We usually return 0 because an exit code of 0 is used to indicate program success. Other integers indicate other kinds of failures (not covered).
+A program in C++ begins with a call to `main` and ends when `main` returns. &#x20;
 
 ```
 int main()
@@ -170,5 +217,15 @@ int main()
 }
 ```
 
+The C++ Standard requires `main` to return an integer value. We usually return 0 because an exit code of 0 is used to indicate program success. Other integers indicate other kinds of failures (not covered).&#x20;
 
+{% hint style="info" %}
+`main()` can also have two parameters:
 
+`int main(int argc, char *argv[]) {}`
+
+* **`argc`**`:`amount of argument
+* **`argv`**`:`holds all the arguments that are "passed to the main() function through the command line when executing a program
+{% endhint %}
+
+For this course, use `main()` with no parameters.
