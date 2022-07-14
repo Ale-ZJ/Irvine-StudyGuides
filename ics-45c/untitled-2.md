@@ -1,53 +1,10 @@
-# week4
+---
+description: week 4
+---
 
-## Constness
+# Structure
 
-&#x20;In C++, there are tools to keep things constant.&#x20;
-
-```cpp
-const int x = 3;
-const std::string nmae = "Boo";
-const int y = x;
-int z = x;
-const int w = z;
-```
-
-Be careful with pointers and references. Both structures potentially allow us to change the contents of a constant variable.
-
-#### References
-
-The key thing to understand is that a reference to a constant doesn't necessarily guarantee that the value it refers to will never change; it simply guarantees that the reference itself will never be used to change the value.
-
-```cpp
-int& r = x; // illegal 
-const int& r = x; // r is a reference to an intger constant
-
-int x = 3;
-const int& y = x; // the value is constant 
-                  // (and technically references are const by definition)
-
-// use reference asa parameter type when objects are extensiv to copy
-void printInReverse(const std::string& s)
-{
-    for (int i = s.length() - 1; i >= 0; --i)
-    {
-        std::cout << s[i];
-    }
-}
-```
-
-#### Pointers
-
-```cpp
-int* p = &x; // illegal neither p or *p is const
-const int* q; // q is non-const, *q is const -- west const
-int const* r; // r is non-const, *r is const -- east const
-const int* const t; // t is const, *t is const
-```
-
-## Structure
-
-&#x20;A `struct` is a combination of things (whether they are different or homogeneous).
+A `struct` is a combination of things (whether they are different or homogeneous).
 
 This is how you declare a struct:
 

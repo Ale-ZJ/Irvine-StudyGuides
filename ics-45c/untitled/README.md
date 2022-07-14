@@ -13,7 +13,7 @@ C++ is a subset of the C programming language that comes with classes. C++ is on
 | _dynamically_ typed language: checks for types _while_ the program runs | _statically_ typed language: checks for types _before_ the program runs                               |
 | you don't need to specify the type of variables nor functions           | strict type checking, you need to specify the type of variable and function to pass, store or  return |
 | two-step process: edit and run                                          | three-step process: edit, compile and run                                                             |
-| no pointers, every variable is a reference to an object                 | objects can be passed as references or pointers ([see notes](week3.md#pointers))                      |
+| no pointers, every variable is a reference to an object                 | objects can be passed as references or pointers ([see notes](../week3/#pointers))                     |
 
 Since C++ is a compiled language, it needs a compiler to convert the source code into executable code (machine language). Linux has a preinstalled compiler C compiler called GCC, and a C++ compiler called G++. We use the commands `gcc` and `g++` respectively.
 
@@ -71,7 +71,7 @@ Here are some examples:
      * `{ ..// .. // ..}`
        * such as control and loop structures
 
-#### Control Structures
+### Control Structures
 
 ```cpp
 // if statements
@@ -99,7 +99,7 @@ default: //technically a FLAW
 }
 ```
 
-#### Loops
+### Loops
 
 ```cpp
 // while loop
@@ -161,7 +161,7 @@ b = x;
 
 pre-incrementing is efficient and faster because you don't use the variable returned.
 
-### Declarations and Definitions&#x20;
+## Declarations and Definitions&#x20;
 
 * A declaration introduces a name into a C++ program and associates the name with a type
   1. **variable declaration**&#x20;
@@ -185,26 +185,21 @@ pre-incrementing is efficient and faster because you don't use the variable retu
     * //a promise
   * `int square(int n) { return n*n }`
     * //declaration + definition
+* order matters!&#x20;
+  * names must be declared before they are used!&#x20;
+* linker: checks that all promises are made
+  * promises of defining a function declaration later on for example
 
-### Lvalues and Rvalues
+## Lvalues and Rvalues
 
 * **lvalue**: an expression that would be legal on the left-hand side of an assignment&#x20;
   * place to live&#x20;
   * piece of storage
   * location in memory
-    * later you will learn that this is a [_reference_](week3.md)__
+    * later you will learn that this is a [_reference_](../week3/)__
 * **rvalue**: an expression that would be legal on their right-hand side of an assignment
   * usually a temporary value that is not stored anywhere
   * e.g. a constant
-
-## Functions
-
-* order matters!&#x20;
-* names must be declared before they are used!&#x20;
-* linker: checks that all promises are made
-  * promises of defining a function declaration later on for example
-* `void` functions&#x20;
-  * doesn't return anything
 
 ## First C++ program
 

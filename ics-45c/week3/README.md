@@ -50,7 +50,7 @@ int* q = p;
 int** r = q
 ```
 
-![](<../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (6).png>)
 
 ### Pass-by-value parameters
 
@@ -159,7 +159,7 @@ double vectorLength(double x, double y, double z = 0.0)
 }
 ```
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (3).png>)
 
 But what is that blue arrow? It can't be a reference because references can't change the object they are referring to.
 
@@ -184,7 +184,7 @@ int* p = &i;
 
 ```
 
-![](<../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (5).png>)
 
 ```cpp
 int* p = new int;
@@ -200,7 +200,7 @@ int*& s = p;
 *s = 6;
 ```
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../../.gitbook/assets/image (4).png>)
 
 There are also null pointers. Pointers that point at the absence of something. Useful in linked lists.
 
@@ -251,7 +251,7 @@ int a[10];
 * The size of an array CANNOT change for as long as it lives&#x20;
 * Given an array, you can't ask a static array its size. It is as if they don't know
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (9).png>)
 
 The compiler uses a "formula" to index into cells. Every cell has a memory address at the beginning. Each subsequent cell memory address can be found by:&#x20;
 
@@ -286,7 +286,7 @@ As the descriptor "dynamically" suggests, this array is created in the heap. Hen
 int* a = new int[10]; // instead of 10, you can use a variable
 ```
 
-![](<../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (8).png>)
 
 The expression above allocated a block of memory on the heap large enough to store 10 ints (10 bytes in our VM).&#x20;
 
