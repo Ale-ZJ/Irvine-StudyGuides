@@ -21,7 +21,7 @@ description: 'week 1: "Python Review"'
 \- Using the = symbol\
 \- Using imports, function definitions and class definitions
 
-![pictorial representation of binding - adapted from prof. Pattis](../.gitbook/assets/image.png)
+![pictorial representation of binding - adapted from prof. Pattis](<../.gitbook/assets/image (3).png>)
 
 ###
 

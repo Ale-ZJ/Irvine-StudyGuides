@@ -57,7 +57,7 @@ std::cout << r << std::endl;    // writes 5
 }
 ```
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 But what is that blue arrow? It can't be a reference because references can't change the object they are referring to.
 

@@ -79,6 +79,13 @@
 * [CPU Scheduling](cs-143a/cpu-scheduling.md)
 * [Process Synchronization](cs-143a/process-synchronization.md)
 
-## EECS-112
+## EECS-112L
 
-* [Page 1](eecs-112/page-1.md)
+* [Intro](eecs-112l/intro.md)
+* [Verilog 101](eecs-112l/verilog-101.md)
+* [MIPS Processor](eecs-112l/mips-processor.md)
+
+## CS 171A
+
+* [Introduction to Artificial Intelligence](cs-171a/introduction-to-artificial-intelligence.md)
+* [Search](cs-171a/search.md)
